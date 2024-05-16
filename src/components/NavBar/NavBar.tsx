@@ -19,7 +19,9 @@ const NavBar: React.FC = () => {
     <nav className="fixed left-0 top-0 h-full w-full">
       <section className="flex w-full items-center justify-between px-4 py-4 capitalize">
         <Link href="/">
-          <div>ewm bespoke interiors</div>
+          <div className="mix-blend-difference">
+            <span className="uppercase">ewm</span> bespoke interiors
+          </div>
         </Link>
         <ul className="hidden flex-row gap-4 lg:flex">
           {navItems.map((item, index) => (

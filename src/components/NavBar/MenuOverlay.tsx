@@ -95,8 +95,8 @@ const MenuOverlay = ({
     >
       <div className="fixed left-0 top-0 h-full w-full">
         <div className="flex w-full items-center justify-between px-4 py-4 capitalize ">
-          <Link className="text-[#e4e8ed]" href="/">
-            ewm bespoke interiors
+          <Link className="text-[#e4e8ed] mix-blend-difference" href="/">
+            <span className="uppercase">ewm</span> bespoke interiors
           </Link>
 
           <div
@@ -149,8 +149,8 @@ const MenuOverlay = ({
           ref={heading}
           className="relative flex h-full w-full items-center justify-center"
         >
-          <h1 className="absolute bottom-[15em] text-center text-2xl uppercase text-[#e4e8ed] md:bottom-[6em] md:text-6xl">
-            ewd bespoke interiors
+          <h1 className="absolute bottom-[15em] text-center text-2xl capitalize text-[#e4e8ed] md:bottom-[6em] md:text-6xl">
+            <span className="uppercase">ewm</span> bespoke interiors
           </h1>
         </div>
       </div>

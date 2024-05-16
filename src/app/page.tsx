@@ -1,7 +1,9 @@
+import Hero from "@/components/Hero/Hero";
+
 const Page = () => {
   return (
     <section>
-      <div></div>
+      <Hero />
     </section>
   );
 };
