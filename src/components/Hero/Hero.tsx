@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useRef } from "react";
 
+import Link from "next/link";
 import { assetsConfig } from "@/config/assets";
 
 const Hero = () => {
   const scrollRef = useRef<HTMLElement | null>(null);
 
   return (
-    <section ref={scrollRef} className="relative z-[-1] mt-[10vh] bg-[#444444]">
+    <section ref={scrollRef} className="relative z-[-1] bg-[#e4e8ed]">
       <Section1 />
       <Section2 />
     </section>
@@ -37,7 +38,7 @@ const Section1 = () => {
         <h1
           data-scroll
           data-scroll-speed="-0.4"
-          className="text-4xl capitalize text-white"
+          className=" px-4 text-4xl capitalize text-white md:px-8 md:text-6xl"
         >
           crafted by hand. created by experts
         </h1>
@@ -48,13 +49,26 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <section className="relative h-screen bg-[#444444]">
-      <p className="absolute top-[15rem] capitalize text-white">
-        we are a family run business offering lorem ipsum dolor sit amet
-        consectetur, adipisicing elit. Commodi, a adipisci magni itaque quis at
-        aliquam deleniti, quas maiores voluptate consequuntur. Illo nisi,
-        laboriosam eveniet repellat nam cum dolorem laudantium!
-      </p>
+    <section className="relative h-screen bg-[#e4e8ed]">
+      <div className="absolute top-[3rem] px-4 text-[#191919] md:top-[2rem] md:px-12 md:text-xl lg:p-32">
+        <p className="py-4 text-lg lg:text-2xl">
+          <span className="uppercase">ewm</span> Bespoke Interiors is a leading
+          provider of joinery, carpentry, upholstery / re-upholstery and office
+          furniture solutions for commercial and residential spaces.
+        </p>
+        <p className="py-4 text-lg lg:text-2xl">
+          We are a family run business with over 40 years of experience in the
+          industry, based in South East London.
+        </p>
+
+        <div className="py-4">
+          <Link className="no-underline" href="/about">
+            <button className=" cursor-pointer rounded-[20rem] bg-[#191919] px-4 py-2 capitalize text-[#e4e8ed] ">
+              our story
+            </button>
+          </Link>
+        </div>
+      </div>
     </section>
   );
 };

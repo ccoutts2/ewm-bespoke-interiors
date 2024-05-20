@@ -106,7 +106,7 @@ const MenuOverlay = ({
             <button className="nav_menu_button_text">
               <span>close</span>
             </button>
-            <div className="flex h-[0.8rem] w-[0.8rem] items-center justify-center rounded-[20rem]  bg-[#d82e2e]"></div>
+            <div className="flex h-[0.5rem] w-[0.5rem] items-center justify-center rounded-[20rem]  bg-[#d82e2e]"></div>
           </div>
         </div>
         <div className="flex flex-col items-stretch justify-stretch border-b border-b-white pt-8">
