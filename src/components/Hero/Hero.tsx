@@ -27,7 +27,7 @@ const Section1 = () => {
 
   return (
     <section className="sticky top-0 flex h-screen flex-col items-center justify-center">
-      <div className="h-screen  w-full">
+      <div className="h-screen w-full">
         <img
           src={assetsConfig.officePicture.src}
           alt={assetsConfig.officePicture.description}
@@ -50,20 +50,20 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <section className="relative h-screen bg-[#e4e8ed]">
-      <div className="absolute top-[3rem] px-4 text-[#191919] md:top-[2rem] md:px-12 md:text-xl lg:p-32">
-        <p className="py-4 text-lg lg:text-2xl">
+      <div className="absolute top-[3rem] px-4 text-[#191919] md:top-[2rem] md:w-[80%] md:px-12 md:pt-12   lg:p-32">
+        <p className="py-4 text-lg md:text-3xl">
           <span className="uppercase">ewm</span> Bespoke Interiors is a leading
           provider of joinery, carpentry, upholstery / re-upholstery and office
           furniture solutions for commercial and residential spaces.
         </p>
-        <p className="py-4 text-lg lg:text-2xl">
+        <p className="py-4 text-lg md:text-3xl">
           We are a family run business with over 40 years of experience in the
           industry, based in South East London.
         </p>
 
         <div className="py-4">
           <Link className="no-underline" href="/about">
-            <button className=" cursor-pointer rounded-[20rem] bg-[#191919] px-4 py-2 capitalize text-[#e4e8ed] ">
+            <button className=" cursor-pointer rounded-[20rem] bg-[#191919] px-4 py-2 capitalize text-[#e4e8ed] md:px-8 md:py-4 md:text-2xl">
               our story
             </button>
           </Link>
