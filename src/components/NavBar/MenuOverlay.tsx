@@ -31,9 +31,9 @@ const MenuOverlay = ({
       gsap.set(socialItems.current, { autoAlpha: 0 });
 
       tl.current = gsap
-        .timeline({ paused: true, delay: 0.5 })
+        .timeline({ paused: true })
         .to(overlay.current, {
-          duration: 1.2,
+          duration: 1,
           clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
           ease: "power3.inOut",
         })
