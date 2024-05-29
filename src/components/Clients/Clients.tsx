@@ -33,11 +33,11 @@ const Clients = () => {
       <h2 className=" uppercase md:text-xl lg:text-2xl">
         just look at who we work with
       </h2>
-      <div className="flex flex-wrap items-stretch justify-start gap-8 py-8 md:justify-between md:gap-4">
+      <div className="flex flex-wrap items-stretch justify-center gap-8 py-8 md:justify-between md:gap-4">
         {clients.map((client, index) => (
           <div
             key={index}
-            className="flex w-[45%] flex-col justify-start py-4 capitalize md:w-[25%]"
+            className="flex w-[40%] flex-col justify-start py-4 capitalize md:w-[25%]"
           >
             <div>
               <img src={client.src}></img>

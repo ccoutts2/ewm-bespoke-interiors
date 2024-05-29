@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const FooterContent = () => {
   return (
-    <footer className="flex h-full w-full flex-col justify-between bg-[#191919] px-4 py-8 text-[#e4e8ed]  md:px-12 lg:px-32">
+    <section className="flex h-full w-full flex-col justify-between bg-[#191919] px-4 py-8 text-[#e4e8ed]  md:px-12 lg:px-32">
       <nav className="flex shrink-0 gap-20">
         <div className="flex flex-col gap-2 ">
           <h3 className="b-bottom uppercase">navigation</h3>
@@ -27,11 +27,11 @@ const FooterContent = () => {
         </div>
       </nav>
       <div className="flex items-end justify-between">
-        <h1 className="pt-8 text-6xl capitalize leading-[0.8]">
+        <h1 className="pt-8 text-3xl capitalize leading-normal md:text-6xl">
           <span className="uppercase">ewm</span> bespoke interiors
         </h1>
       </div>
-    </footer>
+    </section>
   );
 };
 
