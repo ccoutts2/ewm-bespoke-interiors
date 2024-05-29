@@ -1,3 +1,9 @@
+"use client";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 import { assetsConfig } from "@/config/assets";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
@@ -35,6 +41,30 @@ const works = [
 ];
 
 const Page = ({ src, header }: WorkProps) => {
+  const container = useRef<HTMLDivElement | null>(null);
+  const imageContainer = useRef<(HTMLDivElement | null)[]>([]);
+
+  useGSAP(
+    () => {
+      gsap.set(imageContainer.current, { y: 100, opacity: 0 });
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(imageContainer.current, {
+        scrollTrigger: {
+          trigger: imageContainer.current,
+          scrub: false,
+          start: "top bottom-=10",
+          end: "bottom bottom",
+        },
+        ease: "power1.inOut",
+        opacity: 1,
+        // stagger: 0.2,
+        y: 0,
+        duration: 1,
+      });
+    },
+    { scope: container },
+  );
+
   return (
     <section>
       <PagesHero img={assetsConfig.officePicture.src} header={"What We Do"} />
@@ -64,9 +94,15 @@ const Page = ({ src, header }: WorkProps) => {
           level of specification."
         />
       </section>
-      <section className="flex flex-col items-center justify-between bg-[#e4e8ed] px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-32">
+      <section
+        ref={container}
+        className="flex flex-col items-center justify-between bg-[#e4e8ed] px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-32"
+      >
         {works.map((work, index) => (
           <div
+            ref={(el) => {
+              imageContainer.current[index] = el;
+            }}
             key={index}
             className="flex w-full flex-col items-center justify-center py-4 capitalize md:w-[45%] lg:w-[30%]"
           >
