@@ -8,10 +8,13 @@ import { assetsConfig } from "@/config/assets";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
 import Button from "@/components/buttons/Button/Button";
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
 const Page = () => {
   return (
     <>
+      <NavBar />
       <PagesHero img={assetsConfig.officePicture.src} header={"Our Story"} />
       <section className="bg-[#e4e8ed]">
         <section className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
@@ -94,6 +97,7 @@ const Page = () => {
           </section>
         </section>
       </section>
+      <Footer />
     </>
   );
 };

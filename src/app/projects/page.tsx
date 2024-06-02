@@ -1,6 +1,9 @@
 import { assetsConfig } from "@/config/assets";
 import Link from "next/link";
 
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
+
 interface ProjectNavProps {
   title: string;
   href: string;
@@ -57,7 +60,8 @@ const projects: ProjectProps[] = [
 
 const Page = ({ params: { projectId } }: ProjectPage) => {
   return (
-    <section>
+    <>
+      <NavBar />
       <nav className="mt-[4rem] px-4">
         <ul className="flex w-full flex-row flex-wrap items-stretch justify-center no-underline">
           {projectNavItems.map((item, index) => (
@@ -77,7 +81,8 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
           />
         ))}
       </section>
-    </section>
+      <Footer />
+    </>
   );
 };
 
