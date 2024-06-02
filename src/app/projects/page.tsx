@@ -3,6 +3,9 @@ import NavBar from "@/components/NavBar/NavBar";
 import { assetsConfig } from "@/config/assets";
 import Link from "next/link";
 
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
+
 interface ProjectNavProps {
   title: string;
   href: string;
