@@ -57,7 +57,6 @@ const Page = ({ src, header }: WorkProps) => {
         },
         ease: "power1.inOut",
         opacity: 1,
-        // stagger: 0.2,
         y: 0,
         duration: 1,
       });

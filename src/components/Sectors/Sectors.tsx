@@ -1,4 +1,5 @@
 import { assetsConfig } from "@/config/assets";
+import Button from "../buttons/Button/Button";
 
 const sectors = [
   {
@@ -48,7 +49,7 @@ const Sectors = () => {
             </div>
             <h3 className="py-2 text-lg">{sector.header}</h3>
             <p className="pb-4 pt-2 text-sm leading-loose">{sector.info}</p>
-            <button className="w-fit rounded bg-[#191919] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#e4e8ed]">{`explore ${sector.header} works`}</button>
+            <Button href="/" label={`explore ${sector.header} works`} />
           </div>
         ))}
       </div>
