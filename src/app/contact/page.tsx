@@ -5,6 +5,7 @@ const Page = () => {
   return (
     <>
       <NavBar />
+      <div></div>
       <Footer />
     </>
   );

@@ -78,29 +78,29 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
               src={assetsConfig.finsburySquare1.src}
             />
             <img
-              className="sectionColImage"
+              className="w-inherit h-full object-cover"
               src={assetsConfig.finsburySquare2.src}
             />
             <img
-              className="sectionColImage"
+              className="w-inherit h-full object-cover"
               src={assetsConfig.finsburySquare3.src}
             />
             <img
-              className="sectionColImage"
+              className="w-inherit h-full object-cover"
               src={assetsConfig.finsburySquare4.src}
             />
             <img
-              className="sectionColImage"
+              className="w-inherit h-full object-cover"
               src={assetsConfig.finsburySquare5.src}
             />
             <img
-              className="sectionColImage"
+              className="w-inherit h-full object-cover"
               src={assetsConfig.finsburySquare6.src}
             />
           </div>
           <div className="relative flex h-screen flex-col">
             <img
-              className="sectionColImage"
+              className="w-inherit h-full object-cover"
               src={assetsConfig.finsburySquare1.src}
             />
           </div>
