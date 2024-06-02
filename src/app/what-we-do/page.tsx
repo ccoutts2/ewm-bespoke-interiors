@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { assetsConfig } from "@/config/assets";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
 interface WorkProps {
   src: string;
@@ -65,7 +67,8 @@ const Page = ({ src, header }: WorkProps) => {
   );
 
   return (
-    <section>
+    <>
+      <NavBar />
       <PagesHero img={assetsConfig.officePicture.src} header={"What We Do"} />
       <section className="bg-[#e4e8ed] p-4 md:px-12 md:text-lg lg:px-32">
         <Paragraphs
@@ -112,7 +115,8 @@ const Page = ({ src, header }: WorkProps) => {
           </div>
         ))}
       </section>
-    </section>
+      <Footer />
+    </>
   );
 };
 

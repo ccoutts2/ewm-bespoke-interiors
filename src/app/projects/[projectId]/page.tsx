@@ -2,24 +2,25 @@
 
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
+import Link from "next/link";
+
+import Button from "@/components/buttons/Button/Button";
 
 import { assetsConfig } from "@/config/assets";
 
-const projectDetails = {
+interface ProjectDetailsProps {
+  title: string;
+}
+
+const projectDetails: { [key: string]: ProjectDetailsProps } = {
   "mews-property": {
     title: "Mews Property",
-    src: assetsConfig.mewsProperty8.src,
-    description: "Project Details from Mews Property",
   },
   "leonari-office": {
     title: "Leonari Office",
-    src: assetsConfig.leonariOffice3.src,
-    description: "Project Details from Leonari Office...",
   },
   "finsbury-square": {
     title: "Finsbury Square",
-    src: assetsConfig.finsburySquare1.src,
-    description: "Project Details from Finsbury Square...",
   },
 };
 
@@ -66,80 +67,85 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
   }, []);
 
   return (
-    <section>
-      <div className="mt-[15rem]">{`welcome to ${project.title}`}</div>
-      <section className="app">
-        <div className="section">
-          <div className="sectionWrapper">
-            <div className="sectionCol">
-              <div className="sectionColContainer">
-                <img
-                  className="sectionColImage"
-                  src={assetsConfig.finsburySquare1.src}
-                />
-                <img
-                  className="sectionColImage"
-                  src={assetsConfig.finsburySquare2.src}
-                />
-                <img
-                  className="sectionColImage"
-                  src={assetsConfig.finsburySquare3.src}
-                />
-                <img
-                  className="sectionColImage"
-                  src={assetsConfig.finsburySquare4.src}
-                />
-                <img
-                  className="sectionColImage"
-                  src={assetsConfig.finsburySquare5.src}
-                />
-                <img
-                  className="sectionColImage"
-                  src={assetsConfig.finsburySquare6.src}
-                />
-              </div>
-              <div className="sectionColContainer --clone">
-                <img
-                  className="sectionColImage"
-                  src={assetsConfig.finsburySquare1.src}
-                />
-              </div>
-            </div>
+    <section className="relative h-full w-full">
+      <div className="flex gap-[3.2rem]">
+        <div
+          style={{ width: "calc(100vw / 2 - 3.2rem)", position: "relative" }}
+        >
+          <div className="relative flex h-[inherit] flex-col">
+            <img
+              className="h-screen w-[inherit] object-cover"
+              src={assetsConfig.finsburySquare1.src}
+            />
+            <img
+              className="w-inherit h-full object-cover"
+              src={assetsConfig.finsburySquare2.src}
+            />
+            <img
+              className="w-inherit h-full object-cover"
+              src={assetsConfig.finsburySquare3.src}
+            />
+            <img
+              className="w-inherit h-full object-cover"
+              src={assetsConfig.finsburySquare4.src}
+            />
+            <img
+              className="w-inherit h-full object-cover"
+              src={assetsConfig.finsburySquare5.src}
+            />
+            <img
+              className="w-inherit h-full object-cover"
+              src={assetsConfig.finsburySquare6.src}
+            />
+          </div>
+          <div className="relative flex h-screen flex-col">
+            <img
+              className="w-inherit h-full object-cover"
+              src={assetsConfig.finsburySquare1.src}
+            />
+          </div>
+        </div>
 
-            <div className="sectionCol">
-              <div className="sectionColContainer">
-                <div className="sectionColHeading">
-                  <h1>New Street Project</h1>
-                </div>
-                <div className="sectionColDescription">
-                  <div className="sectionColInfo">
-                    <span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Eligendi ipsum cupiditate voluptatibus vitae modi,
-                      corrupti ipsa provident esse omnis nemo repellat
-                      repellendus corporis odit sint temporibus beatae id?
-                      Voluptates, dignissimos.
-                    </span>
-                  </div>
-                  <ul className="sectionColRole">
-                    <li>joinery</li>
-                    <li>interior design</li>
-                  </ul>
-                  <ul className="sectionColAwards">
-                    <li>transformation of the year</li>
-                  </ul>
-                </div>
-                <div className="sectionColLink">
-                  <h2>View Project</h2>
-                </div>
-                <div className="sectionColScroll">
-                  <span ref={scrollInfo}>0%</span>
-                </div>
+        <div className="fixed right-0 top-0 h-screen w-[50%] p-[1.6rem] pl-[6rem]">
+          <div>
+            <h1 className="text-[5rem] uppercase">{project.title}</h1>
+            <div className="flex w-[48rem] flex-wrap gap-[6.4rem]">
+              <div className="w-[20rem] before:mb-[3.2rem] before:block before:text-base before:content-[`Info`]">
+                <span className="list-none text-base uppercase no-underline">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Eligendi ipsum cupiditate voluptatibus vitae modi, corrupti
+                  ipsa provident esse omnis nemo repellat repellendus corporis
+                  odit sint temporibus beatae id? Voluptates, dignissimos.
+                </span>
               </div>
+              <ul className="w-[20rem] before:mb-[3.2rem] before:block before:text-base before:content-[`Role`]">
+                <li className="list-none text-base uppercase no-underline">
+                  joinery
+                </li>
+                <li className="list-none text-base uppercase no-underline">
+                  interior design
+                </li>
+              </ul>
+              <ul className="w-[20rem] before:mb-[3.2rem] before:block before:text-[1.6rem] before:content-[`Role`]">
+                <li className="list-none text-base uppercase no-underline">
+                  transformation of the year
+                </li>
+              </ul>
+            </div>
+            <div>
+              <Button href="/projects" label="back to projects" />
+            </div>
+            <div className="absolute bottom-1 right-2">
+              <span
+                className="list-none text-base uppercase no-underline"
+                ref={scrollInfo}
+              >
+                0%
+              </span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

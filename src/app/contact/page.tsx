@@ -1,8 +1,13 @@
+import Footer from "@/components/Footer/Footer";
+import NavBar from "@/components/NavBar/NavBar";
+
 const Page = () => {
   return (
-    <section>
+    <>
+      <NavBar />
       <div></div>
-    </section>
+      <Footer />
+    </>
   );
 };
 
