@@ -1,6 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Footer from "@/components/Footer/Footer";
 import NavBar from "@/components/NavBar/NavBar";
@@ -58,7 +61,12 @@ const projects: ProjectProps[] = [
   {
     title: "Finsbury Square",
     href: "/projects/finsbury-square",
-    src: assetsConfig.finsburySquare1.src,
+    src: assetsConfig.finsburySquare2.src,
+  },
+  {
+    title: "Pentonville",
+    href: "/projects/pentonville",
+    src: assetsConfig.pentonville5.src,
   },
 ];
 
@@ -80,24 +88,28 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
   return (
     <>
       <NavBar />
-      <nav className="mt-[4rem] px-4">
-        <ul className="flex w-full flex-row flex-wrap items-stretch justify-center no-underline">
-          {projectNavItems.map((item, index) => (
-            <Link href={item.href} key={index} className="no-underline">
-              <li className="list-none p-2 uppercase">{item.title}</li>
-            </Link>
-          ))}
-        </ul>
-      </nav>
-      <section>
-        {projects.map((project, index) => (
-          <Projects
-            key={index}
-            href={project.href}
-            src={project.src}
-            title={project.title}
-          />
-        ))}
+      <section className="bg-[#e4e8ed]">
+        <nav className="mt-[4rem] px-4 py-4 md:mt-0 md:py-8  lg:px-32">
+          <ul className="flex w-full flex-row flex-wrap items-stretch justify-center no-underline lg:justify-between">
+            {projectNavItems.map((item, index) => (
+              <Link href={item.href} key={index} className="no-underline">
+                <li className="list-none uppercase">{item.title}</li>
+              </Link>
+            ))}
+          </ul>
+        </nav>
+        <section className="flex items-center justify-center">
+          <div className="flex flex-wrap items-center justify-between px-32">
+            {projects.map((project, index) => (
+              <Projects
+                key={index}
+                href={project.href}
+                src={project.src}
+                title={project.title}
+              />
+            ))}
+          </div>
+        </section>
       </section>
       <Footer />
     </>
@@ -107,12 +119,36 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
 export default Page;
 
 const Projects = (props: { title: string; src: string; href: string }) => {
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(
+    () => {
+      gsap.set(container.current, { y: 50, opacity: 0 });
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(container.current, {
+        scrollTrigger: {
+          trigger: container.current,
+          scrub: false,
+          start: "top bottom-=10",
+          end: "bottom bottom",
+        },
+        ease: "power1.inOut",
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      });
+    },
+    { scope: container },
+  );
+
   return (
-    <Link href={props.href} className="z-[5] p-4">
-      <div className="h-[20rem] w-full">
-        <img src={props.src} className="h-full w-full object-cover" />
+    <Link href={props.href} className="z-[5] py-8">
+      <div ref={container}>
+        <div className="h-[20rem] w-full md:h-[25rem] md:w-[39rem]">
+          <img src={props.src} className="h-full w-full object-cover" />
+        </div>
+        <h3 className="pb-6 pt-4 text-lg uppercase">{props.title}</h3>
       </div>
-      <h3 className="pb-6 pt-4">{props.title}</h3>
     </Link>
   );
 };

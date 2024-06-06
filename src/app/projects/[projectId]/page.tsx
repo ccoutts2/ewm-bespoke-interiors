@@ -22,6 +22,9 @@ const projectDetails: { [key: string]: ProjectDetailsProps } = {
   "finsbury-square": {
     title: "Finsbury Square",
   },
+  pentonville: {
+    title: "Pentonville",
+  },
 };
 
 interface ProjectPageProps {

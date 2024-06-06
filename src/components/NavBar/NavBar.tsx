@@ -16,8 +16,8 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed left-0 top-0 w-full md:sticky">
-      <section className=" flex w-full items-center justify-between bg-[#e4e8ed] p-4 capitalize md:px-12 lg:px-32">
+    <nav className="fixed left-0 top-0 z-[100] w-full lg:relative">
+      <section className=" flex w-full items-center justify-between bg-[#e4e8ed] p-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
         <Link href="/">
           <div className="text-[#191919]">
             <span className="uppercase">ewm</span> bespoke interiors

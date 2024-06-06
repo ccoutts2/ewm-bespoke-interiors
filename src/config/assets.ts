@@ -107,4 +107,32 @@ export const assetsConfig = {
     description: "A photo showing the work done at Finsbury Square",
     src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Finsbury%20Square%20-%20Commercial%2FTea%20Point.jpg?alt=media&token=d483ec0b-1848-482f-98c0-db4b832f149b",
   },
+  pentonville1: {
+    description: "A photo showing the work done at Pentonville",
+    src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20012.jpg?alt=media&token=98102dfe-9398-4b63-a100-f5ff00ca74cf",
+  },
+  pentonville2: {
+    description: "A photo showing the work done at Pentonville",
+    src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20013.jpg?alt=media&token=ad265fb5-f048-4a62-8717-df09da28eca0",
+  },
+  pentonville3: {
+    description: "A photo showing the work done at Pentonville",
+    src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20014.jpg?alt=media&token=e115358c-9c25-40cf-b612-8c4e062f83a5",
+  },
+  pentonville4: {
+    description: "A photo showing the work done at Pentonville",
+    src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20020.jpg?alt=media&token=88bf5a51-0d8b-4748-94f8-33fb48df3fc6",
+  },
+  pentonville5: {
+    description: "A photo showing the work done at Pentonville",
+    src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20021.jpg?alt=media&token=fd9df4b7-3f8a-4a2a-a379-823aaec493b4",
+  },
+  pentonville6: {
+    description: "A photo showing the work done at Pentonville",
+    src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20023.jpg?alt=media&token=e253f3c5-d85c-40be-a110-f8feccee070f",
+  },
+  pentonville7: {
+    description: "A photo showing the work done at Pentonville",
+    src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20027.jpg?alt=media&token=168cb7a4-b494-48e8-b357-002ba86dbe86",
+  },
 };
