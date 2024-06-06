@@ -1,7 +1,12 @@
+"use client";
+
+import { useEffect } from "react";
+
 import Footer from "@/components/Footer/Footer";
 import NavBar from "@/components/NavBar/NavBar";
 import { assetsConfig } from "@/config/assets";
 import Link from "next/link";
+import Lenis from "lenis";
 
 interface ProjectNavProps {
   title: string;
@@ -58,6 +63,20 @@ const projects: ProjectProps[] = [
 ];
 
 const Page = ({ params: { projectId } }: ProjectPage) => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      infinite: false,
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
   return (
     <>
       <NavBar />
