@@ -15,7 +15,11 @@ const Page = () => {
   return (
     <>
       <NavBar />
-      <PagesHero img={assetsConfig.officePicture.src} header={"Our Story"} />
+      <PagesHero
+        img={assetsConfig.officePicture[0].src}
+        description={assetsConfig.officePicture[0].description}
+        header={"Our Story"}
+      />
       <section className="bg-[#e4e8ed]">
         <section className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
           <Quotes
@@ -38,21 +42,36 @@ const Page = () => {
         </section>
         <section className="md:px-12 lg:px-32">
           <div>
-            <WorkShopImages src={assetsConfig.workshopPicture1.src} />
+            <WorkShopImages
+              src={assetsConfig.workshopPicture[0].src}
+              description={assetsConfig.workshopPicture[0].description}
+            />
           </div>
           <div className="flex md:justify-start">
             <div className="flex-1 pr-2">
-              <WorkShopImages src={assetsConfig.workshopPicture2.src} />
+              <WorkShopImages
+                src={assetsConfig.workshopPicture[1].src}
+                description={assetsConfig.workshopPicture[1].description}
+              />
             </div>
             <div className="flex-1 pl-2">
-              <WorkShopImages src={assetsConfig.workshopPicture3.src} />
+              <WorkShopImages
+                src={assetsConfig.workshopPicture[2].src}
+                description={assetsConfig.workshopPicture[2].description}
+              />
             </div>
           </div>
           <div>
-            <WorkShopImages src={assetsConfig.workshopPicture4.src} />
+            <WorkShopImages
+              src={assetsConfig.workshopPicture[3].src}
+              description={assetsConfig.workshopPicture[3].description}
+            />
           </div>
           <div>
-            <WorkShopImages src={assetsConfig.workshopPicture5.src} />
+            <WorkShopImages
+              src={assetsConfig.workshopPicture[4].src}
+              description={assetsConfig.workshopPicture[4].description}
+            />
           </div>
         </section>
         <section className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
@@ -118,7 +137,7 @@ const Paragraphs = (props: { text: string }) => {
   );
 };
 
-const WorkShopImages = (props: { src: string }) => {
+const WorkShopImages = (props: { src: string; description: string }) => {
   const container = useRef<HTMLDivElement | null>(null);
   const imageContainer = useRef<HTMLDivElement | null>(null);
 
@@ -144,7 +163,11 @@ const WorkShopImages = (props: { src: string }) => {
   return (
     <div ref={container} className="py-2">
       <div ref={imageContainer} className="lg-h-[80%] h-full w-full">
-        <img src={props.src} className="h-full w-full object-cover" />
+        <img
+          src={props.src}
+          alt={props.description}
+          className="h-full w-full object-cover"
+        />
       </div>
     </div>
   );

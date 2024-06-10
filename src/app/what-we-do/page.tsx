@@ -17,27 +17,27 @@ interface WorkProps {
 
 const works = [
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "carpentry & bespoke joinery",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "in house manufacturing of joinery",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "in house spraying & upholsery",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "stone surfaces",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "timber repairs",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "furniture supply & installation",
   },
 ];
@@ -69,7 +69,11 @@ const Page = ({ src, header }: WorkProps) => {
   return (
     <>
       <NavBar />
-      <PagesHero img={assetsConfig.officePicture.src} header={"What We Do"} />
+      <PagesHero
+        img={assetsConfig.officePicture[0].src}
+        description={assetsConfig.officePicture[0].description}
+        header={"What We Do"}
+      />
       <section className="bg-[#e4e8ed] p-4 md:px-12 md:text-lg lg:px-32">
         <Paragraphs
           text="EWM Bespoke Interiors is a leading

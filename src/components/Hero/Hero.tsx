@@ -29,8 +29,8 @@ const Section1 = () => {
     <section className="sticky top-0 flex h-screen flex-col items-center justify-center">
       <div className="h-screen w-full">
         <img
-          src={assetsConfig.officePicture.src}
-          alt={assetsConfig.officePicture.description}
+          src={assetsConfig.officePicture[0].src}
+          alt={assetsConfig.officePicture[0].description}
           className="h-full w-full object-cover brightness-[0.6]"
         />
       </div>

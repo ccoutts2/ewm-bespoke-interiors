@@ -20,6 +20,7 @@ interface ProjectProps {
   title: string;
   href: string;
   src: string;
+  alt: string;
 }
 
 interface ProjectPage {
@@ -51,22 +52,26 @@ const projects: ProjectProps[] = [
   {
     title: "Mews Property",
     href: "/projects/mews-property",
-    src: assetsConfig.mewsProperty8.src,
+    src: assetsConfig["mews-property"][7].src,
+    alt: assetsConfig["mews-property"][7].description,
   },
   {
     title: "Leonari Office",
     href: "/projects/leonari-office",
-    src: assetsConfig.leonariOffice3.src,
+    src: assetsConfig["leonari-office"][2].src,
+    alt: assetsConfig["leonari-office"][2].description,
   },
   {
     title: "Finsbury Square",
     href: "/projects/finsbury-square",
-    src: assetsConfig.finsburySquare2.src,
+    src: assetsConfig["finsbury-square"][1].src,
+    alt: assetsConfig["finsbury-square"][1].description,
   },
   {
     title: "Pentonville",
     href: "/projects/pentonville",
-    src: assetsConfig.pentonville5.src,
+    src: assetsConfig.pentonville[4].src,
+    alt: assetsConfig.pentonville[4].description,
   },
 ];
 

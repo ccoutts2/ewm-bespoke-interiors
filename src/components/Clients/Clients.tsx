@@ -2,27 +2,27 @@ import { assetsConfig } from "@/config/assets";
 
 const clients = [
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "little greene",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "lamello",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "sketchup",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "festool",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "latham",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "blum",
   },
 ];

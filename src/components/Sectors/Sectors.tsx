@@ -3,32 +3,32 @@ import Button from "../buttons/Button/Button";
 
 const sectors = [
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "residential",
     info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum quos, optio ducimus quisquam temporibus voluptate obcaecati",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "commerical",
     info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum quos, optio ducimus quisquam temporibus voluptate obcaecati",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "retail",
     info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum quos, optio ducimus quisquam temporibus voluptate obcaecati",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "hospitality",
     info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum quos, optio ducimus quisquam temporibus voluptate obcaecati",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "heritage & culture",
     info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum quos, optio ducimus quisquam temporibus voluptate obcaecati",
   },
   {
-    src: assetsConfig.officePicture.src,
+    src: assetsConfig.officePicture[0].src,
     header: "cat a/b office fit out",
     info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum quos, optio ducimus quisquam temporibus voluptate obcaecati",
   },

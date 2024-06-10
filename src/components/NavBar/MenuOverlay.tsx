@@ -91,10 +91,10 @@ const MenuOverlay = ({
   return (
     <div
       ref={overlay}
-      className="z-2 fixed right-0 top-0 flex h-screen w-full bg-[#000] p-4 [clip-path:polygon(0%_100%,100%_100%,100%_100%,0%_100%)]"
+      className="fixed right-0 top-0 flex h-screen w-full bg-[#000] p-4 [clip-path:polygon(0%_100%,100%_100%,100%_100%,0%_100%)]"
     >
       <div className="fixed left-0 top-0 h-full w-full">
-        <div className="flex w-full items-center justify-between px-4 py-4 capitalize ">
+        <div className="flex w-full items-center justify-between px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
           <Link className="text-[#e4e8ed] mix-blend-difference" href="/">
             <span className="uppercase">ewm</span> bespoke interiors
           </Link>
