@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
-import Link from "next/link";
 
 import Button from "@/components/buttons/Button/Button";
 
@@ -10,6 +9,10 @@ import { assetsConfig } from "@/config/assets";
 
 interface ProjectDetailsProps {
   title: string;
+}
+
+interface InfoModalProps {
+  handleButtonClick: () => void;
 }
 
 const projectDetails: { [key: string]: ProjectDetailsProps } = {
@@ -36,6 +39,12 @@ interface ProjectPageProps {
 const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
   const project = projectDetails[projectId as keyof typeof projectDetails];
   const images = assetsConfig[projectId as keyof typeof assetsConfig];
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   if (!project) {
     return <p className="mt-[10rem]">Project not found</p>;
@@ -71,10 +80,8 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
 
   return (
     <section className="relative h-full w-full">
-      <div className="flex gap-[3.2rem]">
-        <div
-          style={{ width: "calc(100vw / 2 - 3.2rem)", position: "relative" }}
-        >
+      <div className="flex gap-[0.5rem] lg:gap-[3.2rem]">
+        <div className="relative w-[60%] md:w-[50%]">
           <div className="relative flex h-[inherit] flex-col">
             {images.map(
               (image: { description: string; src: string }, index: number) => (
@@ -88,43 +95,44 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
             )}
           </div>
 
-          <div className="fixed right-0 top-0 h-screen w-[50%] p-[1.6rem] pl-[6rem]">
-            <div>
-              <h1 className="text-[5rem] uppercase">{project.title}</h1>
-              <div className="flex w-[48rem] flex-wrap gap-[6.4rem]">
-                <div className="w-[20rem] before:mb-[3.2rem] before:block before:text-base before:content-[`Info`]">
-                  <span className="list-none text-base uppercase no-underline">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eligendi ipsum cupiditate voluptatibus vitae modi, corrupti
-                    ipsa provident esse omnis nemo repellat repellendus corporis
-                    odit sint temporibus beatae id? Voluptates, dignissimos.
-                  </span>
-                </div>
-                <ul className="w-[20rem] before:mb-[3.2rem] before:block before:text-base before:content-[`Role`]">
-                  <li className="list-none text-base uppercase no-underline">
-                    joinery
-                  </li>
-                  <li className="list-none text-base uppercase no-underline">
-                    interior design
-                  </li>
-                </ul>
-                <ul className="w-[20rem] before:mb-[3.2rem] before:block before:text-[1.6rem] before:content-[`Role`]">
-                  <li className="list-none text-base uppercase no-underline">
-                    transformation of the year
-                  </li>
-                </ul>
+          <div className="fixed right-0 top-0 flex h-screen w-[50%] flex-col justify-between px-4 pt-8 text-right md:text-left lg:pl-[6rem]">
+            <h1 className="w-full text-lg uppercase md:text-4xl">
+              {project.title}
+            </h1>
+            <div className="flex flex-col pb-12 md:py-2 lg:w-[48rem] lg:gap-[2rem]">
+              <div className="md:hidden">
+                <Button label="more info" onClick={handleButtonClick} />
+                {isModalOpen && (
+                  <InfoModal handleButtonClick={handleButtonClick} />
+                )}
               </div>
-              <div>
-                <Button href="/projects" label="back to projects" />
-              </div>
-              <div className="absolute bottom-1 right-2">
-                <span
-                  className="list-none text-base uppercase no-underline"
-                  ref={scrollInfo}
-                >
-                  0%
+              <div className="hidden before:block before:text-base before:content-[`Info`] md:flex lg:w-[20rem] lg:before:mb-[3.2rem]">
+                <span className="list-none text-sm capitalize no-underline lg:text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Eligendi ipsum cupiditate voluptatibus vitae modi, corrupti
+                  ipsa provident esse omnis nemo repellat repellendus corporis
+                  odit sint temporibus beatae id? Voluptates, dignissimos.
                 </span>
               </div>
+              <ul className=" w-full py-4 text-xs before:content-[`Role`] md:w-[20rem] md:text-base md:before:mb-[3.2rem] md:before:block">
+                <li className="w-full list-none uppercase no-underline md:text-base">
+                  joinery
+                </li>
+                <li className="list-none uppercase no-underline md:text-base">
+                  interior design
+                </li>
+              </ul>
+              <div>
+                <Button href="/projects" label="back" />
+              </div>
+            </div>
+            <div className="absolute bottom-1 right-2">
+              <span
+                className="list-none text-base uppercase no-underline"
+                ref={scrollInfo}
+              >
+                0%
+              </span>
             </div>
           </div>
         </div>
@@ -134,3 +142,19 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
 };
 
 export default ProjectPage;
+
+const InfoModal = ({ handleButtonClick }: InfoModalProps) => {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4 text-left">
+      <div className="w-full max-w-screen-lg rounded-lg bg-white p-8">
+        <p className="pb-4 text-black">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          ipsum cupiditate voluptatibus vitae modi, corrupti ipsa provident esse
+          omnis nemo repellat repellendus corporis odit sint temporibus beatae
+          id? Voluptates, dignissimos.
+        </p>
+        <Button label="close" onClick={handleButtonClick} />
+      </div>
+    </div>
+  );
+};
