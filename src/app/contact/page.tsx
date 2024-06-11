@@ -2,7 +2,9 @@ import Footer from "@/components/Footer/Footer";
 import NavBar from "@/components/NavBar/NavBar";
 import PagesHero from "@/components/PagesHero/PagesHero";
 import Form from "@/components/Form/Form";
+import EmployeeInfo from "@/components/EmployeeInfo/EmployeeInfo";
 import { assetsConfig } from "@/config/assets";
+import { employeeData } from "./employeeData";
 
 const Page = () => {
   return (
@@ -35,41 +37,20 @@ const Page = () => {
         </div>
         <Form />
       </section>
-      <section className="flex flex-col items-center justify-center border-t border-cyan-900">
+      <section className="flex flex-col items-center justify-center border-t border-cyan-900 py-12">
         <h1 className="py-8 text-2xl uppercase">meet the team</h1>
         <div className="flex flex-col items-center justify-center md:flex-row md:flex-wrap">
-          <div className="my-8 h-[20rem] w-[20rem] px-8 py-4">
-            <img
-              className="h-full w-full object-cover"
-              src={assetsConfig["mews-property"][0].src}
-            />
-            <h2 className="pt-4 text-center capitalize">johnnie wynne</h2>
-            <h2 className="pt-1 text-center capitalize">title</h2>
-          </div>
-          <div className="my-8 h-[20rem] w-[20rem] px-8 py-4">
-            <img
-              src={assetsConfig["mews-property"][0].src}
-              className="h-full w-full object-cover"
-            />
-            <h2 className="pt-4 text-center capitalize">someone</h2>
-            <h2 className="pt-1 text-center capitalize">title</h2>
-          </div>
-          <div className="my-8 h-[20rem] w-[20rem] px-8 py-4">
-            <img
-              src={assetsConfig["mews-property"][3].src}
-              className="h-full w-full object-cover"
-            />
-            <h2 className="pt-4 text-center capitalize">someone</h2>
-            <h2 className="pt-1 text-center capitalize">title</h2>
-          </div>
-          <div className="my-8 h-[20rem] w-[20rem] px-8 py-4">
-            <img
-              src={assetsConfig["mews-property"][5].src}
-              className="h-full w-full object-cover"
-            />
-            <h2 className="pt-4 text-center capitalize">someone</h2>
-            <h2 className="pt-1 text-center capitalize">title</h2>
-          </div>
+          {employeeData.map((employee, index) => {
+            return (
+              <EmployeeInfo
+                key={index}
+                src={employee.src}
+                name={employee.name}
+                title={employee.title}
+                information={employee.information}
+              />
+            );
+          })}
         </div>
       </section>
       <Footer />

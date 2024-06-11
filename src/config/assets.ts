@@ -149,4 +149,22 @@ export const assetsConfig = {
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20027.jpg?alt=media&token=168cb7a4-b494-48e8-b357-002ba86dbe86",
     },
   ],
+  headshots: [
+    {
+      description: "A photo showing Johnnie Whynne",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Headshots%2FEWM%20Bespoke%20Interiors%20095.jpg?alt=media&token=25c00b8f-7ad1-459b-bcd4-8a6000077996",
+    },
+    {
+      description: "A photo showing Georgie Whynne",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Headshots%2FEWM%20Bespoke%20Interiors%20098.jpg?alt=media&token=a55e9ea9-8d6e-4b47-bc5b-e45a72bab33b",
+    },
+    {
+      description: "A photo showing John Whynne",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Headshots%2FEWM%20Bespoke%20Interiors%20068.jpg?alt=media&token=988df6ec-a76f-41ec-aca2-d4432f13f40a",
+    },
+    {
+      description: "A photo showing Mr Whynne",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Headshots%2FEWM%20Bespoke%20Interiors%20066.jpg?alt=media&token=3ca24d6a-9baa-4f16-a483-8bed57df3652",
+    },
+  ],
 };

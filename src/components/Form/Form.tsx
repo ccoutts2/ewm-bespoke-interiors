@@ -6,6 +6,7 @@ import Button from "@/components/buttons/Button/Button";
 import Input from "../inputs/Input/Input";
 import TextArea from "../inputs/TextArea/TextArea";
 import FormLabel from "../FormLabel/FormLabel";
+import DropDownList from "../inputs/DropDownList/DropDownList";
 
 const Form = () => {
   const [activeLabel, setActiveLabel] = useState("");
@@ -19,7 +20,9 @@ const Form = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const form = useRef<HTMLFormElement>();
 
-  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     setFormFields({
       ...formFields,
       [e.target.name]: e.target.value,
@@ -116,6 +119,7 @@ const Form = () => {
           htmlFor="name"
           activeLabel={activeLabel}
           label="What's your name?"
+          labelNumber="01"
         />
         <Input
           onChange={onChange}
@@ -134,6 +138,7 @@ const Form = () => {
           htmlFor="email"
           activeLabel={activeLabel}
           label="What's your email?"
+          labelNumber="02"
         />
         <Input
           onChange={onChange}
@@ -149,9 +154,32 @@ const Form = () => {
       </FormFieldContainer>
       <FormFieldContainer>
         <FormLabel
+          htmlFor="dropdown"
+          activeLabel={activeLabel}
+          label="What type of work are you looking for?"
+          labelNumber="03"
+        />
+        <DropDownList
+          onChange={onChange}
+          id="dropdown"
+          name="dropdown"
+          options={[
+            { value: "", label: "Please select an option" },
+            { value: "option1", label: "Option 1" },
+            { value: "option2", label: "Option 2" },
+          ]}
+          onFocus={() => handleInputFocus("dropdown")}
+          onBlur={handleInputBlur}
+          isError={isError}
+          formFields={formFields}
+        />
+      </FormFieldContainer>
+      <FormFieldContainer>
+        <FormLabel
           htmlFor="services"
           activeLabel={activeLabel}
           label="What do you want to get in touch about?"
+          labelNumber="04"
         />
         <TextArea
           onChange={onChange}
@@ -169,6 +197,7 @@ const Form = () => {
           htmlFor="textarea"
           activeLabel={activeLabel}
           label="Do you have dimensions for your space?"
+          labelNumber="05"
         />
         <TextArea
           onChange={onChange}
@@ -181,6 +210,7 @@ const Form = () => {
           formFields={formFields}
         />
       </FormFieldContainer>
+
       {isError && <ErrorMessage />}
       <div className="pb-4">
         {/* <Button

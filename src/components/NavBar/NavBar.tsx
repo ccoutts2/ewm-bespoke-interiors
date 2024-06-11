@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
         </ul>
         <div ref={container} onClick={toggleMenu} className="lg:hidden">
           <div className="flex cursor-pointer items-center gap-4 rounded-[20rem] bg-[#191919] px-4 py-2 text-[#e4e8ed]">
-            <button className="nav_menu_button_text">
+            <button>
               <span>menu</span>
             </button>
             <div className="flex h-[0.5rem] w-[0.5rem] items-center justify-center rounded-[20rem] bg-[#2ed84a]"></div>
