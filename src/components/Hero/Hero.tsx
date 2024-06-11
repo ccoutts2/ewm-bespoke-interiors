@@ -49,8 +49,8 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <section className="relative h-screen bg-[#e4e8ed]">
-      <div className="absolute top-[3rem] px-4 text-[#191919] md:top-[2rem] md:w-[80%] md:px-12 md:pt-12   lg:p-32">
+    <section className="relative h-screen bg-[#e4e8ed] ">
+      <div className="absolute top-[3rem] px-4 text-[#191919] md:top-[2rem] md:w-[80%] md:px-12 md:pt-12 lg:p-32">
         <p className="py-4 text-lg md:text-3xl">
           <span className="uppercase">ewm</span> Bespoke Interiors is a leading
           provider of joinery, carpentry, upholstery / re-upholstery and office
