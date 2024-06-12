@@ -8,7 +8,7 @@ const Hero = () => {
   const scrollRef = useRef<HTMLElement | null>(null);
 
   return (
-    <section ref={scrollRef} className="relative z-[-1] bg-[#e4e8ed]">
+    <section ref={scrollRef} className="relative bg-[#e4e8ed]">
       <Section1 />
       <Section2 />
     </section>
@@ -49,7 +49,7 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <section className="relative h-screen bg-[#e4e8ed] ">
+    <section className="relative h-screen bg-[#e4e8ed]">
       <div className="absolute top-[3rem] px-4 text-[#191919] md:top-[2rem] md:w-[80%] md:px-12 md:pt-12 lg:p-32">
         <p className="py-4 text-lg md:text-3xl">
           <span className="uppercase">ewm</span> Bespoke Interiors is a leading

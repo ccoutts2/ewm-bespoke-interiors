@@ -24,7 +24,7 @@ const DropDownList = ({
   return (
     <select
       onChange={onChange}
-      className={`w-full resize-none border-none bg-[transparent] p-4 outline-none placeholder:text-sm ${
+      className={`w-full resize-none border-none bg-[transparent] p-4 text-sm outline-none ${
         isError && !formFields.name.length ? "rounded-3xl bg-[#7006061a]" : ""
       }`}
       id={id}
@@ -33,7 +33,7 @@ const DropDownList = ({
       onBlur={onBlur}
     >
       {options.map((option, index) => (
-        <option key={index} value={option.value}>
+        <option className="text-sm" key={index} value={option.value}>
           {option.label}
         </option>
       ))}

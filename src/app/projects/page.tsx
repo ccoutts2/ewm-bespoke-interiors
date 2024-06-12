@@ -79,7 +79,6 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      infinite: false,
       smoothWheel: true,
     });
 

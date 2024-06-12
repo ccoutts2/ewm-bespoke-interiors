@@ -24,7 +24,7 @@ const TextArea = ({
   return (
     <textarea
       onChange={onChange}
-      className={`w-full resize-none border-none bg-[transparent] p-4 outline-none placeholder:text-sm ${
+      className={`w-full resize-none border-none bg-[transparent] p-4 outline-none placeholder:pl-1 placeholder:text-sm ${
         isError && !formFields.name.length ? "rounded-3xl bg-[#7006061a]" : ""
       }`}
       id={id}

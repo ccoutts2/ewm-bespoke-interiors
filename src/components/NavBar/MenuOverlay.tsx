@@ -128,10 +128,10 @@ const MenuOverlay = ({
                 ref={addressItems}
                 className="text-xs text-[#fff] md:text-lg"
               >
-                <p>10 Green Road</p>
-                <p>Statcross</p>
-                <p>WSN1 R30</p>
-                <p>London</p>
+                <p>Unit 12, Nathan Way Business Park</p>
+                <p>82-100 Nathan Way</p>
+                <p>Thamesmead</p>
+                <p>SE28 0FS, London</p>
               </div>
               <div className="flex flex-col">
                 <ul ref={socialItems} className="h-full flex-row gap-4">

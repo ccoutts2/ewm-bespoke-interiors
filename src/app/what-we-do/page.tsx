@@ -1,9 +1,9 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
+import Lenis from "lenis";
 import { assetsConfig } from "@/config/assets";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
@@ -15,7 +15,7 @@ interface WorkProps {
   header: string;
 }
 
-const works = [
+const works: WorkProps[] = [
   {
     src: assetsConfig.officePicture[0].src,
     header: "carpentry & bespoke joinery",
@@ -65,6 +65,17 @@ const Page = ({ src, header }: WorkProps) => {
     },
     { scope: container },
   );
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <>
