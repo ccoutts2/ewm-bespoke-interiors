@@ -36,7 +36,6 @@ const Page = () => {
         <TextSection />
         <Form />
       </section>
-      <MeetTheTeam />
       <Footer />
     </>
   );

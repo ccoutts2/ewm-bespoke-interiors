@@ -30,8 +30,8 @@ const ImageCarousel = ({
   }, []);
 
   return (
-    <div className="relative h-full w-full">
-      <div className="flex h-[50vh] w-full overflow-hidden lg:h-[85vh]">
+    <div className="relative mt-[8vh] h-full w-full lg:mt-0">
+      <div className="flex h-[60vh] w-full overflow-hidden lg:h-[85vh]">
         {images.map((url, index) => (
           <Image
             width={2000}

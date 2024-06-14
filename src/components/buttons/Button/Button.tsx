@@ -11,7 +11,7 @@ const Button = ({ href, label, onClick }: ButtonProps) => {
     return (
       <Link href={href} className="no-underline">
         <button
-          className="w-fit rounded bg-[#191919] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#e4e8ed]"
+          className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#e4e8ed]"
           onClick={onClick}
         >
           {label}
@@ -21,7 +21,7 @@ const Button = ({ href, label, onClick }: ButtonProps) => {
   } else {
     return (
       <button
-        className="w-fit rounded bg-[#191919] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#e4e8ed]"
+        className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#e4e8ed]"
         onClick={onClick}
       >
         {label}
