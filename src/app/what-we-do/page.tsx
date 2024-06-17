@@ -42,7 +42,7 @@ const works: WorkProps[] = [
   },
 ];
 
-const Page = ({ src, header }: WorkProps) => {
+const Page = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const imageContainer = useRef<(HTMLDivElement | null)[]>([]);
 
