@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       // ref={scrollRef}
-      className="relative bg-[#e4e8ed]"
+      className="relative"
     >
       <ImageCarousel images={images} auto />
       {/* <Section1 /> */}
@@ -45,7 +45,7 @@ export default Hero;
 
 const Section2 = () => {
   return (
-    <section className="bg-[#e4e8ed] px-4 py-4 text-[#191919] md:w-[80%] md:px-12 md:py-8 md:pt-12 lg:p-32">
+    <section className="px-4 py-4 text-[#191919] md:w-[80%] md:px-12 md:py-8 md:pt-12 lg:p-32">
       <p className="py-4 text-lg md:text-3xl">
         <span className="uppercase">ewm</span> Bespoke Interiors is a leading
         provider of joinery, carpentry, upholstery / re-upholstery and office

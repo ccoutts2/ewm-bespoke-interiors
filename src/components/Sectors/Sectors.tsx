@@ -36,7 +36,7 @@ const sectors = [
 
 const Sectors = () => {
   return (
-    <section className="bg-[#e4e8ed] px-4 pt-8 md:px-12 lg:px-32">
+    <section className="px-4 pt-8 md:px-12 lg:px-32">
       <h2 className=" uppercase md:text-xl lg:text-2xl ">sectors</h2>
       <div className="flex flex-col items-stretch justify-between py-4 md:flex-row md:flex-wrap md:gap-4">
         {sectors.map((sector, index) => (

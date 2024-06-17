@@ -6,11 +6,10 @@ import Footer from "@/components/Footer/Footer";
 import NavBar from "@/components/NavBar/NavBar";
 import PagesHero from "@/components/PagesHero/PagesHero";
 import Form from "@/components/Form/Form";
-import EmployeeInfo from "@/components/EmployeeInfo/EmployeeInfo";
 import { assetsConfig } from "@/config/assets";
-import { employeeData } from "./employeeData";
 import Lenis from "lenis";
-import MeetTheTeam from "@/components/MeetTheTeam/MeetTheTeam";
+
+import Link from "next/link";
 
 const Page = () => {
   useEffect(() => {
@@ -62,7 +61,9 @@ const TextSection = () => {
         <p>Thamesmead</p>
         <p>SE28 0FS, London</p>
         <p>07423 126 586</p>
-        <p>email@emailaddress.com</p>
+        <Link href="mailto:Info@ewmbespokeinteriors.co.uk">
+          <p>info@ewmbespokeinteriors.co.uk</p>
+        </Link>
       </div>
     </div>
   );

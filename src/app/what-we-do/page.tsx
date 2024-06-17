@@ -85,7 +85,7 @@ const Page = ({ src, header }: WorkProps) => {
         description={assetsConfig.officePicture[0].description}
         header={"What We Do"}
       />
-      <section className="bg-[#e4e8ed] p-4 md:px-12 md:text-lg lg:px-32">
+      <section className="p-4 md:px-12 md:text-lg lg:px-32">
         <Paragraphs
           text="EWM Bespoke Interiors is a leading
           provider of joinery, carpentry, upholstery / re-upholstery and office
@@ -113,7 +113,7 @@ const Page = ({ src, header }: WorkProps) => {
       </section>
       <section
         ref={container}
-        className="flex flex-col items-center justify-between bg-[#e4e8ed] px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-32"
+        className="flex flex-col items-center justify-between px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-32"
       >
         {works.map((work, index) => (
           <div

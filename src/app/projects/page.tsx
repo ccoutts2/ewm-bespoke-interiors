@@ -92,7 +92,7 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
   return (
     <>
       <NavBar />
-      <section className="bg-[#e4e8ed]">
+      <section>
         <nav className="mt-[4rem] px-4 py-4 md:mt-0 md:py-8  lg:px-32">
           <ul className="flex w-full flex-row flex-wrap items-stretch justify-center no-underline lg:justify-between">
             {projectNavItems.map((item, index) => (
