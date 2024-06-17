@@ -46,10 +46,6 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
     setIsModalOpen(!isModalOpen);
   };
 
-  if (!project) {
-    return <p className="mt-[10rem]">Project not found</p>;
-  }
-
   const scrollInfo = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -77,6 +73,10 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
 
     requestAnimationFrame(raf);
   }, []);
+
+  if (!project) {
+    return <p className="mt-[10rem]">Project not found</p>;
+  }
 
   return (
     <section className="relative h-full w-full">
