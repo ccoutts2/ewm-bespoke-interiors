@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import MenuOverlay from "./MenuOverlay";
 
@@ -15,9 +15,15 @@ const NavBar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    isMenuOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "scroll");
+  }, [isMenuOpen]);
+
   return (
-    <nav className="fixed left-0 top-0 z-[100] w-full lg:relative">
-      <section className=" flex w-full items-center justify-between p-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
+    <nav className="fixed left-0 top-0 z-[100] w-full bg-white lg:relative">
+      <section className="flex w-full items-center justify-between p-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
         <Link href="/">
           <div className="text-[#191919]">
             <span className="uppercase">ewm</span> bespoke interiors
@@ -25,9 +31,11 @@ const NavBar: React.FC = () => {
         </Link>
         <ul className="hidden flex-row gap-4 text-[#191919] lg:flex">
           {navItems.map((item, index) => (
-            <Link key={index} href={item.href}>
-              <li>{item.title}</li>
-            </Link>
+            <li key={index}>
+              <Link key={index} href={item.href}>
+                {item.title}
+              </Link>
+            </li>
           ))}
         </ul>
         <div ref={container} onClick={toggleMenu} className="lg:hidden">

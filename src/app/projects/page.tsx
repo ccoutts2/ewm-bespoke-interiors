@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
+import gsap, { Power0 } from "gsap";
+import { Flip } from "gsap/Flip";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -10,6 +11,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import { assetsConfig } from "@/config/assets";
 import Link from "next/link";
 import Lenis from "lenis";
+import Image from "next/image";
 
 // interface ProjectNavProps {
 //   title: string;
@@ -89,9 +91,70 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
 
     requestAnimationFrame(raf);
   }, []);
+
+  const container = useRef<HTMLElement>(null);
+  const gallery = useRef<HTMLDivElement>(null);
+
+  const images = useRef<(HTMLImageElement | null)[]>([]);
+
+  let rotationValues = [10, -5, 2, -2];
+
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [buttonText, setButtonText] = useState("Explore Projects");
+
+  console.log(isFlipped);
+
+  const buttonFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setButtonText(isFlipped ? "Collapse Projects" : "Explore Projects");
+    }, 1000);
+
+    return () => clearTimeout(delay);
+  }, [isFlipped]);
+
+  useGSAP(
+    () => {
+      buttonFlip();
+
+      gsap.to(images.current, {
+        x: "0",
+        y: "0",
+      });
+    },
+    { scope: container },
+  );
+
   return (
     <>
       <NavBar />
+      <section ref={container} className="h-screen">
+        <div ref={gallery} className="flex w-screen gap-16 px-32 pt-[25vh]">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="m-b-[1em] relative h-[500px] w-[400px] overflow-hidden"
+            >
+              <img
+                ref={(e) => {
+                  if (e) images.current[index] = e;
+                }}
+                src={project.src}
+                alt={project.alt}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+      <button
+        onClick={buttonFlip}
+        className="absolute left-1/2 top-[75%] z-[2] -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-3xl bg-[#0084ff] px-[2em] py-[1em] text-white"
+      >
+        {buttonText}
+      </button>
       <section>
         {/* <nav className="mt-[4rem] px-4 py-4 md:mt-0 md:py-8 lg:px-32">
           <ul className="flex w-full flex-row flex-wrap items-stretch justify-center no-underline lg:justify-between">
@@ -102,8 +165,8 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
             ))}
           </ul>
         </nav> */}
-        <section className="flex items-center justify-center px-4 py-16 md:px-0">
-          <div className="flex flex-wrap items-center justify-center md:justify-between lg:px-32">
+        <section className="flex items-center justify-center px-4 py-16 md:px-12 lg:px-32">
+          <div className="flex flex-wrap items-center justify-center lg:gap-8">
             {projects.map((project, index) => (
               <Projects
                 key={index}
@@ -148,12 +211,16 @@ const Projects = (props: { title: string; src: string; href: string }) => {
   return (
     <Link href={props.href} className="z-[5] py-4">
       <div ref={container}>
-        <div className="h-[20rem] w-full md:h-[25rem] md:w-[39rem]">
-          <img src={props.src} className="h-full w-full object-cover" />
+        <div className="h-[20rem] w-full md:h-[25rem] md:w-[38rem] ">
+          <Image
+            width={600}
+            height={400}
+            src={props.src}
+            alt="Picture of project work"
+            className="h-full w-full object-cover"
+          />
         </div>
-        <h3 className="p-4 text-center text-lg uppercase md:text-left">
-          {props.title}
-        </h3>
+        <h3 className="py-4 text-center text-lg uppercase">{props.title}</h3>
       </div>
     </Link>
   );

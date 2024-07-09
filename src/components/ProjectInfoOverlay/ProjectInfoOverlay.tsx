@@ -9,6 +9,8 @@ interface ProjectInfoOverlayProps {
   container: RefObject<HTMLDivElement>;
   title: string;
   information: string;
+  tag1: string;
+  tag2: string;
 }
 
 const ProjectInfoOverlay = ({
@@ -17,6 +19,8 @@ const ProjectInfoOverlay = ({
   container,
   title,
   information,
+  tag1,
+  tag2,
 }: ProjectInfoOverlayProps) => {
   const overlay = useRef<HTMLDivElement>(null);
   const tl = useRef<GSAPTimeline | null>(null);
@@ -44,12 +48,12 @@ const ProjectInfoOverlay = ({
   return (
     <div
       ref={overlay}
-      className="fixed right-0 top-0 z-0 flex h-screen w-full bg-white p-4 [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]"
+      className="fixed right-0 top-0 z-0 flex h-screen w-full bg-white [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]"
     >
-      <div className="fixed left-0 top-0 h-full w-full">
-        <div className="flex w-full items-center justify-between border-b border-b-black px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
+      <div className="fixed left-0 top-0 h-full w-full px-4 pt-8">
+        <div className="flex w-full items-center justify-between border-b border-b-black pb-4 capitalize">
           <div>
-            <h2 className="text-4xl">{title}</h2>
+            <h2 className="text-xl">{title}</h2>
           </div>
           <div
             onClick={handleButtonClick}
@@ -60,8 +64,12 @@ const ProjectInfoOverlay = ({
             </button>
           </div>
         </div>
-        <section className="flex h-full w-full flex-col items-stretch justify-between gap-10 p-4 md:flex-row md:px-12 md:py-8 lg:px-32  lg:py-16">
+        <section className="flex w-full pt-4 text-left">
           <p>{information}</p>
+        </section>
+        <section className="flex w-full flex-row justify-between pt-4 text-left">
+          <p>{tag1}</p>
+          <p>{tag2}</p>
         </section>
       </div>
     </div>
