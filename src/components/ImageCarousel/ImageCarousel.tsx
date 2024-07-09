@@ -30,7 +30,7 @@ const ImageCarousel = ({
   }, []);
 
   return (
-    <div className="relative mt-[8vh] h-full w-full lg:mt-0">
+    <div className="relative mt-[11vh] h-full w-full lg:mt-0">
       <div className="flex h-[60vh] w-full overflow-hidden lg:h-[85vh]">
         {images.map((url, index) => (
           <Image
@@ -38,6 +38,7 @@ const ImageCarousel = ({
             height={2000}
             key={url}
             src={url}
+            priority
             alt="carousel"
             className="absolute left-0 top-0 block h-full w-full shrink-0 grow-0 object-cover"
             style={{

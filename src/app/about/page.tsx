@@ -150,34 +150,6 @@ const Page = () => {
         </div>
       </section>
       <GetInTouch />
-
-      {/* <div
-          onMouseEnter={(e) => {
-            manageMouseEnter(e);
-          }}
-          onMouseLeave={(e) => {
-            manageMouseLeave(e);
-          }}
-          className="relative h-[20rem] w-[30rem] pl-[10rem]"
-        >
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20020.jpg?alt=media&token=88bf5a51-0d8b-4748-94f8-33fb48df3fc6"
-            alt="Image 1"
-            className="absolute h-full w-full"
-            ref={(el) => {
-              images.current[0] = el;
-            }}
-          />
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20023.jpg?alt=media&token=e253f3c5-d85c-40be-a110-f8feccee070f"
-            alt="Image 2"
-            className="absolute h-full w-full [clip-path:polygon(0_0,100%_0,100%_0,0_0)]"
-            ref={(el) => {
-              images.current[1] = el;
-            }}
-          />
-        </div> */}
-
       <MeetTheTeam />
       <Footer />
     </>
@@ -254,7 +226,7 @@ const GetInTouch = () => {
         Let&apos;s get in touch
       </h2>
       <div className="z-30">
-        <Button href="/contact" label="contact us" />
+        <Button href="/contact" label="contact us" ariaLabel="contact us" />
       </div>
       <div className="absolute h-[60%] w-full bg-[#F17A14] text-right [clip-path:polygon(0_0,100%_0,100%_18%,100%_85%,72%_100%,0_50%)]"></div>
       {/* clip-path: polygon(0 0, 100% 0, 100% 18%, 100% 85%, 72% 100%, 0% 50%); */}

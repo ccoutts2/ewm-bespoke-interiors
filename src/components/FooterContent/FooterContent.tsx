@@ -6,22 +6,28 @@ const FooterContent = () => {
     <section className="flex h-full w-full flex-col justify-between bg-[#191919] px-4 py-8 text-[#e4e8ed]  md:px-12 lg:px-32">
       <nav className="flex shrink-0 gap-20">
         <div className="flex flex-col gap-2 ">
-          <h3 className="b-bottom uppercase">navigation</h3>
+          <h3 className="b-bottom uppercase text-[#F17A14]">navigation</h3>
           <ul className="gap-4 ">
             {navItems.map((item, index) => (
-              <Link key={index} href={item.href}>
-                <li>{item.title}</li>
-              </Link>
+              <li key={index}>
+                <Link href={item.href}>{item.title}</Link>
+              </li>
             ))}
           </ul>
         </div>
-        <div className="flex flex-col gap-2">
-          <h3 className="b-bottom uppercase">socials</h3>
-          <ul className="gap-4 ">
+        <div className="flex w-full flex-col justify-between gap-2">
+          <h3 className="b-bottom uppercase text-[#F17A14]">socials</h3>
+          <ul className="flex flex-row gap-4">
             {socials.map((item, index) => (
-              <Link key={index} href={item.href}>
-                <li>{item.title}</li>
-              </Link>
+              <li key={index}>
+                <Link href={item.href} target="_blank">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="h-[1.8rem] w-[2.2rem] grayscale"
+                  />
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

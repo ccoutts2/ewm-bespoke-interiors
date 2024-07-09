@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
+import gsap, { Power0 } from "gsap";
+import { Flip } from "gsap/Flip";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -10,11 +11,12 @@ import NavBar from "@/components/NavBar/NavBar";
 import { assetsConfig } from "@/config/assets";
 import Link from "next/link";
 import Lenis from "lenis";
+import Image from "next/image";
 
-interface ProjectNavProps {
-  title: string;
-  href: string;
-}
+// interface ProjectNavProps {
+//   title: string;
+//   href: string;
+// }
 
 interface ProjectProps {
   title: string;
@@ -29,24 +31,24 @@ interface ProjectPage {
   };
 }
 
-const projectNavItems: ProjectNavProps[] = [
-  {
-    title: "residential",
-    href: "/",
-  },
-  {
-    title: "office",
-    href: "/",
-  },
-  {
-    title: "soul spaces",
-    href: "/",
-  },
-  {
-    title: "gallery",
-    href: "/",
-  },
-];
+// const projectNavItems: ProjectNavProps[] = [
+//   {
+//     title: "residential",
+//     href: "/",
+//   },
+//   {
+//     title: "office",
+//     href: "/",
+//   },
+//   {
+//     title: "soul spaces",
+//     href: "/",
+//   },
+//   {
+//     title: "gallery",
+//     href: "/",
+//   },
+// ];
 
 const projects: ProjectProps[] = [
   {
@@ -89,32 +91,23 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
 
     requestAnimationFrame(raf);
   }, []);
+
   return (
     <>
       <NavBar />
-      <section>
-        <nav className="mt-[4rem] px-4 py-4 md:mt-0 md:py-8  lg:px-32">
-          <ul className="flex w-full flex-row flex-wrap items-stretch justify-center no-underline lg:justify-between">
-            {projectNavItems.map((item, index) => (
-              <Link href={item.href} key={index} className="no-underline">
-                <li className="list-none uppercase">{item.title}</li>
-              </Link>
-            ))}
-          </ul>
-        </nav>
-        <section className="flex items-center justify-center">
-          <div className="flex flex-wrap items-center justify-between px-32">
-            {projects.map((project, index) => (
-              <Projects
-                key={index}
-                href={project.href}
-                src={project.src}
-                title={project.title}
-              />
-            ))}
-          </div>
-        </section>
+      <section className="flex items-center justify-center px-4 py-16 md:px-12 lg:px-32">
+        <div className="flex flex-wrap items-center justify-center lg:gap-8">
+          {projects.map((project, index) => (
+            <Projects
+              key={index}
+              href={project.href}
+              src={project.src}
+              title={project.title}
+            />
+          ))}
+        </div>
       </section>
+
       <Footer />
     </>
   );
@@ -146,12 +139,18 @@ const Projects = (props: { title: string; src: string; href: string }) => {
   );
 
   return (
-    <Link href={props.href} className="z-[5] py-8">
+    <Link href={props.href} className="z-[5] py-4">
       <div ref={container}>
-        <div className="h-[20rem] w-full md:h-[25rem] md:w-[39rem]">
-          <img src={props.src} className="h-full w-full object-cover" />
+        <div className="h-[20rem] w-full md:h-[25rem] md:w-[38rem] ">
+          <Image
+            width={600}
+            height={400}
+            src={props.src}
+            alt="Picture of project work"
+            className="h-full w-full object-cover"
+          />
         </div>
-        <h3 className="pb-6 pt-4 text-lg uppercase">{props.title}</h3>
+        <h3 className="py-4 text-center text-lg uppercase">{props.title}</h3>
       </div>
     </Link>
   );

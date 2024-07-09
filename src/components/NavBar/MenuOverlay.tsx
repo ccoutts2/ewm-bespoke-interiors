@@ -116,11 +116,9 @@ const MenuOverlay = ({
               className="flex h-full flex-col justify-between gap-4"
             >
               {navItems.map((item, index) => (
-                <Link key={index} href={item.href}>
-                  <li className="text-2xl text-[#fff] md:text-4xl">
-                    {item.title}
-                  </li>
-                </Link>
+                <li key={index} className="text-2xl text-[#fff] md:text-4xl">
+                  <Link href={item.href}>{item.title}</Link>
+                </li>
               ))}
             </ul>
             <div className="flex h-full flex-col justify-between gap-4">
@@ -136,9 +134,9 @@ const MenuOverlay = ({
               <div className="flex flex-col">
                 <ul ref={socialItems} className="h-full flex-row gap-4">
                   {socials.map((item, index) => (
-                    <Link key={index} href={item.href}>
-                      <li className="text-xs text-[#fff]">{item.title}</li>
-                    </Link>
+                    <li key={index} className="text-xs text-[#fff]">
+                      <Link href={item.href}>{item.title}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>

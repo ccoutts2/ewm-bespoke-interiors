@@ -16,8 +16,8 @@ const Hero = () => {
 
   return (
     <section
-      // ref={scrollRef}
-      className="relative"
+    // ref={scrollRef}
+    // className="relative"
     >
       <ImageCarousel images={images} auto />
       {/* <Section1 /> */}

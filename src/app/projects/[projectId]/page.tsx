@@ -6,27 +6,40 @@ import Lenis from "lenis";
 import Button from "@/components/buttons/Button/Button";
 
 import { assetsConfig } from "@/config/assets";
+import ProjectInfoOverlay from "@/components/ProjectInfoOverlay/ProjectInfoOverlay";
 
 interface ProjectDetailsProps {
   title: string;
-}
-
-interface InfoModalProps {
-  handleButtonClick: () => void;
+  information: string;
+  tag1: string;
+  tag2: string;
 }
 
 const projectDetails: { [key: string]: ProjectDetailsProps } = {
   "mews-property": {
     title: "Mews Property",
+    information:
+      "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
+    tag1: "Joinery",
+    tag2: "Interior design",
   },
   "leonari-office": {
     title: "Leonari Office",
+    information: "Detailed information about Mews Property.",
+    tag1: "Carpentry",
+    tag2: "Interior design",
   },
   "finsbury-square": {
     title: "Finsbury Square",
+    information: "Detailed information about Mews Property.",
+    tag1: "workshops",
+    tag2: "Interior design",
   },
   pentonville: {
     title: "Pentonville",
+    information: "Detailed information about Mews Property.",
+    tag1: "Joinery",
+    tag2: "Consultation",
   },
 };
 
@@ -40,10 +53,11 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
   const project = projectDetails[projectId as keyof typeof projectDetails];
   const images = assetsConfig[projectId as keyof typeof assetsConfig];
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
+  const container = useRef<HTMLDivElement>(null);
 
   const handleButtonClick = () => {
-    setIsModalOpen(!isModalOpen);
+    setIsInfoOpen(!isInfoOpen);
   };
 
   const scrollInfo = useRef<HTMLSpanElement>(null);
@@ -79,9 +93,9 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
   }
 
   return (
-    <section className="relative h-full w-full">
+    <section ref={container} className="relative h-full w-full">
       <div className="flex gap-[0.5rem] lg:gap-[3.2rem]">
-        <div className="relative w-[60%] md:w-[50%]">
+        <div className="relative w-full md:w-[50%]">
           <div className="relative flex h-[inherit] flex-col">
             {images.map(
               (image: { description: string; src: string }, index: number) => (
@@ -95,40 +109,48 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
             )}
           </div>
 
-          <div className="fixed right-0 top-0 flex h-screen w-[50%] flex-col justify-between px-4 pt-8 text-right md:text-left lg:pl-[6rem]">
-            <h1 className="w-full text-lg uppercase md:text-4xl">
+          <div className="fixed right-0 top-0 flex h-screen w-full flex-row justify-between px-4 pt-8 text-right md:w-[50%] md:flex-col md:text-left lg:pl-[6rem]">
+            <h1 className="hidden w-full text-lg uppercase md:flex md:text-4xl">
               {project.title}
             </h1>
-            <div className="flex flex-col pb-12 md:py-2 lg:w-[48rem] lg:gap-[2rem]">
-              <div className="md:hidden">
-                <Button label="more info" onClick={handleButtonClick} />
-                {isModalOpen && (
-                  <InfoModal handleButtonClick={handleButtonClick} />
-                )}
+            <div className="flex w-full flex-row-reverse justify-between pb-12 md:flex-col md:py-2 lg:w-[48rem] lg:gap-[2rem]">
+              <div className="pb-8 md:hidden">
+                <Button
+                  label="more info"
+                  ariaLabel="more info"
+                  onClick={handleButtonClick}
+                />
+
+                <ProjectInfoOverlay
+                  handleButtonClick={handleButtonClick}
+                  container={container}
+                  isInfoOpen={isInfoOpen}
+                  title={project.title}
+                  information={project.information}
+                  tag1={project.tag1}
+                  tag2={project.tag2}
+                />
               </div>
               <div className="hidden before:block before:text-base before:content-[`Info`] md:flex lg:w-[20rem] lg:before:mb-[3.2rem]">
                 <span className="list-none text-sm capitalize no-underline lg:text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Eligendi ipsum cupiditate voluptatibus vitae modi, corrupti
-                  ipsa provident esse omnis nemo repellat repellendus corporis
-                  odit sint temporibus beatae id? Voluptates, dignissimos.
+                  {project.information}
                 </span>
               </div>
-              <ul className=" w-full py-4 text-xs before:content-[`Role`] md:w-[20rem] md:text-base md:before:mb-[3.2rem] md:before:block">
+              <ul className="hidden w-full py-4 text-xs before:content-[`Role`] md:flex md:w-[20rem] md:text-base md:before:mb-[3.2rem] md:before:block">
                 <li className="w-full list-none uppercase no-underline md:text-base">
-                  joinery
+                  {project.tag1}
                 </li>
-                <li className="list-none uppercase no-underline md:text-base">
-                  interior design
+                <li className="w-full list-none uppercase no-underline md:text-base">
+                  {project.tag2}
                 </li>
               </ul>
               <div>
-                <Button href="/projects" label="back" />
+                <Button href="/projects" label="back" ariaLabel="back" />
               </div>
             </div>
             <div className="absolute bottom-1 right-2">
               <span
-                className="list-none text-base uppercase no-underline"
+                className="list-none text-base uppercase no-underline "
                 ref={scrollInfo}
               >
                 0%
@@ -142,19 +164,3 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
 };
 
 export default ProjectPage;
-
-const InfoModal = ({ handleButtonClick }: InfoModalProps) => {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4 text-left">
-      <div className="w-full max-w-screen-lg rounded-lg bg-white p-8">
-        <p className="pb-4 text-black">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-          ipsum cupiditate voluptatibus vitae modi, corrupti ipsa provident esse
-          omnis nemo repellat repellendus corporis odit sint temporibus beatae
-          id? Voluptates, dignissimos.
-        </p>
-        <Button label="close" onClick={handleButtonClick} />
-      </div>
-    </div>
-  );
-};
