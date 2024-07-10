@@ -34,8 +34,8 @@ const ImageCarousel = ({
       <div className="flex h-[60vh] w-full overflow-hidden lg:h-[85vh]">
         {images.map((url, index) => (
           <Image
-            width={2000}
-            height={2000}
+            width={2500}
+            height={2500}
             key={url}
             src={url}
             priority
@@ -53,11 +53,11 @@ const ImageCarousel = ({
           <button
             key={index}
             className={`
-            relative mx-[6px] inline-block h-[9px] w-[9px] cursor-pointer rounded-full border [transition:color_0.2s_ease-in-out]
+            relative mx-[6px] inline-block h-[0.65rem] w-[0.65rem] cursor-pointer rounded-full border [transition:color_0.2s_ease-in-out]
               ${
                 index === imageIndex
-                  ? "border-[#d9c6c5] bg-[#d9c6c5]"
-                  : "border-[#d9c6c5] bg-transparent"
+                  ? "border-[#333232] bg-[#333232]"
+                  : "border-[#333232] bg-transparent"
               }
             `}
             onClick={() => setImageIndex(index)}

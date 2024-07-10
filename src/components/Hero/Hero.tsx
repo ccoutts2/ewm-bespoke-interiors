@@ -1,47 +1,29 @@
-"use client";
-import { useEffect, useRef } from "react";
-
 import Link from "next/link";
 import { assetsConfig } from "@/config/assets";
-const pentonvilleKey: "pentonville" = "pentonville";
-const hero1 = assetsConfig[pentonvilleKey][1].src;
-const hero2 = assetsConfig[pentonvilleKey][4].src;
-const hero3 = assetsConfig[pentonvilleKey][2].src;
+const imageCarousel: "imageCarousel" = "imageCarousel";
+const hero1 = assetsConfig[imageCarousel][0].src;
+const hero2 = assetsConfig[imageCarousel][1].src;
+const hero3 = assetsConfig[imageCarousel][2].src;
+const hero4 = assetsConfig[imageCarousel][6].src;
+const hero5 = assetsConfig[imageCarousel][8].src;
+const hero6 = assetsConfig[imageCarousel][9].src;
+const hero7 = assetsConfig[imageCarousel][10].src;
+const hero8 = assetsConfig[imageCarousel][11].src;
 
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
 
 const Hero = () => {
-  // const scrollRef = useRef<HTMLElement | null>(null);
-  const images = [hero1, hero2, hero3];
+  const images = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8];
 
   return (
-    <section
-    // ref={scrollRef}
-    // className="relative"
-    >
+    <>
       <ImageCarousel images={images} auto />
-      {/* <Section1 /> */}
       <Section2 />
-    </section>
+    </>
   );
 };
 
 export default Hero;
-
-// const Section1 = () => {
-//   useEffect(() => {
-//     (async () => {
-//       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-//       const locomotiveScroll = new LocomotiveScroll();
-//     })();
-//   }, []);
-
-//   return (
-//     <section className="sticky top-0 flex h-[50vh] flex-col items-center justify-center lg:h-[85vh]">
-
-//     </section>
-//   );
-// };
 
 const Section2 = () => {
   return (

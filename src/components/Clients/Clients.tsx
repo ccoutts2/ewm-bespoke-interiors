@@ -2,28 +2,40 @@ import { assetsConfig } from "@/config/assets";
 
 const clients = [
   {
-    src: "/assets/logos/lamello.svg",
-    description: "company logo of lamello",
+    src: "/assets/logos/assa-abloy.jpg",
+    description: "company logo of Assa Abloy",
   },
   {
-    src: "/assets/logos/blum.svg",
-    description: "company logo of blum",
+    src: "/assets/logos/camira.png",
+    description: "company logo of Camira",
   },
   {
-    src: "/assets/logos/lamello.svg",
-    description: "company logo of lamello",
+    src: "/assets/logos/egger.jpg",
+    description: "company logo of Egger",
   },
   {
-    src: "/assets/logos/lamello.svg",
-    description: "company logo of lamello",
+    src: "/assets/logos/farrow-and-ball.png",
+    description: "company logo of Farrow and Ball",
   },
   {
-    src: "/assets/logos/lamello.svg",
-    description: "company logo of lamello",
+    src: "/assets/logos/hafele.webp",
+    description: "company logo of Hafele",
   },
   {
-    src: "/assets/logos/lamello.svg",
-    description: "company logo of lamello",
+    src: "/assets/logos/kronospan.jpg",
+    description: "company logo of Kronospan",
+  },
+  {
+    src: "/assets/logos/kvadrat.jpeg",
+    description: "company logo of Kvadrat",
+  },
+  {
+    src: "/assets/logos/panelCo.jfif",
+    description: "company logo of PanelCo",
+  },
+  {
+    src: "/assets/logos/verco.png",
+    description: "company logo of Verco",
   },
 ];
 

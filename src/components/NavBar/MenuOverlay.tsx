@@ -96,7 +96,12 @@ const MenuOverlay = ({
       <div className="fixed left-0 top-0 h-full w-full">
         <div className="flex w-full items-center justify-between px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
           <Link className="text-[#e4e8ed] mix-blend-difference" href="/">
-            <span className="uppercase">ewm</span> bespoke interiors
+            <div className="h-[5rem] w-[10rem]">
+              <img
+                className="h-full w-full rounded-md object-cover"
+                src="/assets/logos/ewm.jpg"
+              />
+            </div>
           </Link>
 
           <div

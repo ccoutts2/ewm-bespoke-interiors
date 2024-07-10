@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import gsap, { Power0 } from "gsap";
-import { Flip } from "gsap/Flip";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -12,11 +11,6 @@ import { assetsConfig } from "@/config/assets";
 import Link from "next/link";
 import Lenis from "lenis";
 import Image from "next/image";
-
-// interface ProjectNavProps {
-//   title: string;
-//   href: string;
-// }
 
 interface ProjectProps {
   title: string;
@@ -30,25 +24,6 @@ interface ProjectPage {
     projectId: string;
   };
 }
-
-// const projectNavItems: ProjectNavProps[] = [
-//   {
-//     title: "residential",
-//     href: "/",
-//   },
-//   {
-//     title: "office",
-//     href: "/",
-//   },
-//   {
-//     title: "soul spaces",
-//     href: "/",
-//   },
-//   {
-//     title: "gallery",
-//     href: "/",
-//   },
-// ];
 
 const projects: ProjectProps[] = [
   {
@@ -126,7 +101,7 @@ const Projects = (props: { title: string; src: string; href: string }) => {
         scrollTrigger: {
           trigger: container.current,
           scrub: false,
-          start: "top bottom-=10",
+          start: "top bottom-=100px",
           end: "bottom bottom",
         },
         ease: "power1.inOut",

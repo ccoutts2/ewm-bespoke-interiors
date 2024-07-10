@@ -149,6 +149,75 @@ export const assetsConfig = {
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20Road%2F210%20Pentonville%20Road%2014%20December%202023%20027.jpg?alt=media&token=168cb7a4-b494-48e8-b357-002ba86dbe86",
     },
   ],
+  imageCarousel: [
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2F210%20Pentonville%20Road%2014%20December%202023%20013.jpg?alt=media&token=32dbfc12-4377-4d9e-89e9-c18128de2f58",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FEWM%20Bespoke%20Interiors%20016.jpg?alt=media&token=05ceadc5-a483-4059-b170-b4b67ac72446",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FEWM%20Bespoke%20Interiors%20028.jpg?alt=media&token=7eae5447-7815-466f-a6fe-2acffb4d6f92",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FEntrance%20Storage%201.jpg?alt=media&token=cb250bb4-9a31-4fa5-99a4-6eacd5c8efdd",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FIMG_4648.jpeg?alt=media&token=533a23a9-6f49-49e0-9105-c72bf5a736a2",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FIMG_6087.JPG?alt=media&token=407b313e-b2f7-4349-a5bf-b2ea74ac8c2f",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FPicture%202.jpg?alt=media&token=c68d9278-c0cc-4cd4-8686-bc2a150ca346",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FPicture%203.jpg?alt=media&token=ab0d002e-aaec-4c00-988a-1a6dce4733a5",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2Fleonari-office_vr_04-a.jpg?alt=media&token=8658f7e0-64c1-48f9-8639-0bc192e2e8c6",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FBunk%20beds%201.jpg?alt=media&token=12ed72f7-deb6-4138-a540-8a1987995a2b",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FIMG_4654.jpeg?alt=media&token=c20dbaad-2bc9-4ed0-a16d-4868d5854d05",
+    },
+    {
+      description: "A photo for the image carousel",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FMedia%20Wall.jpg?alt=media&token=a36ea55a-1bd8-440e-8b18-c54e5b1555d3",
+    },
+  ],
+
+  sectorImages: [
+    {
+      description: "A photo showing residential works",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FResidential.JPG?alt=media&token=c0291c2b-97c6-4205-9798-7767a98bff47",
+    },
+    {
+      description: "A photo showing retail works",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FRetail.jpg?alt=media&token=604e5c48-6021-435e-9d7b-aad5b0927490",
+    },
+    {
+      description: "A photo showing heritage & culture works",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FHeritage%20and%20Culture.jpg?alt=media&token=7ce56751-f73e-432a-bee1-2337b1443e91",
+    },
+    {
+      description: "A photo showing cat a/b fit out works",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FCat%20a%20b%20fit%20out.jpg?alt=media&token=45aee9af-c0c9-4eea-bbe8-9da12473c072",
+    },
+  ],
   headshots: [
     {
       description: "A photo showing Johnnie Whynne",

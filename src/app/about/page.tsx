@@ -10,7 +10,6 @@ import PagesHero from "@/components/PagesHero/PagesHero";
 import Button from "@/components/buttons/Button/Button";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
-import EmployeeInfo from "@/components/EmployeeInfo/EmployeeInfo";
 import MeetTheTeam from "@/components/MeetTheTeam/MeetTheTeam";
 
 const Page = () => {
@@ -24,34 +23,6 @@ const Page = () => {
 
     requestAnimationFrame(raf);
   }, []);
-
-  // const images = useRef<(HTMLImageElement | null)[]>([]);
-
-  // const manageMouseEnter = () => {
-  //   gsap.to(images.current[0], {
-  //     duration: 1,
-  //     opacity: 0,
-  //     ease: "power4.inOut",
-  //   });
-  //   gsap.to(images.current[1], {
-  //     duration: 1,
-  //     clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-  //     ease: "power4.inOut",
-  //   });
-  // };
-
-  // const manageMouseLeave = () => {
-  //   gsap.to(images.current[0], {
-  //     duration: 1,
-  //     opacity: 1,
-  //     ease: "power4.inOut",
-  //   });
-  //   gsap.to(images.current[1], {
-  //     duration: 1,
-  //     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-  //     ease: "power4.inOut",
-  //   });
-  // };
 
   return (
     <>
@@ -195,7 +166,7 @@ const WorkShopImages = ({ src, description }: WorkShopImagesProps) => {
         scrollTrigger: {
           trigger: imageContainer.current,
           scrub: false,
-          start: "top bottom-=10",
+          start: "top bottom-=450px",
           end: "bottom bottom",
         },
         ease: "power1.inOut",
@@ -229,7 +200,6 @@ const GetInTouch = () => {
         <Button href="/contact" label="contact us" ariaLabel="contact us" />
       </div>
       <div className="absolute h-[60%] w-full bg-[#F17A14] text-right [clip-path:polygon(0_0,100%_0,100%_18%,100%_85%,72%_100%,0_50%)]"></div>
-      {/* clip-path: polygon(0 0, 100% 0, 100% 18%, 100% 85%, 72% 100%, 0% 50%); */}
     </section>
   );
 };
