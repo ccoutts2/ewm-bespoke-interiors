@@ -7,7 +7,7 @@ import Lenis from "lenis";
 import { assetsConfig } from "@/config/assets";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
-import Button from "@/components/buttons/Button/Button";
+import GetInTouch from "@/components/GetInTouch/GetInTouch";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import MeetTheTeam from "@/components/MeetTheTeam/MeetTheTeam";
@@ -28,8 +28,8 @@ const Page = () => {
     <>
       <NavBar />
       <PagesHero
-        img={assetsConfig.officePicture[0].src}
-        description={assetsConfig.officePicture[0].description}
+        img={assetsConfig.workshopPicture[0].src}
+        description={assetsConfig.workshopPicture[0].description}
         header={"Our Story"}
       />
       <section className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
@@ -51,34 +51,36 @@ const Page = () => {
           />
         </div>
       </section>
-      <section className="md:px-12 lg:px-32">
-        <div>
-          <WorkShopImages
-            src={assetsConfig.workshopPicture[0].src}
-            description={assetsConfig.workshopPicture[0].description}
-          />
-        </div>
-        <div className="flex md:justify-start">
-          <div className="flex-1 pr-2">
+      <section className="h-auto md:px-12 lg:px-32">
+        <div className="flex gap-4">
+          <div className="flex-[2.2]">
             <WorkShopImages
               src={assetsConfig.workshopPicture[1].src}
               description={assetsConfig.workshopPicture[1].description}
             />
           </div>
-          <div className="flex-1 pl-2">
+          <div className="h-auto flex-1">
+            <WorkShopImages
+              src={assetsConfig.workshopPicture[6].src}
+              description={assetsConfig.workshopPicture[6].description}
+            />
+          </div>
+        </div>
+        <div className="flex md:justify-start">
+          <div className="flex-1 pr-2">
             <WorkShopImages
               src={assetsConfig.workshopPicture[2].src}
               description={assetsConfig.workshopPicture[2].description}
             />
           </div>
+          <div className="flex-1 pl-2">
+            <WorkShopImages
+              src={assetsConfig.workshopPicture[3].src}
+              description={assetsConfig.workshopPicture[3].description}
+            />
+          </div>
         </div>
-        <div>
-          <WorkShopImages
-            src={assetsConfig.workshopPicture[3].src}
-            description={assetsConfig.workshopPicture[3].description}
-          />
-        </div>
-        <div>
+        <div className="h-auto">
           <WorkShopImages
             src={assetsConfig.workshopPicture[4].src}
             description={assetsConfig.workshopPicture[4].description}
@@ -166,20 +168,20 @@ const WorkShopImages = ({ src, description }: WorkShopImagesProps) => {
         scrollTrigger: {
           trigger: imageContainer.current,
           scrub: false,
-          start: "top bottom-=450px",
+          start: "top bottom-=350px",
           end: "bottom bottom",
         },
         ease: "power1.inOut",
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.75,
       });
     },
     { scope: container },
   );
   return (
-    <div ref={container} className="py-2">
-      <div ref={imageContainer} className="lg-h-[80%] h-full w-full">
+    <div ref={container} className="h-full py-2">
+      <div ref={imageContainer} className="h-full w-full">
         <img
           src={src}
           alt={description}
@@ -187,19 +189,5 @@ const WorkShopImages = ({ src, description }: WorkShopImagesProps) => {
         />
       </div>
     </div>
-  );
-};
-
-const GetInTouch = () => {
-  return (
-    <section className="relative flex h-[20rem] items-center justify-center gap-8 bg-white md:gap-32 md:px-12 lg:px-32">
-      <h2 className="z-30 uppercase md:text-xl lg:text-2xl ">
-        Let&apos;s get in touch
-      </h2>
-      <div className="z-30">
-        <Button href="/contact" label="contact us" ariaLabel="contact us" />
-      </div>
-      <div className="absolute h-[60%] w-full bg-[#F17A14] text-right [clip-path:polygon(0_0,100%_0,100%_18%,100%_85%,72%_100%,0_50%)]"></div>
-    </section>
   );
 };

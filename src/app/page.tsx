@@ -8,6 +8,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import Sectors from "@/components/Sectors/Sectors";
 
 import Lenis from "lenis";
+import GetInTouch from "@/components/GetInTouch/GetInTouch";
 
 const Page = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Page = () => {
       <NavBar />
       <Hero />
       <Sectors />
+      <GetInTouch />
       <Clients />
       <Footer />
     </>

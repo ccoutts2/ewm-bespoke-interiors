@@ -26,6 +26,14 @@ export const assetsConfig = {
       description: "A photo showing the work done in the workshop",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20094.jpg?alt=media&token=d389f33f-307f-4070-9411-b1f8b494d51a",
     },
+    {
+      description: "A photo showing the work done in the workshop",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20084.jpg?alt=media&token=4efc0d59-bfd2-4006-99a3-d322ed883352",
+    },
+    {
+      description: "A photo showing the work done in the workshop",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20081.jpg?alt=media&token=789c9174-53de-481c-82b3-48b5c6a311d4",
+    },
   ],
 
   "mews-property": [

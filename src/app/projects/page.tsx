@@ -77,6 +77,7 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
               key={index}
               href={project.href}
               src={project.src}
+              alt={project.alt}
               title={project.title}
             />
           ))}
@@ -90,7 +91,7 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
 
 export default Page;
 
-const Projects = (props: { title: string; src: string; href: string }) => {
+const Projects = ({ title, src, href, alt }: ProjectProps) => {
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
@@ -114,18 +115,18 @@ const Projects = (props: { title: string; src: string; href: string }) => {
   );
 
   return (
-    <Link href={props.href} className="z-[5] py-4">
+    <Link href={href} className="z-[5] py-4">
       <div ref={container}>
         <div className="h-[20rem] w-full md:h-[25rem] md:w-[38rem] ">
           <Image
             width={600}
             height={400}
-            src={props.src}
-            alt="Picture of project work"
+            src={src}
+            alt={alt}
             className="h-full w-full object-cover"
           />
         </div>
-        <h3 className="py-4 text-center text-lg uppercase">{props.title}</h3>
+        <h3 className="py-4 text-center text-lg uppercase">{title}</h3>
       </div>
     </Link>
   );

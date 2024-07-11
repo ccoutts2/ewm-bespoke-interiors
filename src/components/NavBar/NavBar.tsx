@@ -22,7 +22,7 @@ const NavBar: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="fixed left-0 top-0 z-[100] w-full bg-white lg:relative">
+    <nav className="fixed left-0 top-0 z-[100] w-full bg-[#f6f6f6] lg:relative">
       <section className="flex w-full items-center justify-between p-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
         <Link href="/">
           <div className="h-[5rem] w-[10rem]">

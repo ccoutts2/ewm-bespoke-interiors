@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#f6f6f6]">
       <body className={dmSans.className}>{children}</body>
     </html>
   );

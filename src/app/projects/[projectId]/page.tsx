@@ -93,7 +93,7 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
   }
 
   return (
-    <section ref={container} className="relative h-full w-full">
+    <section ref={container} className="relative h-full w-full overscroll-none">
       <div className="flex gap-[0.5rem] lg:gap-[3.2rem]">
         <div className="relative w-full md:w-[50%]">
           <div className="relative flex h-[inherit] flex-col">
