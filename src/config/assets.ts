@@ -218,6 +218,37 @@ export const assetsConfig = {
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FCat%20a%20b%20fit%20out.jpg?alt=media&token=45aee9af-c0c9-4eea-bbe8-9da12473c072",
     },
   ],
+
+  whatWeDo: [
+    {
+      description: "A photo showing carpentry and joinery work",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FCarpentry%20and%20joinery.jpg?alt=media&token=3f95d525-9f90-46aa-8c05-57ed268296d9",
+    },
+    {
+      description: "A photo showing in office furniture work",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FOffice%20Furniture.jpg?alt=media&token=6f482df1-e947-4df0-84b0-29dc09b28da1",
+    },
+    {
+      description: "A photo showing in house manufacturing",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIn%20house%20manufacturing.jpg?alt=media&token=719b5c65-8323-416b-8585-2076fc3e6ece",
+    },
+    {
+      description: "A photo showing in house spraying",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIn%20house%20spraying.jpg?alt=media&token=e014af92-ee0a-4028-b07c-70628184051e",
+    },
+    {
+      description: "A photo showing stone surfaces work",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FStone%20surfaces%20-%20remove%20CURO%20sign.jpg?alt=media&token=dcab7163-87d5-4537-9dc7-56a3c864d257",
+    },
+    {
+      description: "A photo showing upholstery work",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FUpholstery.jpg?alt=media&token=e32ad760-532e-4872-8624-5a768c157a72",
+    },
+    {
+      description: "A photo showing residential joinery work",
+      src: " https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIMG_4648.jpeg?alt=media&token=8837ce7b-384c-4d8c-bb34-14e4e08ee1ca",
+    },
+  ],
   headshots: [
     {
       description: "A photo showing Johnnie Whynne",

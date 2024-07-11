@@ -13,32 +13,39 @@ import Footer from "@/components/Footer/Footer";
 interface WorkProps {
   src: string;
   header: string;
+  alt: string;
 }
 
 const works: WorkProps[] = [
   {
-    src: assetsConfig.officePicture[0].src,
+    src: assetsConfig.whatWeDo[0].src,
     header: "carpentry & bespoke joinery",
+    alt: assetsConfig.whatWeDo[0].description,
   },
   {
-    src: assetsConfig.officePicture[0].src,
-    header: "in house manufacturing of joinery",
+    src: assetsConfig.whatWeDo[1].src,
+    header: "office furniture",
+    alt: assetsConfig.whatWeDo[1].description,
   },
   {
-    src: assetsConfig.officePicture[0].src,
-    header: "in house spraying & upholsery",
+    src: assetsConfig.whatWeDo[2].src,
+    header: "in house manufacturing",
+    alt: assetsConfig.whatWeDo[2].description,
   },
   {
-    src: assetsConfig.officePicture[0].src,
+    src: assetsConfig.whatWeDo[3].src,
+    header: "in house spraying",
+    alt: assetsConfig.whatWeDo[3].description,
+  },
+  {
+    src: assetsConfig.whatWeDo[4].src,
     header: "stone surfaces",
+    alt: assetsConfig.whatWeDo[4].description,
   },
   {
-    src: assetsConfig.officePicture[0].src,
-    header: "timber repairs",
-  },
-  {
-    src: assetsConfig.officePicture[0].src,
-    header: "furniture supply & installation",
+    src: assetsConfig.whatWeDo[5].src,
+    header: "upholstery",
+    alt: assetsConfig.whatWeDo[5].description,
   },
 ];
 
@@ -48,7 +55,7 @@ const Page = () => {
 
   useGSAP(
     () => {
-      gsap.set(imageContainer.current, { y: 100, opacity: 0 });
+      gsap.set(imageContainer.current, { y: 100, autoAlpha: 0 });
       gsap.registerPlugin(ScrollTrigger);
       gsap.to(imageContainer.current, {
         scrollTrigger: {
@@ -58,7 +65,7 @@ const Page = () => {
           end: "bottom bottom",
         },
         ease: "power1.inOut",
-        opacity: 1,
+        autoAlpha: 1,
         y: 0,
         duration: 1,
       });
@@ -81,8 +88,8 @@ const Page = () => {
     <>
       <NavBar />
       <PagesHero
-        img={assetsConfig.officePicture[0].src}
-        description={assetsConfig.officePicture[0].description}
+        img={assetsConfig.whatWeDo[6].src}
+        description={assetsConfig.whatWeDo[6].description}
         header={"What We Do"}
       />
       <section className="p-4 md:px-12 md:text-lg lg:px-32">
@@ -113,7 +120,7 @@ const Page = () => {
       </section>
       <section
         ref={container}
-        className="flex flex-col items-center justify-between px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-32"
+        className="flex flex-col items-center justify-between px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-28"
       >
         {works.map((work, index) => (
           <div
@@ -121,12 +128,16 @@ const Page = () => {
               imageContainer.current[index] = el;
             }}
             key={index}
-            className="flex w-full flex-col items-center justify-center py-4 capitalize md:w-[45%] lg:w-[30%]"
+            className="flex w-full flex-col items-center justify-center gap-4 py-4 capitalize md:w-[45%] lg:w-[30%]"
           >
-            <div>
-              <img src={work.src}></img>
+            <div className="h-[18rem] w-full">
+              <img
+                className="h-full w-full object-cover"
+                src={work.src}
+                alt={work.alt}
+              ></img>
             </div>
-            <h3 className="py-2 text-[1rem]">{work.header}</h3>
+            <h3 className="py-2 text-base">{work.header}</h3>
           </div>
         ))}
       </section>
