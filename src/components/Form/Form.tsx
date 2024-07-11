@@ -219,7 +219,10 @@ const Form = () => {
       }`}
       label={formSubmitted ? "Sent" : "Send"}
     /> */}
-        <Button label="submit" />
+        <Button
+          ariaLabel="Button which allows users to submit the form"
+          label="submit"
+        />
       </div>
     </form>
   );
