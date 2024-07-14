@@ -257,6 +257,12 @@ export const assetsConfig = {
       src: " https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIMG_4648.jpeg?alt=media&token=8837ce7b-384c-4d8c-bb34-14e4e08ee1ca",
     },
   ],
+  contact: [
+    {
+      description: "A photo showing commercial joinery work",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Contact%2FPicture%204.jpg?alt=media&token=69b4c053-5dca-4e35-b9f3-a96878f2315e",
+    },
+  ],
   headshots: [
     {
       description: "A photo showing Johnnie Whynne",

@@ -12,7 +12,7 @@ const PagesHero = ({ img, header, description }: PagesHeroProps) => {
       </h1>
       <img
         src={img}
-        className="h-full w-full object-cover brightness-[0.6]"
+        className="h-full w-full object-cover brightness-[0.7]"
         alt={description}
       />
     </section>

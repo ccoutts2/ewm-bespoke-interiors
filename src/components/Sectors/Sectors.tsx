@@ -41,7 +41,7 @@ const Sectors = () => {
         scrollTrigger: {
           trigger: imageContainer.current,
           scrub: false,
-          start: "top bottom-=250px",
+          start: "top bottom-=100px",
           end: "bottom bottom",
         },
         autoAlpha: 1,

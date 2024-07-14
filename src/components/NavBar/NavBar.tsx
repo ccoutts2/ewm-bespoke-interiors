@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import MenuOverlay from "./MenuOverlay";
 
 import { navItems } from "./data";
 
 const NavBar: React.FC = () => {
+  const pathname = usePathname();
   const container = useRef<HTMLDivElement | null>(null);
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -35,7 +37,11 @@ const NavBar: React.FC = () => {
         <ul className="hidden flex-row gap-4 text-[#191919] lg:flex">
           {navItems.map((item, index) => (
             <li key={index}>
-              <Link key={index} href={item.href}>
+              <Link
+                key={index}
+                href={item.href}
+                className={`hover:border-b-2 hover:border-[#F17A14] ${pathname === item.href ? "border-b-2 border-[#F17A14]" : ""}`}
+              >
                 {item.title}
               </Link>
             </li>
