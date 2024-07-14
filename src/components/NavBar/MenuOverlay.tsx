@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -16,6 +17,7 @@ const MenuOverlay = ({
   toggleMenu: () => void;
   isMenuOpen: boolean;
 }) => {
+  const pathname = usePathname();
   const overlay = useRef<HTMLDivElement>(null);
   const heading = useRef<HTMLDivElement>(null);
   const listItems = useRef<HTMLUListElement>(null);
@@ -37,15 +39,6 @@ const MenuOverlay = ({
           clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
           ease: "power3.inOut",
         })
-        .to(
-          heading.current,
-          {
-            ease: "power3.inOut",
-            autoAlpha: 1,
-            duration: 2,
-          },
-          0,
-        )
         .to(
           listItems.current,
           {
@@ -95,7 +88,7 @@ const MenuOverlay = ({
     >
       <div className="fixed left-0 top-0 h-full w-full">
         <div className="flex w-full items-center justify-between px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
-          <Link className="text-[#e4e8ed] mix-blend-difference" href="/">
+          <Link href="/">
             <div className="h-[5rem] w-[10rem]">
               <img
                 className="h-full w-full rounded-md object-cover"
@@ -114,47 +107,76 @@ const MenuOverlay = ({
             <div className="flex h-[0.5rem] w-[0.5rem] items-center justify-center rounded-[20rem]  bg-[#d82e2e]"></div>
           </div>
         </div>
-        <div className="flex flex-col items-stretch justify-stretch border-b border-b-white pt-8">
-          <div className="flex h-full items-start justify-between px-4 py-4">
+        <div className="flex flex-col items-stretch justify-stretch border-b border-b-[#f6f6f6] pt-8">
+          <div className="flex h-auto flex-1 items-center justify-center px-4 py-4 text-center">
             <ul
               ref={listItems}
               className="flex h-full flex-col justify-between gap-4"
             >
               {navItems.map((item, index) => (
-                <li key={index} className="text-2xl text-[#fff] md:text-4xl">
-                  <Link href={item.href}>{item.title}</Link>
+                <li key={index} className="text-2xl text-[#f6f6f6] md:text-4xl">
+                  <Link
+                    href={item.href}
+                    className={`hover:border-b-2 hover:border-[#F17A14] ${pathname === item.href ? "border-b-2 border-[#F17A14]" : ""}`}
+                  >
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
-            <div className="flex h-full flex-col justify-between gap-4">
+            {/* <div className="flex h-full flex-col justify-between gap-4">
               <div
                 ref={addressItems}
-                className="text-xs text-[#fff] md:text-lg"
+                className="flex-1 text-xs text-[#f6f6f6] md:text-lg"
               >
                 <p>Unit 12, Nathan Way Business Park</p>
                 <p>82-100 Nathan Way</p>
                 <p>Thamesmead</p>
                 <p>SE28 0FS, London</p>
               </div>
-              <div className="flex flex-col">
-                <ul ref={socialItems} className="h-full flex-row gap-4">
+              <div className="flex flex-1 flex-col">
+                <ul ref={socialItems} className="flex gap-4 pt-4">
                   {socials.map((item, index) => (
-                    <li key={index} className="text-xs text-[#fff]">
-                      <Link href={item.href}>{item.title}</Link>
+                    <li key={index}>
+                      <Link href={item.href} target="_blank">
+                        <img
+                          src={item.src}
+                          alt={item.title}
+                          className="h-[1.4rem] w-[2rem] mix-blend-difference hover:scale-110 hover:duration-200"
+                        />
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div
-          ref={heading}
-          className="relative flex h-full w-full items-center justify-center"
-        >
-          <h1 className="absolute bottom-[15em] text-center text-2xl capitalize text-[#e4e8ed] md:bottom-[6em] md:text-6xl">
-            <span className="uppercase">ewm</span> bespoke interiors
-          </h1>
+        <div className="mt-[5rem] flex h-auto flex-col items-center justify-center gap-4 text-center">
+          <div
+            ref={addressItems}
+            className="flex-1 text-sm text-[#f6f6f6] md:text-lg"
+          >
+            <p>Unit 12, Nathan Way Business Park</p>
+            <p>82-100 Nathan Way</p>
+            <p>Thamesmead</p>
+            <p>SE28 0FS, London</p>
+          </div>
+          <div className="flex flex-1 flex-col">
+            <ul ref={socialItems} className="flex gap-4 pt-4">
+              {socials.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href} target="_blank">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="h-[1.4rem] w-[2rem] mix-blend-difference hover:scale-110 hover:duration-200"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

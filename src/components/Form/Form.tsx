@@ -112,7 +112,7 @@ const Form = () => {
     <form
       // ref={form}
       // onSubmit={sendEmail}
-      className="flex w-full flex-[2.5] flex-col items-start justify-center pt-4 md:pl-12"
+      className="flex w-full flex-[2.5] flex-col items-start justify-between pt-4 md:pl-12"
     >
       <FormFieldContainer>
         <FormLabel
@@ -212,7 +212,7 @@ const Form = () => {
       </FormFieldContainer>
 
       {isError && <ErrorMessage />}
-      <div className="pb-4">
+      <div className="pb-1">
         {/* <Button
       className={`${styles.button} ${
         formSubmitted ? styles.button_confirm : ""
