@@ -1,9 +1,9 @@
-interface NavItem {
+interface NavItemProps {
   title: string;
   href: string;
 }
 
-export const navItems: NavItem[] = [
+export const navItems: NavItemProps[] = [
   {
     title: "What We Do",
     href: "/what-we-do",
@@ -22,17 +22,17 @@ export const navItems: NavItem[] = [
   },
 ];
 
-interface Socials {
+interface SocialsProps {
   title: string;
   href: string;
   src: string;
 }
 
-export const socials: Socials[] = [
+export const socials: SocialsProps[] = [
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/company/ewm-bespoke-interiors/?originalSubdomain=uk",
-    src: "/assets/icons/linkedin.png",
+    src: "/assets/icons/linkedin.svg",
   },
   {
     title: "Instagram",

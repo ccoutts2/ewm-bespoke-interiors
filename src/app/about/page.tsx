@@ -51,7 +51,7 @@ const Page = () => {
           />
         </div>
       </section>
-      <section className="h-auto md:px-12 lg:px-32">
+      <section className="h-auto px-4 md:px-12 lg:px-32">
         <div className="flex gap-4">
           <div className="flex-[2.2]">
             <WorkShopImages
