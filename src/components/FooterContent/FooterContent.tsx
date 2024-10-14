@@ -18,7 +18,7 @@ const FooterContent = () => {
         <div className="flex w-full flex-col justify-between text-right">
           <h3 className="b-bottom uppercase text-[#F17A14]">contact details</h3>
           <ul className="gap-4">
-            <li className="text-sm">
+            <li className="text-sm md:text-base">
               <Link href="mailto:Info@ewmbespokeinteriors.co.uk">
                 <p>info@ewmbespokeinteriors.co.uk</p>
               </Link>
