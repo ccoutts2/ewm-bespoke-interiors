@@ -3,16 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 
+import ProjectInfoOverlay from "@/components/ProjectInfoOverlay/ProjectInfoOverlay";
 import Button from "@/components/buttons/Button/Button";
 
+import Image from "next/image";
+
 import { assetsConfig } from "@/config/assets";
-import ProjectInfoOverlay from "@/components/ProjectInfoOverlay/ProjectInfoOverlay";
 
 interface ProjectDetailsProps {
   title: string;
   information: string;
   tag1: string;
   tag2: string;
+  width: number;
+  height: number;
 }
 
 const projectDetails: { [key: string]: ProjectDetailsProps } = {
@@ -22,24 +26,32 @@ const projectDetails: { [key: string]: ProjectDetailsProps } = {
       "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
     tag1: "Joinery",
     tag2: "Interior design",
+    width: 600,
+    height: 400,
   },
   "leonari-office": {
     title: "Leonari Office",
     information: "Detailed information about Mews Property.",
     tag1: "Carpentry",
     tag2: "Interior design",
+    width: 400,
+    height: 250,
   },
   "finsbury-square": {
     title: "Finsbury Square",
     information: "Detailed information about Mews Property.",
     tag1: "workshops",
     tag2: "Interior design",
+    width: 600,
+    height: 400,
   },
   pentonville: {
     title: "Pentonville",
     information: "Detailed information about Mews Property.",
     tag1: "Joinery",
     tag2: "Consultation",
+    width: 600,
+    height: 400,
   },
 };
 
@@ -98,10 +110,20 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
         <div className="relative w-full md:w-[50%]">
           <div className="relative flex h-[inherit] flex-col">
             {images.map(
-              (image: { description: string; src: string }, index: number) => (
-                <img
+              (
+                image: {
+                  description: string;
+                  src: string;
+                  width: number;
+                  height: number;
+                },
+                index: number,
+              ) => (
+                <Image
                   key={index}
                   src={image.src}
+                  width={image.width}
+                  height={image.height}
                   alt={image.description}
                   className="h-screen w-[inherit] object-cover"
                 />

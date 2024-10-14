@@ -7,7 +7,13 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button = ({ href, label, ariaLabel, onClick }: ButtonProps) => {
+const Button = ({
+  href,
+  label,
+  ariaLabel,
+  onClick,
+  ...defaultProps
+}: ButtonProps) => {
   if (href) {
     return (
       <Link href={href} className="no-underline">
@@ -15,6 +21,7 @@ const Button = ({ href, label, ariaLabel, onClick }: ButtonProps) => {
           className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#f6f6f6]"
           onClick={onClick}
           aria-label={ariaLabel}
+          {...defaultProps}
         >
           {label}
         </button>

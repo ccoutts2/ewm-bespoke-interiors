@@ -15,6 +15,8 @@ import Image from "next/image";
 interface ProjectProps {
   title: string;
   href: string;
+  width: number;
+  height: number;
   src: string;
   alt: string;
 }
@@ -31,24 +33,32 @@ const projects: ProjectProps[] = [
     href: "/projects/mews-property",
     src: assetsConfig["mews-property"][7].src,
     alt: assetsConfig["mews-property"][7].description,
+    width: 600,
+    height: 400,
   },
   {
     title: "Leonari Office",
     href: "/projects/leonari-office",
     src: assetsConfig["leonari-office"][2].src,
     alt: assetsConfig["leonari-office"][2].description,
+    width: 400,
+    height: 250,
   },
   {
     title: "Finsbury Square",
     href: "/projects/finsbury-square",
     src: assetsConfig["finsbury-square"][1].src,
     alt: assetsConfig["finsbury-square"][1].description,
+    width: 600,
+    height: 400,
   },
   {
     title: "Pentonville",
     href: "/projects/pentonville",
     src: assetsConfig.pentonville[4].src,
     alt: assetsConfig.pentonville[4].description,
+    width: 600,
+    height: 400,
   },
 ];
 
@@ -79,6 +89,8 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
               src={project.src}
               alt={project.alt}
               title={project.title}
+              width={project.width}
+              height={project.height}
             />
           ))}
         </div>
@@ -91,7 +103,7 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
 
 export default Page;
 
-const Projects = ({ title, src, href, alt }: ProjectProps) => {
+const Projects = ({ title, src, href, alt, width, height }: ProjectProps) => {
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
@@ -119,8 +131,8 @@ const Projects = ({ title, src, href, alt }: ProjectProps) => {
       <div ref={container}>
         <div className="h-[20rem] w-full md:h-[25rem] md:w-[38rem] ">
           <Image
-            width={600}
-            height={400}
+            width={width}
+            height={height}
             src={src}
             alt={alt}
             className="h-full w-full object-cover"
