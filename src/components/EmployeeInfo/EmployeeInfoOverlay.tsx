@@ -86,7 +86,7 @@ const EmployeeInfoOverlay = ({
   return (
     <div
       ref={overlay}
-      className="fixed right-0 top-0 z-0 flex h-screen w-full bg-white p-4 [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]"
+      className="fixed right-0 top-0 z-0 flex h-screen w-full bg-[#f6f6f6] p-4 [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]"
     >
       <div className="fixed left-0 top-0 h-full w-full">
         <div className="flex w-full items-center justify-between border-b border-b-black px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
