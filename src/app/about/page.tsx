@@ -8,8 +8,6 @@ import { assetsConfig } from "@/config/assets";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
 import GetInTouch from "@/components/GetInTouch/GetInTouch";
-import NavBar from "@/components/NavBar/NavBar";
-import Footer from "@/components/Footer/Footer";
 import MeetTheTeam from "@/components/MeetTheTeam/MeetTheTeam";
 
 const Page = () => {
@@ -26,7 +24,6 @@ const Page = () => {
 
   return (
     <>
-      <NavBar />
       <PagesHero
         img={assetsConfig.workshopPicture[0].src}
         description={assetsConfig.workshopPicture[0].description}
@@ -37,18 +34,9 @@ const Page = () => {
           text={`"No part-timers, no passengers. We're in it for the love of the game"`}
         />
         <div className="flex flex-col md:flex-[2]">
-          <Paragraphs
-            text="As a family run business, we are invested in giving our clients a
-          high-quality service. Having a team that has come from the varied
-          backgrounds such as main contracting and production of carpentry,
-          upholstery and furniture installation gives us the necessary
-          experience to deliver high quality products"
-          />
-          <Paragraphs
-            text="Our workshop consists of all the relevant machinery required to
-          produce exceptional joinery items, spraying and upholstery to any
-          level of specification"
-          />
+          <Paragraphs text="As a family-owned business, we take pride in the personal and professional service given to all our clients. We have developed a strong reputation over the years by combining these family values with a commitment to craftsmanship. In our approach, we remain deeply involved in all projects, ensuring attention to every detail, trust, and long-term involvement with our clients." />
+          <Paragraphs text="Our fully equipped workshop is the heart of our business, a place where ingenuity and attention to detail are nurtured. This facility forms the lifeblood of our operations, housing all the machinery required for precision joinery, custom spraying, and bespoke upholstery. It's here that we turn ideas into reality, making sure each piece meets the highest standards." />
+          <Paragraphs text="Our services range from carpentry and fitting of furniture to upholstery. We are fully prepared to handle both standard and highly customised projects, providing tailored solutions that meet your specifications precisely." />
         </div>
       </section>
       <section className="h-auto px-4 md:px-12 lg:px-32">
@@ -69,8 +57,8 @@ const Page = () => {
         <div className="flex md:justify-start">
           <div className="flex-1 pr-2">
             <WorkShopImages
-              src={assetsConfig.workshopPicture[2].src}
-              description={assetsConfig.workshopPicture[2].description}
+              src={assetsConfig.workshopPicture[4].src}
+              description={assetsConfig.workshopPicture[4].description}
             />
           </div>
           <div className="flex-1 pl-2">
@@ -82,8 +70,8 @@ const Page = () => {
         </div>
         <div className="h-auto">
           <WorkShopImages
-            src={assetsConfig.workshopPicture[4].src}
-            description={assetsConfig.workshopPicture[4].description}
+            src={assetsConfig.workshopPicture[2].src}
+            description={assetsConfig.workshopPicture[2].description}
           />
         </div>
       </section>
@@ -124,7 +112,6 @@ const Page = () => {
       </section>
       <GetInTouch />
       <MeetTheTeam />
-      <Footer />
     </>
   );
 };

@@ -4,9 +4,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-import Footer from "@/components/Footer/Footer";
-import NavBar from "@/components/NavBar/NavBar";
 import { assetsConfig } from "@/config/assets";
 import Link from "next/link";
 import Lenis from "lenis";
@@ -78,26 +75,21 @@ const Page = ({ params: { projectId } }: ProjectPage) => {
   }, []);
 
   return (
-    <>
-      <NavBar />
-      <section className="flex items-center justify-center px-4 py-16 md:px-12 lg:px-32">
-        <div className="flex flex-wrap items-center justify-center lg:gap-8">
-          {projects.map((project, index) => (
-            <Projects
-              key={index}
-              href={project.href}
-              src={project.src}
-              alt={project.alt}
-              title={project.title}
-              width={project.width}
-              height={project.height}
-            />
-          ))}
-        </div>
-      </section>
-
-      <Footer />
-    </>
+    <section className="flex items-center justify-center px-4 py-16 md:px-12 lg:px-32">
+      <div className="flex flex-wrap items-center justify-center lg:gap-8">
+        {projects.map((project, index) => (
+          <Projects
+            key={index}
+            href={project.href}
+            src={project.src}
+            alt={project.alt}
+            title={project.title}
+            width={project.width}
+            height={project.height}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 

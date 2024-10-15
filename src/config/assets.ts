@@ -16,7 +16,7 @@ export const assetsConfig = {
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20082.jpg?alt=media&token=bb1697cd-9232-43be-8dd7-c35ecb820024",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20001.jpg?alt=media&token=9775de03-9aa7-408e-bbba-90c41edc69b0",
     },
     {
       description: "A photo showing the work done in the workshop",
@@ -24,7 +24,7 @@ export const assetsConfig = {
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20094.jpg?alt=media&token=d389f33f-307f-4070-9411-b1f8b494d51a",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20004.jpg?alt=media&token=09d3756b-464a-4b3f-a7ab-74ed8fa876fa",
     },
     {
       description: "A photo showing the work done in the workshop",

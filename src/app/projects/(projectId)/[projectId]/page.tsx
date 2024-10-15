@@ -23,7 +23,7 @@ const projectDetails: { [key: string]: ProjectDetailsProps } = {
   "mews-property": {
     title: "Mews Property",
     information:
-      "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
+      "On this beautiful Mews property, we delivered a comprehensive bespoke joinery solution. Our team designed, manufactured, and installed custom wardrobes, sleek vanity units, a stylish media wall, and charming bunk beds for the children's room. Additionally, we incorporated a discreet and functional secret door, blending seamlessly with the surrounding storage. Every element was crafted to align with the client's vision of a modern, sophisticated space while maximizing functionality. The result is a harmonious blend of design and craftsmanship, perfect for this elegant London home.",
     tag1: "Joinery",
     tag2: "Interior design",
     width: 600,
@@ -39,7 +39,8 @@ const projectDetails: { [key: string]: ProjectDetailsProps } = {
   },
   "finsbury-square": {
     title: "Finsbury Square",
-    information: "Detailed information about Mews Property.",
+    information:
+      "For the Finsbury Square office project, we designed, manufactured, and installed a stylish wall-dividing planter, featuring reeded panelling, integrated banquette seating, and a glazed screen partition. This creative solution not only divides the space but enhances its functionality and aesthetic appeal, providing both seating and visual separation. As part of the project, we also installed client-supplied kitchen units, ensuring seamless integration with the overall design of the office space. The result is a modern and inviting environment that maximises utility while maintaining an elegant, cohesive design.",
     tag1: "workshops",
     tag2: "Interior design",
     width: 600,
@@ -114,16 +115,14 @@ const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
                 image: {
                   description: string;
                   src: string;
-                  width: number;
-                  height: number;
                 },
                 index: number,
               ) => (
                 <Image
                   key={index}
                   src={image.src}
-                  width={image.width}
-                  height={image.height}
+                  width={600}
+                  height={400}
                   alt={image.description}
                   className="h-screen w-[inherit] object-cover"
                 />

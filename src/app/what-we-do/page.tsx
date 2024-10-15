@@ -7,8 +7,6 @@ import Lenis from "lenis";
 import { assetsConfig } from "@/config/assets";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
-import NavBar from "@/components/NavBar/NavBar";
-import Footer from "@/components/Footer/Footer";
 
 interface WorkProps {
   src: string;
@@ -34,7 +32,7 @@ const works: WorkProps[] = [
   },
   {
     src: assetsConfig.whatWeDo[3].src,
-    header: "in house spraying",
+    header: "independent spraying services",
     alt: assetsConfig.whatWeDo[3].description,
   },
   {
@@ -86,37 +84,17 @@ const Page = () => {
 
   return (
     <>
-      <NavBar />
       <PagesHero
         img={assetsConfig.whatWeDo[6].src}
         description={assetsConfig.whatWeDo[6].description}
         header={"What We Do"}
       />
       <section className="p-4 md:px-12 md:text-lg lg:px-32">
-        <Paragraphs
-          text="EWM Bespoke Interiors is a leading
-          provider of joinery, carpentry, upholstery / re-upholstery and office
-          furniture solutions for commercial and residential spaces. Our mission
-          is to deliver professional services, our team of experts work closely
-          with clients from concept to handover to ensure their expectations are
-          met."
-        />
-        <Paragraphs
-          text="We are a family run business with over 40 years of experience in the
-          industry, based in South East London"
-        />
-        <Paragraphs
-          text="As a family run business, we are invested in giving our clients a
-          high-quality service. Having a team that has come from the varied
-          backgrounds such as main contracting and production of carpentry,
-          upholstery and furniture installation gives us the necessary
-          experience to deliver high quality products."
-        />
-        <Paragraphs
-          text="Our workshop consists of all the relevant machinery required to
-          produce exceptional joinery items, spraying and upholstery to any
-          level of specification."
-        />
+        <Paragraphs text="EWM Bespoke Interiors is a trusted provider of custom joinery, carpentry, upholstery, re-upholstery, and office furniture solutions, tailored for both commercial and residential spaces. We specialise in transforming ideas into beautifully crafted, functional environments that reflect the unique needs and styles of our clients. From initial concept to final handover, our mission is to ensure every detail exceeds expectations, delivering high-quality workmanship with a personal touch." />
+
+        <Paragraphs text="What truly makes us unique is the diverse experience of our team, who come from a variety of backgrounds, including main contracting, carpentry production, upholstery, and furniture installation. This collective expertise enables us to tackle projects with ease, ensuring every product is not only of exceptional quality but also perfectly aligned with the client’s expectations." />
+        <Paragraphs text="At EWM Bespoke Interiors, we operate from a fully equipped workshop that houses the machinery to deliver joinery, professional spraying services, and expert upholstery to meet any specification. Every item is meticulously crafted with the highest standards of quality and durability in mind." />
+        <Paragraphs text="We believe in the power of collaboration, working closely with our clients at every stage of the process to ensure their vision is realised in a way that reflects their style, meets their needs, and stands the test of time." />
       </section>
       <section
         ref={container}
@@ -141,7 +119,6 @@ const Page = () => {
           </div>
         ))}
       </section>
-      <Footer />
     </>
   );
 };

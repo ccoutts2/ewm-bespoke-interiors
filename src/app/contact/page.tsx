@@ -2,8 +2,6 @@
 
 import { useEffect } from "react";
 
-import Footer from "@/components/Footer/Footer";
-import NavBar from "@/components/NavBar/NavBar";
 import PagesHero from "@/components/PagesHero/PagesHero";
 import Form from "@/components/Form/Form";
 
@@ -27,7 +25,6 @@ const Page = () => {
 
   return (
     <>
-      <NavBar />
       <PagesHero
         img={assetsConfig.contact[0].src}
         description={assetsConfig.contact[0].description}
@@ -38,7 +35,6 @@ const Page = () => {
         <Form />
         <ContactDetails className="py-4 text-sm md:hidden md:flex-col md:text-base" />
       </section>
-      <Footer />
     </>
   );
 };

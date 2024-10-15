@@ -59,7 +59,7 @@ const Sectors = () => {
         {sectors.map((sector, index) => (
           <div
             key={index}
-            className="flex w-full flex-col justify-start py-4 capitalize md:w-[45%] lg:w-[40%]"
+            className="flex w-full flex-col justify-start py-4 md:w-[45%] lg:w-[40%]"
           >
             <div
               ref={(el) => {
@@ -75,7 +75,7 @@ const Sectors = () => {
                 alt={sector.info}
               />
             </div>
-            <h3 className="py-2 text-lg">{sector.header}</h3>
+            <h3 className="py-2 text-lg capitalize">{sector.header}</h3>
             <p className="pb-4 pt-2 text-sm leading-loose">{sector.info}</p>
           </div>
         ))}
