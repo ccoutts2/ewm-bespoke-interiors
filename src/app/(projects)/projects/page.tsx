@@ -47,28 +47,32 @@ const projects: ProjectProps[] = [
 
 const ProjectsPage = () => {
   return (
-    <main className="flex items-center justify-center px-4 py-16 md:px-12 lg:px-32">
-      <div className="flex flex-wrap items-center justify-center gap-8">
-        {projects.map((project, index) => (
-          <Link
-            key={index}
-            href={`/projects/${project.projectId}`}
-            className="z-[5] py-4"
-          >
-            <div className="h-[20rem] w-full md:h-[22rem] md:w-[34rem]">
-              <img
-                src={project.src}
-                alt={project.alt}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <h3 className="py-4 text-center text-lg uppercase">
-              {project.title}
-            </h3>
-          </Link>
-        ))}
-      </div>
-    </main>
+    <>
+      <NavBar />
+      <main className="flex items-center justify-center px-4 py-16 md:px-12 lg:px-32">
+        <div className="flex flex-wrap items-center justify-center gap-8">
+          {projects.map((project, index) => (
+            <Link
+              key={index}
+              href={`/projects/${project.projectId}`}
+              className="z-[5] py-4"
+            >
+              <div className="h-[20rem] w-full md:h-[22rem] md:w-[34rem]">
+                <img
+                  src={project.src}
+                  alt={project.alt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="py-4 text-center text-lg uppercase">
+                {project.title}
+              </h3>
+            </Link>
+          ))}
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 };
 

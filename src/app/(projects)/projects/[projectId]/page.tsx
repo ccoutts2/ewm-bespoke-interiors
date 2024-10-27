@@ -17,12 +17,21 @@ interface ProjectPageProps {
   };
 }
 
-const ProjectPage = ({ params: { projectId } }: ProjectPageProps) => {
+const ProjectPage = ({ params }: ProjectPageProps) => {
+  const [projectId, setProjectId] = useState<string | null>(null);
   const project = projectDetails[projectId as keyof typeof projectDetails];
   const images = assetsConfig[projectId as keyof typeof assetsConfig];
 
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const unwrapParams = async () => {
+      const { projectId } = await params;
+      setProjectId(projectId);
+    };
+    unwrapParams();
+  }, [params]);
 
   const handleButtonClick = () => {
     setIsInfoOpen(!isInfoOpen);

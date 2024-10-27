@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import "../../../app/globals.css";
+import "../../app/globals.css";
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -14,12 +16,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" className="bg-[#f6f6f6]">
-      <body className={dmSans.className}>{children}</body>
+      <body className={dmSans.className}>
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import "./globals.css";
-import NavBar from "@/components/NavBar/NavBar";
-import Footer from "@/components/Footer/Footer";
+import "../../app/globals.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -10,22 +8,19 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "EWM Bespoke Interiors",
-  description: "Website showcasing services offered by EWM Bespoke Interiors",
+  title: "EWM Bespoke Interiors Project Pages",
+  description:
+    "Website showcasing the projects completed by EWM Bespoke Interiors",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="bg-[#f6f6f6]">
-      <body className={dmSans.className}>
-        <NavBar />
-        {children}
-        <Footer />
-      </body>
+      <body className={dmSans.className}>{children}</body>
     </html>
   );
 }
