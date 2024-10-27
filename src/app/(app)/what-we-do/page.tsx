@@ -1,75 +1,14 @@
 "use client";
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect } from "react";
 import Lenis from "lenis";
 import { assetsConfig } from "@/config/assets";
+import { works } from ".";
 
 import PagesHero from "@/components/PagesHero/PagesHero";
-
-interface WorkProps {
-  src: string;
-  header: string;
-  alt: string;
-}
-
-const works: WorkProps[] = [
-  {
-    src: assetsConfig.whatWeDo[0].src,
-    header: "carpentry & bespoke joinery",
-    alt: assetsConfig.whatWeDo[0].description,
-  },
-  {
-    src: assetsConfig.whatWeDo[1].src,
-    header: "office furniture",
-    alt: assetsConfig.whatWeDo[1].description,
-  },
-  {
-    src: assetsConfig.whatWeDo[2].src,
-    header: "in house manufacturing",
-    alt: assetsConfig.whatWeDo[2].description,
-  },
-  {
-    src: assetsConfig.whatWeDo[3].src,
-    header: "independent spraying services",
-    alt: assetsConfig.whatWeDo[3].description,
-  },
-  {
-    src: assetsConfig.whatWeDo[4].src,
-    header: "stone surfaces",
-    alt: assetsConfig.whatWeDo[4].description,
-  },
-  {
-    src: assetsConfig.whatWeDo[5].src,
-    header: "upholstery",
-    alt: assetsConfig.whatWeDo[5].description,
-  },
-];
+import { useLoadPicturesAnimation } from "@/hooks/useLoadPicturesAnimation";
 
 const Page = () => {
-  const container = useRef<HTMLDivElement | null>(null);
-  const imageContainer = useRef<(HTMLDivElement | null)[]>([]);
-
-  useGSAP(
-    () => {
-      gsap.set(imageContainer.current, { y: 100, autoAlpha: 0 });
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.to(imageContainer.current, {
-        scrollTrigger: {
-          trigger: imageContainer.current,
-          scrub: false,
-          start: "top bottom-=10",
-          end: "bottom bottom",
-        },
-        ease: "power1.inOut",
-        autoAlpha: 1,
-        y: 0,
-        duration: 1,
-      });
-    },
-    { scope: container },
-  );
+  const { container, imageContainer } = useLoadPicturesAnimation();
 
   useEffect(() => {
     const lenis = new Lenis();

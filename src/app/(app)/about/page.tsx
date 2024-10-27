@@ -25,8 +25,8 @@ const Page = () => {
   return (
     <>
       <PagesHero
-        img={assetsConfig.workshopPicture[0].src}
-        description={assetsConfig.workshopPicture[0].description}
+        img={assetsConfig.workshopPicture[5].src}
+        description={assetsConfig.workshopPicture[5].description}
         header={"Our Story"}
       />
       <section className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
