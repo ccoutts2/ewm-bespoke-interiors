@@ -36,51 +36,90 @@ export const assetsConfig = {
     },
   ],
 
-  "mews-property": [
+  "new-street": [
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at New Street",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/New%20Street%2FEWM%20Bespoke%20Interiors%20027.jpg?alt=media&token=268511e2-b70a-436e-83aa-22c19a9419d3",
+      width: 600,
+      height: 400,
+    },
+    {
+      description: "A photo showing the work done at New Street",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/New%20Street%2FEWM%20Bespoke%20Interiors%20035.jpg?alt=media&token=2d017b58-1fb4-4809-aafe-e4e9a35ddfb5",
+      width: 600,
+      height: 400,
+    },
+    {
+      description: "A photo showing the work done at New Street",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/New%20Street%2FEWM%20Bespoke%20Interiors%20044.jpg?alt=media&token=4d445b9b-0eb8-4d6b-a573-a6264d1e6c48",
+      width: 600,
+      height: 400,
+    },
+    {
+      description: "A photo showing the work done at New Street",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/New%20Street%2FEWM%20Bespoke%20Interiors%20045.jpg?alt=media&token=df9172bf-444f-48e4-aa9c-4ed21722bcf2",
+      width: 600,
+      height: 400,
+    },
+    {
+      description: "A photo showing the work done at New Street",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/New%20Street%2FEWM%20Bespoke%20Interiors%20048.jpg?alt=media&token=37850ab3-1008-4ecb-b096-1a3513da5762",
+      width: 600,
+      height: 400,
+    },
+    {
+      description: "A photo showing the work done at New Street",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/New%20Street%2FEWM%20Bespoke%20Interiors%20052.jpg?alt=media&token=41ca1174-b452-4784-9223-a290fc628020",
+      width: 600,
+      height: 400,
+    },
+  ],
+
+  "fulton-mews": [
+    {
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FGround%20Floor%20cupboards.jpg?alt=media&token=a1eb4569-4b78-4493-93b4-8f07369c3d31",
       width: 600,
       height: 400,
     },
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FWardrobe.jpg?alt=media&token=8a83fc9f-087b-4da2-ab0a-6f02639bc54c",
       width: 600,
       height: 400,
     },
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FVanity%20Unit.jpg?alt=media&token=5a7f5825-8d9b-4cf9-b79d-50d7638915b1",
       width: 600,
       height: 400,
     },
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FVanity%20Unit%201.jpg?alt=media&token=fe59e9ac-2b6a-4e99-9827-52fa481ed7e4",
       width: 600,
       height: 400,
     },
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FMedia%20Wall.jpg?alt=media&token=05b35093-bf87-46d8-bc0b-d857191898e4",
       width: 600,
       height: 400,
     },
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FEntrance%20Storage%201.jpg?alt=media&token=0651b7a1-6d31-4757-83cc-a38756512b76",
       width: 600,
       height: 400,
     },
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FBunk%20beds%201.jpg?alt=media&token=6f429f87-3684-467d-af9a-29055a0af0ec",
       width: 600,
       height: 400,
     },
     {
-      description: "A photo showing the work done at Mews Property",
+      description: "A photo showing the work done at Fulton Mews",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Residential%20-%20Mews%20Property%2FTop%20floor%20bar%201.jpg?alt=media&token=d304a3ef-5f5d-49f0-80aa-63ed3df42853",
       width: 600,
       height: 400,

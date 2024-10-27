@@ -1,13 +1,13 @@
 import { assetsConfig } from "@/config/assets";
 
-interface EmployeeDataProps {
+interface EmployeeData {
   src: string;
   name: string;
   title: string;
   information: string;
 }
 
-export const employeeData: EmployeeDataProps[] = [
+export const employeeData: EmployeeData[] = [
   {
     src: assetsConfig["headshots"][0].src,
     name: "Johnnie Wynne",

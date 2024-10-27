@@ -1,5 +1,5 @@
 import EmployeeInfo from "../EmployeeInfo/EmployeeInfo";
-import { employeeData } from "@/app/about/employeeData";
+import { employeeData } from "@/lib/getEmployeeData";
 
 const MeetTheTeam = () => {
   return (

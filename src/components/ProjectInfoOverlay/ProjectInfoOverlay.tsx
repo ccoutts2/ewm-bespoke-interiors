@@ -9,8 +9,7 @@ interface ProjectInfoOverlayProps {
   container: RefObject<HTMLDivElement>;
   title: string;
   information: string;
-  tag1: string;
-  tag2: string;
+  location: string;
 }
 
 const ProjectInfoOverlay = ({
@@ -19,8 +18,7 @@ const ProjectInfoOverlay = ({
   container,
   title,
   information,
-  tag1,
-  tag2,
+  location,
 }: ProjectInfoOverlayProps) => {
   const overlay = useRef<HTMLDivElement>(null);
   const tl = useRef<GSAPTimeline | null>(null);
@@ -64,13 +62,12 @@ const ProjectInfoOverlay = ({
             </button>
           </div>
         </div>
-        <section className="flex w-full pt-4 text-left">
+        <div className="flex w-full pt-4 text-left">
           <p>{information}</p>
-        </section>
-        <section className="flex w-full flex-row justify-between pt-4 text-left">
-          <p>{tag1}</p>
-          <p>{tag2}</p>
-        </section>
+        </div>
+        <div className="flex w-full flex-row justify-between pt-4 text-left">
+          <p>{location}</p>
+        </div>
       </div>
     </div>
   );

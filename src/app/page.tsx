@@ -24,12 +24,10 @@ const Page = () => {
 
   return (
     <>
-      <NavBar />
       <Hero />
       <Sectors />
       <GetInTouch />
       <Clients />
-      <Footer />
     </>
   );
 };
