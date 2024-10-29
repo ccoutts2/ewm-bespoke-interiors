@@ -3,12 +3,6 @@ interface DropDownListProps {
   id: string;
   name: string;
   options: { value: string; label: string }[];
-  onFocus?: () => void;
-  onBlur?: () => void;
-  isError: boolean;
-  formFields: {
-    [key: string]: string;
-  };
 }
 
 const DropDownList = ({
@@ -16,22 +10,20 @@ const DropDownList = ({
   id,
   name,
   options,
-  onFocus,
-  onBlur,
-  isError,
-  formFields,
+  ...defaultProps
 }: DropDownListProps) => {
   return (
     <select
       onChange={onChange}
-      className={`w-full resize-none border-none bg-[transparent] p-4 text-sm outline-none ${
-        isError && !formFields.name.length ? "rounded-3xl bg-[#7006061a]" : ""
-      }`}
+      className="w-full resize-none border-none bg-[transparent] p-4 text-sm outline-none"
       id={id}
       name={name}
-      onFocus={onFocus}
-      onBlur={onBlur}
+      defaultValue=""
+      {...defaultProps}
     >
+      <option disabled value="">
+        Please select from the following
+      </option>
       {options.map((option, index) => (
         <option className="text-sm" key={index} value={option.value}>
           {option.label}

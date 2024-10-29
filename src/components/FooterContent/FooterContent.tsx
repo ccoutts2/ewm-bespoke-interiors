@@ -15,7 +15,7 @@ const FooterContent = () => {
             ))}
           </ul>
         </div>
-        <div className="flex w-full flex-col justify-between text-right">
+        <section className="flex w-full flex-col justify-between text-right">
           <h3 className="b-bottom uppercase text-[#F17A14]">contact details</h3>
           <ul className="gap-4">
             <li className="text-sm md:text-base">
@@ -26,7 +26,7 @@ const FooterContent = () => {
             <li>07515829261</li>
             <li>07734387217</li>
           </ul>
-        </div>
+        </section>
       </nav>
       <div className="flex items-end justify-between">
         <Link href="/">

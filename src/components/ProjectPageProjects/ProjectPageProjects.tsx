@@ -18,7 +18,7 @@ const ProjectPageProjects = () => {
               ref={(el) => {
                 imageContainer.current[index] = el;
               }}
-              className="relative flex w-full flex-col-reverse gap-8 rounded-3xl bg-[#F17A14] p-8 md:flex-row-reverse"
+              className="relative flex w-full flex-col-reverse gap-8 rounded-3xl bg-[#F17A14] bg-opacity-80 p-8 md:flex-row-reverse"
             >
               <div className="flex flex-col items-start justify-start gap-4 md:flex-[2]">
                 <h3 className="text-center text-base uppercase">

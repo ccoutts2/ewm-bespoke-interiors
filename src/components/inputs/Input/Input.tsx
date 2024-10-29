@@ -4,12 +4,7 @@ interface InputProps {
   name: string;
   type: string;
   placeholder: string;
-  onFocus?: () => void;
-  onBlur?: () => void;
-  isError: boolean;
-  formFields: {
-    [key: string]: string;
-  };
+  required: boolean;
 }
 
 const Input = ({
@@ -18,23 +13,18 @@ const Input = ({
   name,
   type,
   placeholder,
-  onFocus,
-  onBlur,
-  isError,
-  formFields,
+
+  required = false,
 }: InputProps) => {
   return (
     <input
       onChange={onChange}
-      className={`w-full resize-none border-none bg-[transparent] p-4 outline-none placeholder:pl-1 placeholder:text-sm ${
-        isError && !formFields.name.length ? "rounded-3xl bg-[#7006061a]" : ""
-      }`}
+      className="w-full resize-none border-none bg-[transparent] p-4 outline-none placeholder:pl-1 placeholder:text-sm"
       id={id}
       name={name}
       type={type}
       placeholder={placeholder}
-      onFocus={onFocus}
-      onBlur={onBlur}
+      required={required}
     ></input>
   );
 };

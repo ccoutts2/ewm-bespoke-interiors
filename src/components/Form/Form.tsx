@@ -1,232 +1,120 @@
 "use client";
 
-import { useState, useRef, ChangeEvent } from "react";
-
+import { useState, forwardRef } from "react";
+import type { DetailedHTMLProps, FormHTMLAttributes } from "react";
 import Button from "@/components/buttons/Button/Button";
 import Input from "../inputs/Input/Input";
 import TextArea from "../inputs/TextArea/TextArea";
 import FormLabel from "../FormLabel/FormLabel";
 import DropDownList from "../inputs/DropDownList/DropDownList";
 
-const Form = () => {
-  const [activeLabel, setActiveLabel] = useState("");
-  const [isError, setIsError] = useState(false);
-  const [formFields, setFormFields] = useState({
-    name: "",
-    email: "",
-    services: "",
-    textarea: "",
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const form = useRef<HTMLFormElement>();
+interface FormProps
+  extends DetailedHTMLProps<
+    FormHTMLAttributes<HTMLFormElement>,
+    HTMLFormElement
+  > {
+  handleInputChange: () => void;
+  buttonLabel: string;
+}
 
-  const onChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
-  ) => {
-    setFormFields({
-      ...formFields,
-      [e.target.name]: e.target.value,
-    });
-  };
+export const Form = forwardRef<HTMLFormElement, FormProps>(
+  ({ buttonLabel, handleInputChange, ...defaultProps }, ref) => {
+    const [activeLabel, setActiveLabel] = useState("");
 
-  const isNameValid = () => {
-    if (!formFields.name.length) {
-      return false;
-    }
-
-    return true;
-  };
-
-  const isEmailValid = () => {
-    const validateEmail = (email: string) => {
-      return String(email)
-        .toLowerCase()
-        .match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        );
-    };
-    if (!formFields.email.length || !validateEmail(formFields.email)) {
-      return false;
-    }
-    return true;
-  };
-
-  const isServicesValid = () => {
-    if (!formFields.services.length) {
-      return false;
-    }
-    return true;
-  };
-
-  const isMessageValid = () => {
-    if (!formFields.textarea.length) {
-      return false;
-    }
-    return true;
-  };
-
-  const isFormValid = () => {
     return (
-      isNameValid() && isEmailValid() && isServicesValid() && isMessageValid()
+      <form
+        ref={ref}
+        {...defaultProps}
+        className="flex w-full flex-[2.5] flex-col items-start justify-between pt-4 md:pl-12"
+      >
+        <FormFieldContainer>
+          <FormLabel
+            htmlFor="name"
+            activeLabel={activeLabel}
+            label="What's your name?"
+            labelNumber="01"
+          />
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            onChange={handleInputChange}
+            placeholder="Joe Smith"
+            required
+          />
+        </FormFieldContainer>
+        <FormFieldContainer>
+          <FormLabel
+            htmlFor="email"
+            activeLabel={activeLabel}
+            label="What's your email?"
+            labelNumber="02"
+          />
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            onChange={handleInputChange}
+            placeholder="joe.smith@email.com"
+            required
+          />
+        </FormFieldContainer>
+        <FormFieldContainer>
+          <FormLabel
+            htmlFor="dropdown"
+            activeLabel={activeLabel}
+            label="What type of work are you looking for?"
+            labelNumber="03"
+          />
+          <DropDownList
+            id="dropdown"
+            name="dropdown"
+            options={[
+              { value: "option1", label: "Option 1" },
+              { value: "option2", label: "Option 2" },
+            ]}
+            onChange={handleInputChange}
+          />
+        </FormFieldContainer>
+        <FormFieldContainer>
+          <FormLabel
+            htmlFor="services"
+            activeLabel={activeLabel}
+            label="What do you want to get in touch about?"
+            labelNumber="04"
+          />
+          <TextArea
+            id="services"
+            name="services"
+            onChange={handleInputChange}
+            placeholder="Share as many details as possible such as space and scale of work"
+          />
+        </FormFieldContainer>
+        <FormFieldContainer>
+          <FormLabel
+            htmlFor="dimensions"
+            activeLabel={activeLabel}
+            label="Do you have dimensions for your space?"
+            labelNumber="05"
+          />
+          <TextArea
+            id="dimensions"
+            name="dimensions"
+            onChange={handleInputChange}
+            placeholder="Please enter approximate value if unknown"
+          />
+        </FormFieldContainer>
+
+        <div className="pb-1">
+          <Button
+            ariaLabel="Button which allows users to submit the form"
+            label="submit"
+          />
+        </div>
+      </form>
     );
-  };
-
-  // const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-
-  //   if (isFormValid()) {
-  //     emailjs
-  //       .sendForm(
-  //         process.env.NEXT_PUBLIC_SERVICE_ID,
-  //         process.env.NEXT_PUBLIC_TEMPLATE_ID,
-  //         form.current,
-  //         {
-  //           publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-  //         },
-  //       )
-  //       .then(
-  //         () => {
-  //           console.log("SUCCESS!");
-  //           setFormSubmitted(true);
-  //           setTimeout(() => {
-  //             window.location.reload();
-  //           }, 1000);
-  //         },
-  //         (error) => {
-  //           console.log("FAILED...", error);
-  //         },
-  //       );
-  //   } else {
-  //     setIsError(true);
-  //   }
-  // };
-
-  const handleInputFocus = (labelFor: string) => {
-    setActiveLabel(labelFor);
-  };
-
-  const handleInputBlur = () => {
-    setActiveLabel("");
-  };
-  return (
-    <form
-      // ref={form}
-      // onSubmit={sendEmail}
-      className="flex w-full flex-[2.5] flex-col items-start justify-between pt-4 md:pl-12"
-    >
-      <FormFieldContainer>
-        <FormLabel
-          htmlFor="name"
-          activeLabel={activeLabel}
-          label="What's your name?"
-          labelNumber="01"
-        />
-        <Input
-          onChange={onChange}
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Joe Smith"
-          onFocus={() => handleInputFocus("name")}
-          onBlur={handleInputBlur}
-          isError={isError}
-          formFields={formFields}
-        />
-      </FormFieldContainer>
-      <FormFieldContainer>
-        <FormLabel
-          htmlFor="email"
-          activeLabel={activeLabel}
-          label="What's your email?"
-          labelNumber="02"
-        />
-        <Input
-          onChange={onChange}
-          id="email"
-          name="email"
-          type="email"
-          placeholder="joe.smith@email.com"
-          onFocus={() => handleInputFocus("email")}
-          onBlur={handleInputBlur}
-          isError={isError}
-          formFields={formFields}
-        />
-      </FormFieldContainer>
-      <FormFieldContainer>
-        <FormLabel
-          htmlFor="dropdown"
-          activeLabel={activeLabel}
-          label="What type of work are you looking for?"
-          labelNumber="03"
-        />
-        <DropDownList
-          onChange={onChange}
-          id="dropdown"
-          name="dropdown"
-          options={[
-            { value: "", label: "Please select an option" },
-            { value: "option1", label: "Option 1" },
-            { value: "option2", label: "Option 2" },
-          ]}
-          onFocus={() => handleInputFocus("dropdown")}
-          onBlur={handleInputBlur}
-          isError={isError}
-          formFields={formFields}
-        />
-      </FormFieldContainer>
-      <FormFieldContainer>
-        <FormLabel
-          htmlFor="services"
-          activeLabel={activeLabel}
-          label="What do you want to get in touch about?"
-          labelNumber="04"
-        />
-        <TextArea
-          onChange={onChange}
-          id="textarea"
-          name="textarea"
-          placeholder="Share as many details as possible such as space and scale of work"
-          onFocus={() => handleInputFocus("textarea")}
-          onBlur={handleInputBlur}
-          isError={isError}
-          formFields={formFields}
-        />
-      </FormFieldContainer>
-      <FormFieldContainer>
-        <FormLabel
-          htmlFor="textarea"
-          activeLabel={activeLabel}
-          label="Do you have dimensions for your space?"
-          labelNumber="05"
-        />
-        <TextArea
-          onChange={onChange}
-          id="textarea"
-          name="textarea"
-          placeholder="Please enter approximate value if unknown"
-          onFocus={() => handleInputFocus("textarea")}
-          onBlur={handleInputBlur}
-          isError={isError}
-          formFields={formFields}
-        />
-      </FormFieldContainer>
-
-      {isError && <ErrorMessage />}
-      <div className="pb-1">
-        {/* <Button
-      className={`${styles.button} ${
-        formSubmitted ? styles.button_confirm : ""
-      }`}
-      label={formSubmitted ? "Sent" : "Send"}
-    /> */}
-        <Button
-          ariaLabel="Button which allows users to submit the form"
-          label="submit"
-        />
-      </div>
-    </form>
-  );
-};
+  },
+);
 
 export default Form;
 
