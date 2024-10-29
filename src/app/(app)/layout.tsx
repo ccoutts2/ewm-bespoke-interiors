@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "../../app/globals.css";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
+import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-[#f6f6f6]">
       <body className={dmSans.className}>
-        <NavBar />
-        {children}
-        <Footer />
+        <SmoothScroll>
+          <NavBar />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

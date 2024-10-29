@@ -1,28 +1,12 @@
-"use client";
-
-import { useEffect } from "react";
-
 import PagesHero from "@/components/PagesHero/PagesHero";
 import Form from "@/components/Form/Form";
 
 import { socials } from "@/components/NavBar/data";
 import { assetsConfig } from "@/config/assets";
-import Lenis from "lenis";
 
 import Link from "next/link";
 
 const Page = () => {
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
-
   return (
     <>
       <PagesHero
