@@ -13,8 +13,8 @@ const Input = ({
   name,
   type,
   placeholder,
-
   required = false,
+  ...defaultProps
 }: InputProps) => {
   return (
     <input
@@ -25,6 +25,7 @@ const Input = ({
       type={type}
       placeholder={placeholder}
       required={required}
+      {...defaultProps}
     ></input>
   );
 };

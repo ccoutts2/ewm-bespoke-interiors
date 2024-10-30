@@ -1,12 +1,12 @@
 import PagesHero from "@/components/PagesHero/PagesHero";
-import Form from "@/components/Form/Form";
+import ContactForm from "@/components/ContactForm/ContactForm";
 
 import { socials } from "@/components/NavBar/data";
 import { assetsConfig } from "@/config/assets";
 
 import Link from "next/link";
 
-const Page = () => {
+export default async function Page() {
   return (
     <>
       <PagesHero
@@ -16,14 +16,12 @@ const Page = () => {
       />
       <section className="flex flex-col p-4 md:flex-row md:px-12 lg:px-32">
         <TextSection />
-        <Form />
+        <ContactForm />
         <ContactDetails className="py-4 text-sm md:hidden md:flex-col md:text-base" />
       </section>
     </>
   );
-};
-
-export default Page;
+}
 
 const TextSection = () => {
   return (
