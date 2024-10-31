@@ -101,9 +101,7 @@ const MenuOverlay = ({
             onClick={toggleMenu}
             className="flex cursor-pointer items-center gap-4 rounded-[20rem] bg-[#191919] px-4 py-2 text-[#e4e8ed]"
           >
-            <button>
-              <span>close</span>
-            </button>
+            <button>close</button>
             <div className="flex h-[0.5rem] w-[0.5rem] items-center justify-center rounded-[20rem]  bg-[#d82e2e]"></div>
           </div>
         </div>

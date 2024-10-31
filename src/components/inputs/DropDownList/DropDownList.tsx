@@ -3,6 +3,7 @@ interface DropDownListProps {
   id: string;
   name: string;
   options: { value: string; label: string }[];
+  value: string;
 }
 
 const DropDownList = ({
@@ -10,6 +11,7 @@ const DropDownList = ({
   id,
   name,
   options,
+  value,
   ...defaultProps
 }: DropDownListProps) => {
   return (
@@ -18,7 +20,7 @@ const DropDownList = ({
       className="w-full resize-none border-none bg-[transparent] p-4 text-sm outline-none"
       id={id}
       name={name}
-      defaultValue=""
+      defaultValue={value}
       {...defaultProps}
     >
       <option disabled value="">

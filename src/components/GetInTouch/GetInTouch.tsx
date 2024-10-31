@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../buttons/Button/Button";
 
 const GetInTouch = () => {
@@ -7,7 +8,12 @@ const GetInTouch = () => {
         Let&apos;s get in touch
       </h2>
       <div className="z-30">
-        <Button href="/contact" label="contact us" ariaLabel="contact us" />
+        <Link
+          className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#f6f6f6]"
+          href="/contact"
+        >
+          Contact Us
+        </Link>
       </div>
       <div className="absolute h-[60%] w-full bg-[#F17A14] text-right [clip-path:polygon(0_0,100%_0,100%_18%,100%_85%,72%_100%,0_50%)]"></div>
     </section>

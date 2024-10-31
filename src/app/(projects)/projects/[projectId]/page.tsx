@@ -10,6 +10,7 @@ import Image from "next/image";
 
 import { assetsConfig } from "@/config/assets";
 import { projectDetails } from "@/lib/getProjectDetails";
+import Link from "next/link";
 
 interface ProjectPageProps {
   params: {
@@ -103,6 +104,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                 <Button
                   label="more info"
                   ariaLabel="more info"
+                  type="button"
                   onClick={handleButtonClick}
                 />
 
@@ -126,7 +128,12 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                 </li>
               </ul>
               <div>
-                <Button href="/projects" label="back" ariaLabel="back" />
+                <Link
+                  className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#f6f6f6]"
+                  href="/projects"
+                >
+                  Back
+                </Link>
               </div>
             </div>
             <div className="absolute bottom-1 right-2">

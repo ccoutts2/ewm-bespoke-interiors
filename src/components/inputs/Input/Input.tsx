@@ -3,6 +3,7 @@ interface InputProps {
   id: string;
   name: string;
   type: string;
+  value: string;
   placeholder: string;
   required: boolean;
 }
@@ -12,6 +13,7 @@ const Input = ({
   id,
   name,
   type,
+  value,
   placeholder,
   required = false,
   ...defaultProps
@@ -22,6 +24,7 @@ const Input = ({
       className="w-full resize-none border-none bg-[transparent] p-4 outline-none placeholder:pl-1 placeholder:text-sm"
       id={id}
       name={name}
+      value={value}
       type={type}
       placeholder={placeholder}
       required={required}

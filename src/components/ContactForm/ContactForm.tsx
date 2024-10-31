@@ -1,34 +1,36 @@
 "use client";
 
-import { useState, useRef, FormEvent, useActionState } from "react";
+import { useState, useRef } from "react";
 import Button from "@/components/buttons/Button/Button";
 import Input from "../inputs/Input/Input";
 import TextArea from "../inputs/TextArea/TextArea";
 import FormLabel from "../FormLabel/FormLabel";
 import DropDownList from "../inputs/DropDownList/DropDownList";
-import { handleContactForm } from "@/lib/actions";
 
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(useGSAP);
+import emailjs from "@emailjs/browser";
+import { z } from "zod";
 
-export const ContactForm = ({ ...defaultProps }) => {
+const Schema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string({
+    invalid_type_error: "Invalid Email",
+  }),
+});
+
+export const ContactForm = () => {
+  const form = useRef<HTMLFormElement>(null);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [dropdown, setDropdown] = useState<string[]>([]);
+  const [dropdown, setDropdown] = useState("");
   const [services, setServices] = useState("");
   const [dimensions, setDimensions] = useState("");
-
-  const [error, action, isPending] = useActionState(handleContactForm, null);
-
-  const form = useRef<HTMLFormElement | null>(null);
+  const [errorMessages, setErrorMessages] = useState({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     if (name === "name") setName(value);
     if (name === "email") setEmail(value);
-    if (name === "services") setServices(value);
-    if (name === "dimensions") setDimensions(value);
   };
 
   const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -40,21 +42,69 @@ export const ContactForm = ({ ...defaultProps }) => {
 
   const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value, name } = e.target;
-    if (name === "dropdown") setDropdown([value]);
+    if (name === "dropdown") setDropdown(value);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(form.current!);
+    const validatedFields = Schema.safeParse({
+      name: formData.get("name"),
+      email: formData.get("email"),
+    });
+
+    if (!validatedFields.success) {
+      setErrorMessages(validatedFields.error.flatten().fieldErrors);
+      return;
+    }
+
+    try {
+      const emailServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const emailTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const emailPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+        setErrorMessages({
+          message: "EmailJS environment variables are not set.",
+        });
+        return;
+      }
+
+      await emailjs.send(
+        emailServiceId,
+        emailTemplateId,
+        {
+          name: validatedFields.data.name,
+          email: validatedFields.data.email,
+        },
+        emailPublicKey,
+      );
+
+      setName("");
+      setEmail("");
+      setDropdown("");
+      setServices("");
+      setDimensions("");
+      return { message: "Success" };
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Error sending email. Please try again later.");
+    }
   };
 
   return (
     <form
-      action={action}
+      onSubmit={handleSubmit}
       ref={form}
-      {...defaultProps}
       className="flex w-full flex-[2.5] flex-col items-start justify-between pt-4 md:pl-12"
     >
       <FormFieldContainer>
-        <FormLabel htmlFor="name" label="What's your name?" labelNumber="01" />
+        <FormLabel htmlFor="name" label="What's your name?*" labelNumber="01" />
         <Input
           id="name"
           name="name"
+          value={name}
           type="text"
           onChange={handleInputChange}
           placeholder="Joe Smith"
@@ -64,13 +114,14 @@ export const ContactForm = ({ ...defaultProps }) => {
       <FormFieldContainer>
         <FormLabel
           htmlFor="email"
-          label="What's your email?"
+          label="What's your email?*"
           labelNumber="02"
         />
         <Input
           id="email"
           name="email"
           type="email"
+          value={email}
           onChange={handleInputChange}
           placeholder="joe.smith@email.com"
           required
@@ -89,6 +140,7 @@ export const ContactForm = ({ ...defaultProps }) => {
             { value: "option1", label: "Option 1" },
             { value: "option2", label: "Option 2" },
           ]}
+          value={dropdown}
           onChange={handleDropdownChange}
         />
       </FormFieldContainer>
@@ -101,6 +153,7 @@ export const ContactForm = ({ ...defaultProps }) => {
         <TextArea
           id="services"
           name="services"
+          value={services}
           onChange={handleTextareaChange}
           placeholder="Share as many details as possible such as space and scale of work"
         />
@@ -114,6 +167,7 @@ export const ContactForm = ({ ...defaultProps }) => {
         <TextArea
           id="dimensions"
           name="dimensions"
+          value={dimensions}
           onChange={handleTextareaChange}
           placeholder="Please enter approximate value if unknown"
         />
@@ -125,8 +179,6 @@ export const ContactForm = ({ ...defaultProps }) => {
           label="submit"
           type="submit"
         />
-        {error && <p>{error}</p>}
-        {isPending && <Toast>Sending message...</Toast>}
       </div>
     </form>
   );
@@ -150,22 +202,4 @@ const ErrorMessage = () => {
   return (
     <p className="text-base text-red-700">**Please fill in all the fields**</p>
   );
-};
-
-interface ToastProps {
-  children: React.ReactNode;
-}
-
-const Toast = ({ children }: ToastProps) => {
-  const container = useRef<HTMLDivElement | null>(null);
-  const tl = useRef<GSAPTimeline | null>(null);
-
-  useGSAP(
-    () => {
-      gsap.set(container, { y: -200 });
-      gsap.to(container, { y: 0 });
-    },
-    { scope: container },
-  );
-  return <div className="">{children}</div>;
 };

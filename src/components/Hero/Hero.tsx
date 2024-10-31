@@ -18,18 +18,18 @@ const Hero = () => {
   return (
     <>
       <ImageCarousel images={images} auto />
-      <Section2 />
+      <HeroText />
     </>
   );
 };
 
 export default Hero;
 
-const Section2 = () => {
+const HeroText = () => {
   return (
     <section className="px-4 py-4 text-[#191919] md:w-[80%] md:px-12 md:py-8 md:pt-12 lg:p-32">
       <p className="py-4 text-lg md:text-3xl">
-        <span className="uppercase">ewm</span> Bespoke Interiors is a leading
+        <span className="uppercase">Ewm</span> Bespoke Interiors is a leading
         provider of joinery, carpentry, upholstery / re-upholstery and office
         furniture solutions for commercial and residential spaces.
       </p>
@@ -39,10 +39,11 @@ const Section2 = () => {
       </p>
 
       <div className="py-4">
-        <Link className="no-underline" href="/about">
-          <button className=" cursor-pointer rounded-[20rem] bg-[#191919] px-4 py-2 capitalize text-[#e4e8ed] md:px-8 md:py-4 md:text-2xl">
-            our story
-          </button>
+        <Link
+          className="cursor-pointer rounded-[20rem] bg-[#191919] px-4 py-2 capitalize text-[#e4e8ed] no-underline md:px-8 md:py-4 md:text-2xl"
+          href="/about"
+        >
+          our story
         </Link>
       </div>
     </section>
