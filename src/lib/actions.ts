@@ -2,21 +2,20 @@ import emailjs from "@emailjs/browser";
 import { validateEmail } from "@/utils/validation";
 
 export const handleContactForm = async (
-  formState: { message: string },
-  formElement: HTMLFormElement,
+  state: { message: string } | null,
+  payload: FormData,
 ) => {
   try {
-    const formData = new FormData(formElement);
-
-    const name = formData.get("name");
-    const email = formData.get("email");
+    const name = payload.get("name");
+    const email = payload.get("email");
 
     if (!name || !email) {
       return { message: "Please enter a name and a valid email." };
     }
-    if (!validateEmail(email)) {
+    if (!validateEmail(email as string)) {
       return { message: "Must be a valid email." };
     }
+
     const emailServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const emailTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const emailPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
@@ -25,13 +24,12 @@ export const handleContactForm = async (
       return { message: "EmailJS environment variables are not set." };
     }
 
-    await emailjs.sendForm(
+    await emailjs.send(
       emailServiceId,
       emailTemplateId,
-      formElement,
+      payload,
       emailPublicKey,
     );
-
     return { message: "Success" };
   } catch (error) {
     console.error(error);

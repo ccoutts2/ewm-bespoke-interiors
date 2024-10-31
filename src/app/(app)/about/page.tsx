@@ -14,17 +14,17 @@ const Page = () => {
         description={assetsConfig.workshopPicture[5].description}
         header={"Our Story"}
       />
-      <section className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
-        <Quotes
-          text={`"No part-timers, no passengers. We're in it for the love of the game"`}
-        />
+      <div className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
         <div className="flex flex-col md:flex-[2]">
           <Paragraphs text="As a family-owned business, we take pride in the personal and professional service given to all our clients. We have developed a strong reputation over the years by combining these family values with a commitment to craftsmanship. In our approach, we remain deeply involved in all projects, ensuring attention to every detail, trust, and long-term involvement with our clients." />
           <Paragraphs text="Our fully equipped workshop is the heart of our business, a place where ingenuity and attention to detail are nurtured. This facility forms the lifeblood of our operations, housing all the machinery required for precision joinery, custom spraying, and bespoke upholstery. It's here that we turn ideas into reality, making sure each piece meets the highest standards." />
           <Paragraphs text="Our services range from carpentry and fitting of furniture to upholstery. We are fully prepared to handle both standard and highly customised projects, providing tailored solutions that meet your specifications precisely." />
         </div>
-      </section>
-      <section className="h-auto px-4 md:px-12 lg:px-32">
+        <Quotes
+          text={`"No part-timers, no passengers. We're in it for the love of the game"`}
+        />
+      </div>
+      <div className="h-auto px-4 md:px-12 lg:px-32">
         <div className="flex gap-4">
           <div className="flex-[2.2]">
             <WorkShopImages
@@ -59,11 +59,8 @@ const Page = () => {
             description={assetsConfig.workshopPicture[2].description}
           />
         </div>
-      </section>
-      <section className="flex flex-col justify-between p-4 md:flex-row md:items-center md:px-12 lg:px-32 lg:py-12">
-        <Quotes
-          text={`"Enthusiasm and expertise drives us to create better every day"`}
-        />
+      </div>
+      <div className="flex flex-col-reverse justify-between p-4 md:flex-row-reverse md:items-center md:px-12 lg:px-32 lg:py-12">
         <div className="flex flex-col md:flex-[3]">
           <Paragraphs text="Our design team can provide a full design service from concept to install" />
           <Paragraphs
@@ -94,7 +91,10 @@ const Page = () => {
           to manufacture"
           />
         </div>
-      </section>
+        <Quotes
+          text={`"Enthusiasm and expertise drives us to create better every day"`}
+        />
+      </div>
       <GetInTouch />
       <MeetTheTeam />
     </>

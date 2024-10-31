@@ -13,7 +13,10 @@ const ProjectPageProjects = () => {
     <div ref={container} className="mt-[10vh]">
       <ol className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {projects.map((project, index) => (
-          <li key={index} className="flex">
+          <li
+            key={index}
+            className="flex overflow-hidden transition-all duration-300 ease-in-out hover:scale-105"
+          >
             <div
               ref={(el) => {
                 imageContainer.current[index] = el;

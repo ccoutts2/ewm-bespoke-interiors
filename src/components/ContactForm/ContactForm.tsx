@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, FormEvent } from "react";
+import { useState, useRef, FormEvent, useActionState } from "react";
 import Button from "@/components/buttons/Button/Button";
 import Input from "../inputs/Input/Input";
 import TextArea from "../inputs/TextArea/TextArea";
@@ -19,8 +19,7 @@ export const ContactForm = ({ ...defaultProps }) => {
   const [services, setServices] = useState("");
   const [dimensions, setDimensions] = useState("");
 
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+  const [error, action, isPending] = useActionState(handleContactForm, null);
 
   const form = useRef<HTMLFormElement | null>(null);
 
@@ -44,34 +43,9 @@ export const ContactForm = ({ ...defaultProps }) => {
     if (name === "dropdown") setDropdown([value]);
   };
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (form.current) {
-      setLoading(true);
-      setMessage(null);
-
-      const formState = { message: "" };
-      const response = await handleContactForm(formState, form.current);
-
-      console.log(response);
-      if (response && response.message) {
-        setMessage(response.message);
-
-        if (response.message === "Success") {
-          setName("");
-          setEmail("");
-          setDropdown([]);
-          setServices("");
-          setDimensions("");
-        }
-      }
-      setLoading(false);
-    }
-  };
-
   return (
     <form
-      onSubmit={onSubmit}
+      action={action}
       ref={form}
       {...defaultProps}
       className="flex w-full flex-[2.5] flex-col items-start justify-between pt-4 md:pl-12"
@@ -149,9 +123,10 @@ export const ContactForm = ({ ...defaultProps }) => {
         <Button
           ariaLabel="Button which allows users to submit the form"
           label="submit"
+          type="submit"
         />
-        {message && <p>{message}</p>}
-        {loading && <Toast>Sending message...</Toast>}
+        {error && <p>{error}</p>}
+        {isPending && <Toast>Sending message...</Toast>}
       </div>
     </form>
   );
@@ -192,9 +167,5 @@ const Toast = ({ children }: ToastProps) => {
     },
     { scope: container },
   );
-  return (
-    <div className="">
-      <p>{children}</p>
-    </div>
-  );
+  return <div className="">{children}</div>;
 };
