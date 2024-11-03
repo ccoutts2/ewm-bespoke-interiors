@@ -96,7 +96,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
           </div>
 
           <section className="fixed right-0 top-0 flex h-screen w-full flex-row justify-between px-4 pt-8 text-right md:w-[50%] md:flex-col md:text-left lg:pl-[6rem]">
-            <h1 className="hidden w-full text-lg uppercase md:flex md:text-4xl">
+            <h1 className="hidden w-full text-lg uppercase text-[#F17A14] md:flex md:text-4xl">
               {project.title}
             </h1>
             <div className="flex w-full flex-row-reverse justify-between pb-12 md:flex-col md:py-2 lg:w-[48rem] lg:gap-[2rem]">
@@ -118,7 +118,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                 />
               </div>
               <div className="hidden before:block before:text-base before:content-[`Info`] md:flex lg:w-[24rem] lg:before:mb-[3.2rem]">
-                <p className="list-none text-sm capitalize no-underline lg:text-base">
+                <p className="list-none text-sm no-underline lg:text-base">
                   {project.information}
                 </p>
               </div>
@@ -127,14 +127,13 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                   {project.location}
                 </li>
               </ul>
-              <div>
-                <Link
-                  className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#f6f6f6]"
-                  href="/projects"
-                >
-                  Back
-                </Link>
-              </div>
+
+              <Link
+                className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#f6f6f6]"
+                href="/projects"
+              >
+                Back
+              </Link>
             </div>
             <div className="absolute bottom-1 right-2">
               <span

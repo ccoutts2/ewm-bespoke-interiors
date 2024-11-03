@@ -90,20 +90,18 @@ const EmployeeInfoOverlay = ({
     >
       <div className="fixed left-0 top-0 h-full w-full">
         <div className="flex w-full items-center justify-between border-b border-b-black px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
-          <div ref={heading}>
+          <section ref={heading}>
             <h2 className="text-4xl">{name}</h2>
             <h3 className="text-2xl">{title}</h3>
-          </div>
-          <div
+          </section>
+          <button
+            className="rounded-[20rem] bg-[#191919] px-4 py-2 text-[#e4e8ed] "
             onClick={toggleInfo}
-            className="flex cursor-pointer items-center gap-4 rounded-[20rem]  bg-[#191919] px-4 py-2 text-[#e4e8ed]"
           >
-            <button>
-              <span>close</span>
-            </button>
-          </div>
+            Close
+          </button>
         </div>
-        <section className="flex h-full w-full flex-col items-stretch justify-between gap-10 p-4 md:flex-row md:px-12 md:py-8 lg:px-32  lg:py-16">
+        <div className="flex h-full w-full flex-col items-stretch justify-between gap-10 p-4 md:flex-row md:px-12 md:py-8 lg:px-32  lg:py-16">
           <div
             ref={imageContainer}
             className="flex-1 [clip-path:polygon(0_0,100%_0,100%_0,0_0)]"
@@ -113,7 +111,7 @@ const EmployeeInfoOverlay = ({
           <div ref={text} className="flex-1">
             <p>{information}</p>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );
