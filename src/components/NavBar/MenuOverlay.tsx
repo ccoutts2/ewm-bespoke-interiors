@@ -86,13 +86,14 @@ const MenuOverlay = ({
       ref={overlay}
       className="fixed right-0 top-0 flex h-screen w-full bg-[#000] p-4 [clip-path:polygon(0%_100%,100%_100%,100%_100%,0%_100%)]"
     >
-      <div className="fixed left-0 top-0 h-full w-full">
+      <nav className="fixed left-0 top-0 h-full w-full">
         <div className="flex w-full items-center justify-between px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
           <Link href="/">
             <div className="h-[5rem] w-[10rem]">
               <img
                 className="h-full w-full rounded-md object-cover"
                 src="/assets/logos/ewm.jpg"
+                alt="EWM company logo"
               />
             </div>
           </Link>
@@ -176,7 +177,7 @@ const MenuOverlay = ({
             </ul>
           </div>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };

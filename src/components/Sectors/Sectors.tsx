@@ -33,10 +33,12 @@ const Sectors = () => {
   const container = useRef<HTMLElement | null>(null);
   const imageContainer = useRef<(HTMLDivElement | null)[]>([]);
 
+  gsap.registerPlugin(ScrollTrigger);
+
   useGSAP(
     () => {
       gsap.set(imageContainer.current, { autoAlpha: 0 });
-      gsap.registerPlugin(ScrollTrigger);
+
       gsap.to(imageContainer.current, {
         scrollTrigger: {
           trigger: imageContainer.current,
@@ -54,7 +56,7 @@ const Sectors = () => {
   );
   return (
     <section ref={container} className="px-4 pt-8 md:px-12 lg:px-32">
-      <h2 className=" uppercase md:text-xl lg:text-2xl ">sectors</h2>
+      <h2 className=" uppercase md:text-xl lg:text-2xl ">Sectors</h2>
       <div className="flex flex-col items-stretch justify-between py-4 md:flex-row md:flex-wrap md:gap-4">
         {sectors.map((sector, index) => (
           <div
@@ -73,6 +75,7 @@ const Sectors = () => {
                 className="h-[18rem] w-full object-cover md:h-[20rem] lg:h-[25rem]"
                 src={sector.src}
                 alt={sector.info}
+                loading="lazy"
               />
             </div>
             <h3 className="py-2 text-lg capitalize">{sector.header}</h3>

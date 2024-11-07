@@ -12,8 +12,8 @@ export const projectDetails: { [key: string]: ProjectDetails } = {
     information:
       "For this stylish Borough Market office, we designed and installed a custom-sprayed finish kitchenette and print station, featuring a sleek finger-pull detail. Both pieces were complemented by microcement countertops and sides, creating a seamless, modern aesthetic. Our bespoke design struck the perfect balance between form and function, enhancing the industrial charm of the office interior while providing practical and durable workspace solutions",
     location: "London",
-    width: 600,
-    height: 400,
+    width: 400,
+    height: 200,
   },
   "finsbury-square": {
     title: "Finsbury Square",

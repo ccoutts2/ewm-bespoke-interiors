@@ -1,8 +1,10 @@
+import { DropDownOptions } from "@/lib/getDropdownOptions";
+
 interface DropDownListProps {
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   id: string;
   name: string;
-  options: { value: string; label: string }[];
+  options: DropDownOptions[];
   value: string;
 }
 

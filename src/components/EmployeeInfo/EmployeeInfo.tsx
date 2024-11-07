@@ -5,12 +5,19 @@ import EmployeeInfoOverlay from "./EmployeeInfoOverlay";
 
 interface EmployeeInfoProps {
   src: string;
+  alt: string;
   name: string;
   title: string;
   information: string;
 }
 
-const EmployeeInfo = ({ src, name, title, information }: EmployeeInfoProps) => {
+const EmployeeInfo = ({
+  src,
+  alt,
+  name,
+  title,
+  information,
+}: EmployeeInfoProps) => {
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const container = useRef<HTMLDivElement>(null);
 
@@ -25,6 +32,7 @@ const EmployeeInfo = ({ src, name, title, information }: EmployeeInfoProps) => {
           className="h-full w-full cursor-pointer object-cover"
           onClick={toggleInfo}
           src={src}
+          alt={alt}
         />
         <h2 className="pt-4 text-center capitalize">{name}</h2>
         <h2 className="pt-1 text-center capitalize">{title}</h2>
@@ -37,6 +45,7 @@ const EmployeeInfo = ({ src, name, title, information }: EmployeeInfoProps) => {
         title={title}
         information={information}
         src={src}
+        alt={alt}
       />
     </>
   );

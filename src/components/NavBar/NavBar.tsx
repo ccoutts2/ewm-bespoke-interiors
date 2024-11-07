@@ -24,13 +24,14 @@ const NavBar: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="fixed left-0 top-0 z-[100] w-full bg-[#f6f6f6] lg:relative">
-      <section className="flex w-full items-center justify-between p-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
+    <header className="fixed left-0 top-0 z-[100] w-full bg-[#f6f6f6] lg:relative">
+      <nav className="flex w-full items-center justify-between p-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
         <Link href="/">
           <div className="h-[5rem] w-[10rem]">
             <img
               className="h-full w-full rounded-md object-cover"
               src="/assets/logos/ewm.jpg"
+              alt="EWM company logo"
             />
           </div>
         </Link>
@@ -47,13 +48,13 @@ const NavBar: React.FC = () => {
             <div className="flex h-[0.5rem] w-[0.5rem] items-center justify-center rounded-[20rem] bg-[#2ed84a]"></div>
           </div>
         </div>
-      </section>
+      </nav>
       <MenuOverlay
         container={container}
         toggleMenu={toggleMenu}
         isMenuOpen={isMenuOpen}
       />
-    </nav>
+    </header>
   );
 };
 

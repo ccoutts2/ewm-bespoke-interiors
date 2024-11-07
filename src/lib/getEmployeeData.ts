@@ -2,6 +2,7 @@ import { assetsConfig } from "@/config/assets";
 
 interface EmployeeData {
   src: string;
+  alt: string;
   name: string;
   title: string;
   information: string;
@@ -10,16 +11,18 @@ interface EmployeeData {
 export const employeeData: EmployeeData[] = [
   {
     src: assetsConfig["headshots"][0].src,
+    alt: assetsConfig["headshots"][0].description,
     name: "Johnnie Wynne",
     title: "Managing Director",
     information:
-      "Johnnie is really good at his job. He has been leading the company for over 10 years with a focus on innovative design and customer satisfaction. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      "With a solid foundation in operations from my time with a leading main contractor in the construction industry, I bring a comprehensive understanding of project execution and team dynamics to my current role as Managing Director of our family-owned bespoke joinery company. Leveraging my expertise in programming and my broad construction knowledge, I excel at streamlining processes and implementing innovative solutions to deliver exceptional results for our clients.",
   },
   {
     src: assetsConfig["headshots"][1].src,
+    alt: assetsConfig["headshots"][1].description,
     name: "Georgie Wynne",
     title: "Operations Director",
     information:
-      "Whynne oversees project management and ensures everything runs smoothly from start to finish. His attention to detail is second to none. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      "Georgie Wynne brings a hands-on approach and a keen eye for quality to his role, rooted in his background as a qualified upholsterer. Having spent years perfecting his craft and gaining invaluable experience in installation, he has developed a deep understanding of the intricacies involved in delivering exceptional bespoke projects.",
   },
 ];

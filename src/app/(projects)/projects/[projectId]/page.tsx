@@ -67,7 +67,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
   }, []);
 
   if (!project) {
-    return <p className="mt-[10rem]">Project not found</p>;
+    return <p className="mt-[10rem]">Loading project..</p>;
   }
 
   return (

@@ -27,7 +27,7 @@ export default Hero;
 
 const HeroText = () => {
   return (
-    <section className="px-4 py-4 text-[#191919] md:w-[80%] md:px-12 md:py-8 md:pt-12 lg:p-32">
+    <div className="px-4 py-4 text-[#191919] md:w-[80%] md:px-12 md:py-8 md:pt-12 lg:p-32">
       <p className="py-4 text-lg md:text-3xl">
         <span className="uppercase">Ewm</span> Bespoke Interiors is a leading
         provider of joinery, carpentry, upholstery / re-upholstery and office
@@ -46,6 +46,6 @@ const HeroText = () => {
           our story
         </Link>
       </div>
-    </section>
+    </div>
   );
 };

@@ -1,5 +1,3 @@
-import { assetsConfig } from "@/config/assets";
-
 const clients = [
   {
     src: "/assets/logos/assa-abloy.jpg",
@@ -41,24 +39,22 @@ const clients = [
 
 const Clients = () => {
   return (
-    <section className="px-4 pt-4 md:px-12 md:pt-8 lg:px-32 lg:pt-12">
-      <div className="flex flex-wrap items-stretch justify-center gap-8 py-8 md:justify-between md:gap-4">
-        {clients.map((client, index) => (
-          <div
-            key={index}
-            className="flex w-[40%] flex-col items-center justify-center py-4 capitalize md:w-[25%]"
-          >
-            <div className="w-[50%]">
-              <img
-                className="h-full w-full object-cover mix-blend-multiply"
-                src={client.src}
-                alt={client.description}
-              ></img>
-            </div>
+    <div className="flex flex-wrap items-stretch justify-center gap-8 px-4 pt-4 md:justify-between md:gap-4 md:px-12 md:pt-8 lg:px-32 lg:pt-12">
+      {clients.map((client, index) => (
+        <div
+          key={index}
+          className="flex w-[40%] flex-col items-center justify-center py-4 capitalize md:w-[25%]"
+        >
+          <div className="w-[50%]">
+            <img
+              className="h-full w-full object-cover mix-blend-multiply"
+              src={client.src}
+              alt={client.description}
+            />
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </div>
   );
 };
 

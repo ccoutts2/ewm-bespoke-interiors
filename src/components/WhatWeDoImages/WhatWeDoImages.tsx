@@ -1,6 +1,7 @@
 "use client";
 import { useLoadPicturesAnimation } from "@/hooks/useLoadPicturesAnimation";
 import { works } from "@/app/(app)/what-we-do";
+import Image from "next/image";
 
 const WhatWeDoImages = () => {
   const { container, imageContainer } = useLoadPicturesAnimation();
@@ -19,11 +20,14 @@ const WhatWeDoImages = () => {
           className="flex w-full flex-col items-center justify-center gap-4 py-4 capitalize md:w-[45%] lg:w-[30%]"
         >
           <div className="h-[18rem] w-full">
-            <img
+            <Image
               className="h-full w-full object-cover"
               src={work.src}
               alt={work.alt}
-            ></img>
+              width={400}
+              height={200}
+              loading="lazy"
+            />
           </div>
           <h3 className="py-2 text-base">{work.header}</h3>
         </div>

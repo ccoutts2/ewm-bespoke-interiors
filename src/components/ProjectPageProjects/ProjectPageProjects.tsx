@@ -40,7 +40,7 @@ const ProjectPageProjects = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       style={{ width: "20px", height: "20px" }}
                     >
-                      <g clipPath="url(#clip0)">
+                      <g>
                         <rect
                           width="28"
                           height="28"
@@ -62,15 +62,13 @@ const ProjectPageProjects = () => {
                         </g>
                       </g>
                       <defs>
-                        <clipPath id="clip0">
-                          <rect
-                            width="28"
-                            height="28"
-                            rx="8"
-                            transform="matrix(-1 0 0 1 28 0)"
-                            fill="#fff"
-                          />
-                        </clipPath>
+                        <rect
+                          width="28"
+                          height="28"
+                          rx="8"
+                          transform="matrix(-1 0 0 1 28 0)"
+                          fill="#fff"
+                        />
                       </defs>
                     </svg>
                   </span>
@@ -82,8 +80,8 @@ const ProjectPageProjects = () => {
 
               <div className="max-h-[15rem] w-full max-w-[20rem] overflow-hidden md:max-h-[8rem] md:flex-[1]">
                 <Image
-                  width={400}
-                  height={400}
+                  width={project.width}
+                  height={project.height}
                   src={project.src}
                   alt={project.alt}
                   className="h-full w-full object-cover"

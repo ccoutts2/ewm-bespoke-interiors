@@ -6,10 +6,12 @@ import Input from "../inputs/Input/Input";
 import TextArea from "../inputs/TextArea/TextArea";
 import FormLabel from "../FormLabel/FormLabel";
 import DropDownList from "../inputs/DropDownList/DropDownList";
+import Toast from "../Toast/Toast";
+
+import { getDropdown } from "@/lib/getDropdownOptions";
 
 import emailjs from "@emailjs/browser";
 import { z } from "zod";
-import Toast from "../Toast/Toast";
 
 const Schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -170,10 +172,7 @@ export const ContactForm = () => {
           <DropDownList
             id="dropdown"
             name="dropdown"
-            options={[
-              { value: "option1", label: "Option 1" },
-              { value: "option2", label: "Option 2" },
-            ]}
+            options={getDropdown}
             value={dropdown}
             onChange={handleDropdownChange}
           />
@@ -207,7 +206,7 @@ export const ContactForm = () => {
           />
         </FormFieldContainer>
 
-        <div className="relative w-full pb-1">
+        <div className="relative w-full pb-1 pt-4">
           <Button
             ariaLabel="Button which allows users to submit the form"
             label="submit"
