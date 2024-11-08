@@ -1,7 +1,7 @@
 import PagesHero from "@/components/PagesHero/PagesHero";
 import ContactForm from "@/components/ContactForm/ContactForm";
 
-import { socials } from "@/components/navbar/data";
+import { socials } from "@/components/NavBar/data";
 import { assetsConfig } from "@/config/assets";
 
 import Link from "next/link";

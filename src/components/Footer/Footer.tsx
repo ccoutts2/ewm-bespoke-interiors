@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navItems, socials } from "../navbar/data";
+import { navItems, socials } from "../NavBar/data";
 import NavLink from "../NavLink/NavLink";
 
 const Footer = () => {
