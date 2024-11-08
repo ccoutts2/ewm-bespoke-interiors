@@ -10,8 +10,8 @@ const Page = () => {
   return (
     <>
       <PagesHero
-        img={assetsConfig.workshopPicture[5].src}
-        description={assetsConfig.workshopPicture[5].description}
+        img={assetsConfig.whatWeDo[0].src}
+        description={assetsConfig.whatWeDo[0].description}
         header={"Our Story"}
       />
       <div className="flex flex-col p-4 md:px-12 lg:px-32 lg:py-12">
@@ -50,8 +50,8 @@ const Page = () => {
         </div>
         <div className="h-auto">
           <WorkShopImages
-            src={assetsConfig.workshopPicture[2].src}
-            description={assetsConfig.workshopPicture[2].description}
+            src={assetsConfig.workshopPicture[5].src}
+            description={assetsConfig.workshopPicture[5].description}
           />
         </div>
       </div>

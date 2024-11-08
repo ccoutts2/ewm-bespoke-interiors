@@ -4,11 +4,11 @@ const imageCarousel: "imageCarousel" = "imageCarousel";
 const hero1 = assetsConfig[imageCarousel][0].src;
 const hero2 = assetsConfig[imageCarousel][1].src;
 const hero3 = assetsConfig[imageCarousel][2].src;
-const hero4 = assetsConfig[imageCarousel][6].src;
-const hero5 = assetsConfig[imageCarousel][8].src;
-const hero6 = assetsConfig[imageCarousel][9].src;
-const hero7 = assetsConfig[imageCarousel][10].src;
-const hero8 = assetsConfig[imageCarousel][11].src;
+const hero4 = assetsConfig[imageCarousel][3].src;
+const hero5 = assetsConfig[imageCarousel][5].src;
+const hero6 = assetsConfig[imageCarousel][6].src;
+const hero7 = assetsConfig[imageCarousel][7].src;
+const hero8 = assetsConfig[imageCarousel][8].src;
 
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
 
@@ -27,7 +27,7 @@ export default Hero;
 
 const HeroText = () => {
   return (
-    <div className="px-4 py-4 text-[#191919] md:w-[80%] md:px-12 md:py-8 md:pt-12 lg:p-32">
+    <div className="px-4 py-4 font-semibold text-[#F17A14] md:w-[80%] md:px-12 md:py-8 md:pt-12 lg:p-32">
       <p className="py-4 text-lg md:text-3xl">
         <span className="uppercase">Ewm</span> Bespoke Interiors is a leading
         provider of joinery, carpentry, upholstery / re-upholstery and office
@@ -38,9 +38,9 @@ const HeroText = () => {
         industry, based in South East London.
       </p>
 
-      <div className="py-4">
+      <div className="my-8">
         <Link
-          className="cursor-pointer rounded-[20rem] bg-[#191919] px-4 py-2 capitalize text-[#e4e8ed] no-underline md:px-8 md:py-4 md:text-2xl"
+          className="cursor-pointer rounded-[20rem] bg-[#F17A14] px-4 py-2 capitalize text-[#f6f6f6] no-underline md:px-8 md:py-4 md:text-2xl"
           href="/about"
         >
           our story

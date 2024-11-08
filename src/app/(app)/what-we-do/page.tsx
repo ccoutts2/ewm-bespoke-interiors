@@ -8,11 +8,11 @@ const Page = () => {
   return (
     <>
       <PagesHero
-        img={assetsConfig.whatWeDo[6].src}
-        description={assetsConfig.whatWeDo[6].description}
+        img={assetsConfig.workshopPicture[0].src}
+        description={assetsConfig.workshopPicture[0].description}
         header={"What We Do"}
       />
-      <div className="p-4 md:px-12 md:text-lg lg:px-32">
+      <div className="p-4 md:px-12 md:py-12 md:text-lg lg:px-48">
         <Paragraphs text="EWM Bespoke Interiors is a trusted provider of custom joinery, carpentry, upholstery, re-upholstery, and office furniture solutions, tailored for both commercial and residential spaces. We specialise in transforming ideas into beautifully crafted, functional environments that reflect the unique needs and styles of our clients. From initial concept to final handover, our mission is to ensure every detail exceeds expectations, delivering high-quality workmanship with a personal touch." />
 
         <Paragraphs text="What truly makes us unique is the diverse experience of our team, who come from a variety of backgrounds, including main contracting, carpentry production, upholstery, and furniture installation. This collective expertise enables us to tackle projects with ease, ensuring every product is not only of exceptional quality but also perfectly aligned with the client’s expectations." />

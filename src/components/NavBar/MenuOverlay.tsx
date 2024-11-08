@@ -35,14 +35,14 @@ const MenuOverlay = ({
       tl.current = gsap
         .timeline({ paused: true })
         .to(overlay.current, {
-          duration: 1,
+          duration: 0.85,
           clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
           ease: "power3.inOut",
         })
         .to(
           listItems.current,
           {
-            duration: 1.5,
+            duration: 1,
             ease: "power4.inOut",
             autoAlpha: 1,
             delay: 0.4,
@@ -52,7 +52,7 @@ const MenuOverlay = ({
         .to(
           addressItems.current,
           {
-            duration: 1.5,
+            duration: 1,
             ease: "power4.inOut",
             autoAlpha: 1,
             delay: 0.6,
@@ -62,7 +62,7 @@ const MenuOverlay = ({
         .to(
           socialItems.current,
           {
-            duration: 1.5,
+            duration: 1,
             ease: "power4.inOut",
             autoAlpha: 1,
             delay: 0.75,

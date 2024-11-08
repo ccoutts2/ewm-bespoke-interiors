@@ -5,30 +5,36 @@ export const assetsConfig = {
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/EWM%20Bespoke%20Interiors%20026.jpg?alt=media&token=28f4ec63-92dd-442c-a1be-3cf4a357bf6b",
     },
   ],
+  projectsHero: [
+    {
+      description: "A photo showing work at EWM does",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FEWM%20Bespoke%20Interiors%20049.webp?alt=media&token=3c571de7-4ec8-4f80-925f-cad53cb641e7",
+    },
+  ],
   workshopPicture: [
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20001.jpg?alt=media&token=3fbc7230-48d1-4e6f-b0c5-b8a27c5cb38b",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20084.webp?alt=media&token=63baa757-ca53-47b1-bc34-d8b9daf36731",
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20070.jpg?alt=media&token=447952e4-5850-4537-bff9-0886fe02fe88",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20074.webp?alt=media&token=6b2aa237-d36d-4a59-bdb4-0deda38bc228",
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20001.jpg?alt=media&token=9775de03-9aa7-408e-bbba-90c41edc69b0",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20080.jpg?alt=media&token=8a904410-e1b6-4f61-8e3a-ea18e7f9f078",
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20087.jpg?alt=media&token=8c04fdfe-8482-4375-9dec-da15cd5525ac",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20004.webp?alt=media&token=99dc4c74-c87e-4d8b-b100-10bcbd0acf4f",
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20004.jpg?alt=media&token=09d3756b-464a-4b3f-a7ab-74ed8fa876fa",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20087.webp?alt=media&token=babddcac-d0e6-4449-ad6a-c08e06098489",
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Workshop%2FEWM%20Bespoke%20Interiors%20084.jpg?alt=media&token=4efc0d59-bfd2-4006-99a3-d322ed883352",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20001.webp?alt=media&token=4153d63b-2305-4123-95a0-91b69e95c511",
     },
     {
       description: "A photo showing the work done in the workshop",
@@ -305,19 +311,19 @@ export const assetsConfig = {
   "hyde-park-corner": [
     {
       description: "A photo showing the work done at Hyde Park Corner",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Hyde%20Park%20Corner%2Fa447e9f5-56a8-4863-8e53-8bd00ad28fee.JPG?alt=media&token=09f20e53-d9e7-4413-a43f-88a67fc94a18",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Hyde%20Park%20Corner%2Fa447e9f5-56a8-4863-8e53-8bd00ad28fee.webp?alt=media&token=de982605-668f-4687-8422-e7bce17bff77",
       width: 400,
       height: 600,
     },
     {
       description: "A photo showing the work done at Hyde Park Corner",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Hyde%20Park%20Corner%2Fb027c34b-9763-4191-8f29-5daf6136d084.JPG?alt=media&token=4ed8d608-8276-455e-9629-51f34908ef20",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Hyde%20Park%20Corner%2Fb027c34b-9763-4191-8f29-5daf6136d084.webp?alt=media&token=bf255b88-a8ee-4eb0-b8dc-ecd334cf62f4",
       width: 400,
       height: 600,
     },
     {
       description: "A photo showing the work done at Hyde Park Corner",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Hyde%20Park%20Corner%2Fe70ac32d-e195-43f3-99d3-58685393fecf.JPG?alt=media&token=0c7e818d-bfd5-4576-ac9e-0adbb33fec1a",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Hyde%20Park%20Corner%2Fe70ac32d-e195-43f3-99d3-58685393fecf.webp?alt=media&token=97fcf3ef-f555-444a-9262-f1c4368657af",
       width: 400,
       height: 600,
     },
@@ -325,37 +331,37 @@ export const assetsConfig = {
   "yester-park": [
     {
       description: "A photo showing the work done at Yester Park",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2FIMG_4654.jpeg?alt=media&token=009a5023-3d50-42b7-a8d4-5698ce574e81",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2FIMG_4654.webp?alt=media&token=5be1b09f-2610-4d10-ab83-296bbb0d0279",
       width: 400,
       height: 600,
     },
     {
       description: "A photo showing the work done at Yester Park",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2F9d06ec35-4324-48d0-8403-93a7e29f15e1.jpeg?alt=media&token=88f37f53-a485-4c60-a359-a030f4ea3407",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2Fbc350ec0-13cd-42d5-b359-1ad2023e742f.webp?alt=media&token=b9861f9f-e24f-4f44-8e7d-c4e2ad3f10b0",
       width: 400,
       height: 600,
     },
     {
       description: "A photo showing the work done at Yester Park",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2FIMG_4641.jpeg?alt=media&token=c91e0fa2-3afc-49ed-bed6-5841f36e03d7",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2Ff5e65f00-ea28-46a0-bae9-a909b2a4cbaa.webp?alt=media&token=c237da2b-8a5a-432f-86ce-1328a9d1091e",
       width: 400,
       height: 600,
     },
     {
       description: "A photo showing the work done at Yester Park",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2FIMG_4648.jpeg?alt=media&token=1b0e1308-f11d-47b7-be37-51046f4ea301",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2F9d06ec35-4324-48d0-8403-93a7e29f15e1.webp?alt=media&token=e8d65f33-0f91-4e31-b415-2a1ae85aa932",
       width: 400,
       height: 600,
     },
     {
       description: "A photo showing the work done at Yester Park",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2Fbc350ec0-13cd-42d5-b359-1ad2023e742f.jpeg?alt=media&token=082b49aa-219f-4597-b202-afb45451b202",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2FIMG_4641.webp?alt=media&token=11d54d36-accd-4c58-9a26-c946d22bab78",
       width: 400,
       height: 600,
     },
     {
       description: "A photo showing the work done at Yester Park",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2Ff5e65f00-ea28-46a0-bae9-a909b2a4cbaa.jpeg?alt=media&token=913a725c-9da0-4596-aff1-d055a063f183",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2FIMG_4648.webp?alt=media&token=db335359-ae44-4eda-adff-6d4b46506cc3",
       width: 400,
       height: 600,
     },
@@ -451,39 +457,27 @@ export const assetsConfig = {
   imageCarousel: [
     {
       description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2F210%20Pentonville%20Road%2014%20December%202023%20013.jpg?alt=media&token=32dbfc12-4377-4d9e-89e9-c18128de2f58",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20-%20Compresses%2F210%20Pentonville%20Road%2014%20December%202023%20013.webp?alt=media&token=c1d15cb2-030f-480f-953a-d6841996ff58",
     },
     {
       description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FEWM%20Bespoke%20Interiors%20016.jpg?alt=media&token=05ceadc5-a483-4059-b170-b4b67ac72446",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/New%20Street%2FEWM%20Bespoke%20Interiors%20027.webp?alt=media&token=da24bbbd-7d91-4405-b11c-74f63e60508a",
     },
     {
       description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FEWM%20Bespoke%20Interiors%20028.jpg?alt=media&token=7eae5447-7815-466f-a6fe-2acffb4d6f92",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Finsbury%20Square%20-%20Commercial%2FPicture%202.jpg?alt=media&token=cf72f2fb-c631-4270-8127-3806ce6dd660",
     },
     {
       description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FEntrance%20Storage%201.jpg?alt=media&token=cb250bb4-9a31-4fa5-99a4-6eacd5c8efdd",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Yester%20Park%2FIMG_4654.webp?alt=media&token=5be1b09f-2610-4d10-ab83-296bbb0d0279",
     },
     {
       description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FIMG_4648.jpeg?alt=media&token=533a23a9-6f49-49e0-9105-c72bf5a736a2",
-    },
-    {
-      description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FIMG_6087.JPG?alt=media&token=407b313e-b2f7-4349-a5bf-b2ea74ac8c2f",
-    },
-    {
-      description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FPicture%202.jpg?alt=media&token=c68d9278-c0cc-4cd4-8686-bc2a150ca346",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Dalling%20Road%2FIMG_6086.webp?alt=media&token=c4f14c3e-189c-4739-8a3f-bfdf6ad10339",
     },
     {
       description: "A photo for the image carousel",
       src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2FPicture%203.jpg?alt=media&token=ab0d002e-aaec-4c00-988a-1a6dce4733a5",
-    },
-    {
-      description: "A photo for the image carousel",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Image%20Carousel%2Fleonari-office_vr_04-a.jpg?alt=media&token=8658f7e0-64c1-48f9-8639-0bc192e2e8c6",
     },
     {
       description: "A photo for the image carousel",
@@ -502,7 +496,7 @@ export const assetsConfig = {
   sectorImages: [
     {
       description: "A photo showing residential works",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FResidential.JPG?alt=media&token=c0291c2b-97c6-4205-9798-7767a98bff47",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Hyde%20Park%20Corner%2Fa447e9f5-56a8-4863-8e53-8bd00ad28fee.webp?alt=media&token=de982605-668f-4687-8422-e7bce17bff77",
     },
     {
       description: "A photo showing retail works",
@@ -510,48 +504,44 @@ export const assetsConfig = {
     },
     {
       description: "A photo showing heritage & culture works",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FHeritage%20and%20Culture.jpg?alt=media&token=7ce56751-f73e-432a-bee1-2337b1443e91",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Woodbury%20House%2FWoodbury%20House%202.jpg?alt=media&token=315a5989-d27c-490f-83a2-86e816bb1ccf",
     },
     {
       description: "A photo showing cat a/b fit out works",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Sectors%20Images%2FCat%20a%20b%20fit%20out.jpg?alt=media&token=45aee9af-c0c9-4eea-bbe8-9da12473c072",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Leonari%20-%20Office%2Fleonari-office_vr_07-a.webp?alt=media&token=bf7c7cf9-f4b5-462b-9b67-44cea83bc468",
     },
   ],
 
   whatWeDo: [
     {
-      description: "A photo showing carpentry and joinery work",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FCarpentry%20and%20joinery.jpg?alt=media&token=3f95d525-9f90-46aa-8c05-57ed268296d9",
+      description: "A photo showing work at Pentonville",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20-%20Compresses%2F210%20Pentonville%20Road%2014%20December%202023%20028.webp?alt=media&token=ea09c69e-703f-46ee-ad5c-0c4a21689759",
     },
     {
       description: "A photo showing in office furniture work",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FOffice%20Furniture.jpg?alt=media&token=6f482df1-e947-4df0-84b0-29dc09b28da1",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FOffice%20Furniture.webp?alt=media&token=9d80889c-9820-46fa-a0f6-3106dd6ab669",
     },
     {
       description: "A photo showing in house manufacturing",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIn%20house%20manufacturing.jpg?alt=media&token=719b5c65-8323-416b-8585-2076fc3e6ece",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIn%20house%20manufacturing.webp?alt=media&token=34086530-cb33-4288-81f2-29e46356f379",
     },
     {
       description: "A photo showing in house spraying",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIn%20house%20spraying.jpg?alt=media&token=e014af92-ee0a-4028-b07c-70628184051e",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIn%20house%20spraying.webp?alt=media&token=6eafe9a3-09b5-4fce-aaec-2d8018c1dbc9",
     },
     {
       description: "A photo showing stone surfaces work",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FStone%20surfaces%20-%20remove%20CURO%20sign.jpg?alt=media&token=dcab7163-87d5-4537-9dc7-56a3c864d257",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FStone%20surfaces%20-%20remove%20CURO%20sign.webp?alt=media&token=95065623-fe66-40f1-ae69-2314deb6687d",
     },
     {
       description: "A photo showing upholstery work",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FUpholstery.jpg?alt=media&token=e32ad760-532e-4872-8624-5a768c157a72",
-    },
-    {
-      description: "A photo showing residential joinery work",
-      src: " https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FIMG_4648.jpeg?alt=media&token=8837ce7b-384c-4d8c-bb34-14e4e08ee1ca",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FUpholstery.webp?alt=media&token=e36cd8f7-5330-4f9f-992c-5344990b573b",
     },
   ],
   contact: [
     {
       description: "A photo showing commercial joinery work",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Contact%2FPicture%204.jpg?alt=media&token=69b4c053-5dca-4e35-b9f3-a96878f2315e",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Capability%20Green%2FPicture%204.webp?alt=media&token=3600b69d-b349-4e25-b125-ca6fec501a9f",
     },
   ],
   headshots: [

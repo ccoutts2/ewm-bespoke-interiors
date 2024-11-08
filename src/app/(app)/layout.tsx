@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "../../app/globals.css";
-import NavBar from "@/components/NavBar/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 

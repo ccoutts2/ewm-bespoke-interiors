@@ -6,26 +6,42 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import { assetsConfig } from "@/config/assets";
 
-const sectors = [
+interface Sectors {
+  src: string;
+  header: string;
+  info: string;
+  width: number;
+  height: number;
+}
+
+const sectors: Sectors[] = [
   {
     src: assetsConfig.sectorImages[0].src,
     header: "residential",
     info: "Custom design kitchens, wardrobes, media walls and storage to fit your home spaces perfectly",
+    width: 600,
+    height: 600,
   },
   {
     src: assetsConfig.sectorImages[1].src,
     header: "retail",
     info: "From reception desks to banquette seating, our experience in the retail sector is extensive and we manufacture a wide range of elements to complement your vision",
+    width: 600,
+    height: 600,
   },
   {
     src: assetsConfig.sectorImages[2].src,
     header: "heritage & culture",
     info: "We understand that buildings with historic and cultural importance desersve and demand a certain approach when it comes to detail and specification. Our team have extensive experience in delivering projects within this sector from Grade I listed museums to high-end art galleries. Our works in these properties predominantly consist of bespoke joinery & carpentry",
+    width: 600,
+    height: 600,
   },
   {
     src: assetsConfig.sectorImages[3].src,
     header: "cat a/b office fit out",
     info: "This is a sector we offer our widest range of services. It includes your traditional 1st & 2nd fix carpentry, bespoke joinery, vanity units and office furniture. We have a dedicated team for each element and would work closely with your team to provide the best solutions for your space",
+    width: 400,
+    height: 400,
   },
 ];
 
@@ -70,11 +86,11 @@ const Sectors = () => {
               className="h-auto w-full"
             >
               <Image
-                width={2000}
-                height={2000}
                 className="h-[18rem] w-full object-cover md:h-[20rem] lg:h-[25rem]"
                 src={sector.src}
                 alt={sector.info}
+                width={sector.width}
+                height={sector.height}
                 loading="lazy"
               />
             </div>

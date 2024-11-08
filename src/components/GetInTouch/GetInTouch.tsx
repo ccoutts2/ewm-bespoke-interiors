@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Button from "../buttons/Button/Button";
 
 const GetInTouch = () => {
   return (
