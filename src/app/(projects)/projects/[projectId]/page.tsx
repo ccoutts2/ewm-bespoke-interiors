@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import * as React from "react";
 import Lenis from "lenis";
 
 import ProjectInfoOverlay from "@/components/ProjectInfoOverlay/ProjectInfoOverlay";
@@ -13,9 +14,9 @@ import { projectDetails } from "@/lib/getProjectDetails";
 import Link from "next/link";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     projectId: string;
-  };
+  }>;
 }
 
 const ProjectPage = ({ params }: ProjectPageProps) => {
@@ -27,11 +28,12 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const unwrapParams = async () => {
-      const { projectId } = await params;
-      setProjectId(projectId);
+    const fetchParams = async () => {
+      const resolvedParams = await params;
+      setProjectId(resolvedParams.projectId);
     };
-    unwrapParams();
+
+    fetchParams();
   }, [params]);
 
   const handleButtonClick = () => {
