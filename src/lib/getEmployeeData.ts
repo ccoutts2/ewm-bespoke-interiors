@@ -15,7 +15,7 @@ export const employeeData: EmployeeData[] = [
     name: "Johnnie Wynne",
     title: "Managing Director",
     information:
-      "With a solid foundation in operations from my time with a leading main contractor in the construction industry, I bring a comprehensive understanding of project execution and team dynamics to my current role as Managing Director of our family-owned bespoke joinery company. Leveraging my expertise in programming and my broad construction knowledge, I excel at streamlining processes and implementing innovative solutions to deliver exceptional results for our clients.",
+      "With a solid foundation in operations from experience with a leading main contractor in the construction industry, Johnnie brings a comprehensive understanding of project execution and team dynamics to his role as Managing Director. Leveraging expertise in programming and a broad construction knowledge, he excels at streamlining processes and implementing innovative solutions to deliver exceptional results for clients.",
   },
   {
     src: assetsConfig["headshots"][1].src,

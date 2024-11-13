@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 import Link from "next/link";
 import MenuOverlay from "./MenuOverlay";
@@ -8,19 +8,17 @@ import { navItems } from "./data";
 import NavLink from "../NavLink/NavLink";
 
 const NavBar: React.FC = () => {
-  const container = useRef<HTMLDivElement | null>(null);
-
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      setIsMenuOpen(true);
+    } else {
+      setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 500);
+    }
   };
-
-  useEffect(() => {
-    isMenuOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "scroll");
-  }, [isMenuOpen]);
 
   return (
     <header className="fixed left-0 top-0 z-[100] w-full bg-[#f6f6f6] lg:relative">
@@ -41,18 +39,14 @@ const NavBar: React.FC = () => {
             </li>
           ))}
         </ul>
-        <div ref={container} onClick={toggleMenu} className="lg:hidden">
+        <div onClick={toggleMenu} className="lg:hidden">
           <div className="flex cursor-pointer items-center gap-4 rounded-[20rem] bg-[#191919] px-4 py-2 text-[#e4e8ed]">
-            <button>menu</button>
+            <button onClick={toggleMenu}>Menu</button>
             <div className="flex h-[0.5rem] w-[0.5rem] items-center justify-center rounded-[20rem] bg-[#2ed84a]"></div>
           </div>
         </div>
       </nav>
-      <MenuOverlay
-        container={container}
-        toggleMenu={toggleMenu}
-        isMenuOpen={isMenuOpen}
-      />
+      <MenuOverlay toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
     </header>
   );
 };

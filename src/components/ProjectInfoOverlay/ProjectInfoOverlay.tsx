@@ -55,9 +55,9 @@ const ProjectInfoOverlay = ({
           </div>
           <div
             onClick={handleButtonClick}
-            className="flex cursor-pointer items-center gap-4 rounded-[20rem]  bg-[#191919] px-4 py-2 text-[#e4e8ed]"
+            className="flex cursor-pointer items-center gap-4 rounded-[20rem] bg-[#191919] px-4 py-2 text-sm text-[#e4e8ed]"
           >
-            <button>close</button>
+            <button>Close</button>
           </div>
         </div>
         <div className="flex w-full pt-4 text-left">

@@ -93,8 +93,8 @@ const EmployeeInfoOverlay = ({
       <div className="fixed left-0 top-0 w-full">
         <div className="flex w-full items-center justify-between border-b border-b-black px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
           <header ref={heading}>
-            <h2 className="text-4xl">{name}</h2>
-            <h3 className="text-2xl">{title}</h3>
+            <h2 className="text-xl md:text-4xl">{name}</h2>
+            <h3 className="text-lg md:text-2xl">{title}</h3>
           </header>
           <button
             className="rounded-[20rem] bg-[#191919] px-4 py-2 text-[#e4e8ed] "
@@ -111,8 +111,7 @@ const EmployeeInfoOverlay = ({
             <img src={src} alt={alt} />
           </div>
           <div ref={text} className="flex-1">
-            <h3 className="pb-4 text-3xl">About</h3>
-            <p className="text-lg">{information}</p>
+            <p className="text-base md:text-lg">{information}</p>
           </div>
         </div>
       </div>

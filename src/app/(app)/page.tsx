@@ -8,12 +8,12 @@ import GetInTouch from "@/components/GetInTouch/GetInTouch";
 
 const Page = () => {
   return (
-    <>
+    <main>
       <Hero />
       <Sectors />
       <GetInTouch />
       <Clients />
-    </>
+    </main>
   );
 };
 

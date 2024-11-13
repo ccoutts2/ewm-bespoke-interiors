@@ -9,8 +9,16 @@ const WhatWeDoImages = () => {
   return (
     <div
       ref={container}
-      className="flex flex-col items-center justify-between px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-28"
+      className="relative flex flex-col items-center justify-between px-4 py-8 md:flex-row md:flex-wrap md:gap-4 md:px-12 lg:px-28"
     >
+      <svg
+        className="absolute bottom-0 right-0 z-[-1] h-[15rem] rotate-180 opacity-50"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1000 100"
+        fill="#F17A14"
+      >
+        <path d="M0 0v4l396.3 84a500.1 500.1 0 0 0 207.4 0L1000 4V0H0Z"></path>
+      </svg>
       {works.map((work, index) => (
         <div
           ref={(el) => {

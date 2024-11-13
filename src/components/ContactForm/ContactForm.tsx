@@ -122,100 +122,94 @@ export const ContactForm = () => {
   };
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit}
-        ref={form}
-        className="flex w-full flex-[2.5] flex-col items-start justify-between pt-4 md:pl-12"
-      >
-        <FormFieldContainer>
-          <FormLabel
-            htmlFor="name"
-            label="What's your name?*"
-            labelNumber="01"
-          />
-          <Input
-            id="name"
-            name="name"
-            value={name}
-            type="text"
-            onChange={handleInputChange}
-            placeholder="Joe Smith"
-            required
-          />
-        </FormFieldContainer>
-        <FormFieldContainer>
-          <FormLabel
-            htmlFor="email"
-            label="What's your email?*"
-            labelNumber="02"
-          />
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            value={email}
-            onChange={handleInputChange}
-            placeholder="joe.smith@email.com"
-            required
-          />
-          {emailError && (
-            <p className="px-4 text-sm text-red-700">{emailError}</p>
-          )}
-        </FormFieldContainer>
-        <FormFieldContainer>
-          <FormLabel
-            htmlFor="dropdown"
-            label="What type of work are you looking for?"
-            labelNumber="03"
-          />
-          <DropDownList
-            id="dropdown"
-            name="dropdown"
-            options={getDropdown}
-            value={dropdown}
-            onChange={handleDropdownChange}
-          />
-        </FormFieldContainer>
-        <FormFieldContainer>
-          <FormLabel
-            htmlFor="services"
-            label="What do you want to get in touch about?"
-            labelNumber="04"
-          />
-          <TextArea
-            id="services"
-            name="services"
-            value={services}
-            onChange={handleTextareaChange}
-            placeholder="Share as many details as possible such as space and scale of work"
-          />
-        </FormFieldContainer>
-        <FormFieldContainer>
-          <FormLabel
-            htmlFor="dimensions"
-            label="Do you have dimensions for your space?"
-            labelNumber="05"
-          />
-          <TextArea
-            id="dimensions"
-            name="dimensions"
-            value={dimensions}
-            onChange={handleTextareaChange}
-            placeholder="Please enter approximate value if unknown"
-          />
-        </FormFieldContainer>
+    <form
+      onSubmit={handleSubmit}
+      ref={form}
+      className="flex w-full flex-[2.5] flex-col items-start justify-between pt-4 md:pl-12"
+    >
+      <FormFieldContainer>
+        <FormLabel htmlFor="name" label="What's your name?*" labelNumber="01" />
+        <Input
+          id="name"
+          name="name"
+          value={name}
+          type="text"
+          onChange={handleInputChange}
+          placeholder="Joe Smith"
+          required
+        />
+      </FormFieldContainer>
+      <FormFieldContainer>
+        <FormLabel
+          htmlFor="email"
+          label="What's your email?*"
+          labelNumber="02"
+        />
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          value={email}
+          onChange={handleInputChange}
+          placeholder="joe.smith@email.com"
+          required
+        />
+        {emailError && (
+          <p className="px-4 text-sm text-red-700">{emailError}</p>
+        )}
+      </FormFieldContainer>
+      <FormFieldContainer>
+        <FormLabel
+          htmlFor="dropdown"
+          label="What type of work are you looking for?"
+          labelNumber="03"
+        />
+        <DropDownList
+          id="dropdown"
+          name="dropdown"
+          options={getDropdown}
+          value={dropdown}
+          onChange={handleDropdownChange}
+        />
+      </FormFieldContainer>
+      <FormFieldContainer>
+        <FormLabel
+          htmlFor="services"
+          label="What do you want to get in touch about?"
+          labelNumber="04"
+        />
+        <TextArea
+          id="services"
+          name="services"
+          value={services}
+          onChange={handleTextareaChange}
+          placeholder="Share as many details as possible such as space and scale of work"
+        />
+      </FormFieldContainer>
+      <FormFieldContainer>
+        <FormLabel
+          htmlFor="dimensions"
+          label="Do you have dimensions for your space?"
+          labelNumber="05"
+        />
+        <TextArea
+          id="dimensions"
+          name="dimensions"
+          value={dimensions}
+          onChange={handleTextareaChange}
+          placeholder="Please enter approximate value if unknown"
+        />
+      </FormFieldContainer>
 
-        <div className="relative w-full pb-1 pt-4">
-          <Button
-            ariaLabel="Button which allows users to submit the form"
-            label="submit"
-            type="submit"
-          />
-          {isToastVisible && <Toast />}
-        </div>
-      </form>
-    </>
+      <div className="relative w-full pb-1 pt-4">
+        <Button
+          ariaLabel="Button which allows users to submit the form"
+          label="submit"
+          type="submit"
+        />
+        {isToastVisible && <Toast />}
+      </div>
+    </form>
   );
 };
 

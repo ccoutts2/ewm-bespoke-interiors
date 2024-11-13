@@ -34,8 +34,8 @@ const ImageCarousel = ({
       <div className="flex h-[60vh] w-full overflow-hidden lg:h-[95vh]">
         {images.map((url, index) => (
           <Image
-            width={800}
-            height={600}
+            width={2000}
+            height={2000}
             key={url}
             src={url}
             priority

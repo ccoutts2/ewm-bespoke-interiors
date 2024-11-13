@@ -3,13 +3,21 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 interface WorkShopImagesProps {
   src: string;
   description: string;
+  width: number;
+  height: number;
 }
 
-const WorkShopImages = ({ src, description }: WorkShopImagesProps) => {
+const WorkShopImages = ({
+  src,
+  description,
+  width,
+  height,
+}: WorkShopImagesProps) => {
   const container = useRef<HTMLDivElement | null>(null);
   const imageContainer = useRef<HTMLDivElement | null>(null);
 
@@ -36,9 +44,12 @@ const WorkShopImages = ({ src, description }: WorkShopImagesProps) => {
   return (
     <div ref={container} className="h-full py-2">
       <div ref={imageContainer} className="h-full w-full">
-        <img
+        <Image
+          width={width}
+          height={height}
           src={src}
           alt={description}
+          loading="lazy"
           className="h-full w-full object-cover"
         />
       </div>

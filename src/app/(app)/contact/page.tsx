@@ -8,18 +8,27 @@ import Link from "next/link";
 
 export default async function Page() {
   return (
-    <>
+    <main>
       <PagesHero
         img={assetsConfig.contact[0].src}
         description={assetsConfig.contact[0].description}
         header={"Get In Touch"}
       />
-      <section className="flex flex-col p-4 md:flex-row md:px-12 lg:px-32">
+      <div className="relative flex flex-col overflow-hidden p-4 md:flex-row md:px-12 lg:px-32">
+        <svg
+          className="absolute bottom-0 right-0 z-[-1] rotate-180 opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          fill="#F17A14"
+        >
+          <path d="M0 0v36L250 4l750 96V0H0z"></path>
+        </svg>
+
         <TextSection />
         <ContactForm />
         <ContactDetails className="py-4 text-sm md:hidden md:flex-col md:text-base" />
-      </section>
-    </>
+      </div>
+    </main>
   );
 }
 

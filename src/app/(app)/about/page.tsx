@@ -8,13 +8,22 @@ import MeetTheTeam from "@/components/MeetTheTeam/MeetTheTeam";
 
 const Page = () => {
   return (
-    <>
+    <main>
       <PagesHero
         img={assetsConfig.whatWeDo[0].src}
         description={assetsConfig.whatWeDo[0].description}
         header={"Our Story"}
       />
-      <div className="flex flex-col p-4 md:px-12 lg:px-32 lg:py-12">
+      <div className="relative flex flex-col p-4 md:px-12 lg:px-32 lg:py-12">
+        <svg
+          className="absolute right-0 top-0 z-[-1] opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          fill="#F17A14"
+        >
+          <path d="M0 0v100S0 4 500 4s500 96 500 96V0H0Z"></path>
+        </svg>
+
         <Paragraphs text="As a family-owned business, we take pride in the personal and professional service given to all our clients. We have developed a strong reputation over the years by combining these family values with a commitment to craftsmanship. In our approach, we remain deeply involved in all projects, ensuring attention to every detail, trust, and long-term involvement with our clients." />
         <Paragraphs text="Our fully equipped workshop is the heart of our business, a place where ingenuity and attention to detail are nurtured. This facility forms the lifeblood of our operations, housing all the machinery required for precision joinery, custom spraying, and bespoke upholstery. It's here that we turn ideas into reality, making sure each piece meets the highest standards." />
         <Paragraphs text="Our services range from carpentry and fitting of furniture to upholstery. We are fully prepared to handle both standard and highly customised projects, providing tailored solutions that meet your specifications precisely." />
@@ -25,12 +34,16 @@ const Page = () => {
             <WorkShopImages
               src={assetsConfig.workshopPicture[1].src}
               description={assetsConfig.workshopPicture[1].description}
+              width={600}
+              height={600}
             />
           </div>
           <div className="h-auto flex-1">
             <WorkShopImages
               src={assetsConfig.workshopPicture[6].src}
               description={assetsConfig.workshopPicture[6].description}
+              width={400}
+              height={400}
             />
           </div>
         </div>
@@ -39,12 +52,16 @@ const Page = () => {
             <WorkShopImages
               src={assetsConfig.workshopPicture[4].src}
               description={assetsConfig.workshopPicture[4].description}
+              width={600}
+              height={600}
             />
           </div>
           <div className="flex-1 pl-2">
             <WorkShopImages
               src={assetsConfig.workshopPicture[3].src}
               description={assetsConfig.workshopPicture[3].description}
+              width={600}
+              height={600}
             />
           </div>
         </div>
@@ -52,6 +69,8 @@ const Page = () => {
           <WorkShopImages
             src={assetsConfig.workshopPicture[5].src}
             description={assetsConfig.workshopPicture[5].description}
+            width={600}
+            height={600}
           />
         </div>
       </div>
@@ -83,7 +102,7 @@ const Page = () => {
       </div>
       <GetInTouch />
       <MeetTheTeam />
-    </>
+    </main>
   );
 };
 

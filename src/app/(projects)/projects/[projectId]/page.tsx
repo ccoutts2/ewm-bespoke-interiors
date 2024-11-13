@@ -53,7 +53,12 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
     lenis.on(
       "scroll",
       ({ scroll, limit }: { scroll: number; limit: number }) => {
-        percentage = (scroll / limit) * 100;
+        if (limit > 0) {
+          percentage = (scroll / limit) * 100;
+        } else {
+          percentage = 0;
+        }
+
         if (scrollInfo.current) {
           scrollInfo.current.textContent = `${percentage.toFixed(0)}%`;
         }
@@ -89,7 +94,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                   key={index}
                   src={image.src}
                   width={600}
-                  height={400}
+                  height={650}
                   alt={image.description}
                   className="h-screen w-[inherit] object-cover"
                 />
@@ -98,9 +103,18 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
           </div>
 
           <section className="fixed right-0 top-0 flex h-screen w-full flex-row justify-between px-4 pt-8 text-right md:w-[50%] md:flex-col md:text-left lg:pl-[6rem]">
-            <h1 className="hidden w-full text-lg uppercase text-[#F17A14] md:flex md:text-4xl">
-              {project.title}
-            </h1>
+            <div className="flex w-full justify-between">
+              <h1 className="hidden w-full text-lg uppercase text-[#F17A14] md:flex md:text-4xl">
+                {project.title}
+              </h1>
+              <Link
+                className="h-[fit-content] w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#f6f6f6]"
+                href="/projects"
+              >
+                Back
+              </Link>
+            </div>
+
             <div className="flex w-full flex-row-reverse justify-between pb-12 md:flex-col md:py-2 lg:w-[48rem] lg:gap-[2rem]">
               <div className="pb-8 md:hidden">
                 <Button
@@ -129,13 +143,6 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                   {project.location}
                 </li>
               </ul>
-
-              <Link
-                className="w-fit rounded bg-[#444444] px-4 py-2 text-start text-sm capitalize leading-relaxed text-[#f6f6f6]"
-                href="/projects"
-              >
-                Back
-              </Link>
             </div>
             <div className="absolute bottom-1 right-2">
               <span

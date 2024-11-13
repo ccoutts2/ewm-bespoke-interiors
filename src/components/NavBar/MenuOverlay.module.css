@@ -1,0 +1,16 @@
+.MenuOverlay,
+.MenuOverlay[data-is-open] {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  background-color: #000;
+  transition: clip-path 0.8s ease-in-out;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.MenuOverlay[data-is-open] {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

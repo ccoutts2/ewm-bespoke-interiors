@@ -22,7 +22,7 @@ export const assetsConfig = {
     },
     {
       description: "A photo showing the work done in the workshop",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20080.jpg?alt=media&token=8a904410-e1b6-4f61-8e3a-ea18e7f9f078",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/About%20Us%2FEWM%20Bespoke%20Interiors%20080%20(1).webp?alt=media&token=beae2865-ece9-473b-8038-0072926d9208",
     },
     {
       description: "A photo showing the work done in the workshop",
@@ -514,8 +514,8 @@ export const assetsConfig = {
 
   whatWeDo: [
     {
-      description: "A photo showing work at Pentonville",
-      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/Pentonville%20-%20Compresses%2F210%20Pentonville%20Road%2014%20December%202023%20028.webp?alt=media&token=ea09c69e-703f-46ee-ad5c-0c4a21689759",
+      description: "A photo showing carpentry and bespoke joinery",
+      src: "https://firebasestorage.googleapis.com/v0/b/ewm-bespoke-interiors.appspot.com/o/What%20We%20Do%20Photos%2FCarpentry%20and%20joinery.webp?alt=media&token=916781e9-8b82-41c1-beb9-feebaf009e8c",
     },
     {
       description: "A photo showing in office furniture work",

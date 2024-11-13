@@ -23,7 +23,7 @@ const ProjectPageProjects = () => {
               }}
               className="relative flex w-full flex-col-reverse gap-8 rounded-3xl bg-[#F17A14] bg-opacity-80 p-8 md:flex-row-reverse"
             >
-              <div className="flex flex-col items-start justify-start gap-4 md:flex-[2]">
+              <div className="flex flex-col items-start justify-start gap-4 md:flex-[1.5]">
                 <h3 className="text-center text-base uppercase">
                   {project.title}
                 </h3>
@@ -78,7 +78,7 @@ const ProjectPageProjects = () => {
                 </span>
               </div>
 
-              <div className="max-h-[15rem] w-full max-w-[20rem] overflow-hidden md:max-h-[8rem] md:flex-[1]">
+              <div className="max-h-[15rem] w-full max-w-[20rem] overflow-hidden md:max-h-[10rem] md:flex-[1]">
                 <Image
                   width={project.width}
                   height={project.height}
