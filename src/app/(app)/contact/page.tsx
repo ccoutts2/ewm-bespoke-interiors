@@ -16,7 +16,7 @@ export default async function Page() {
       />
       <div className="relative flex flex-col overflow-hidden p-4 md:flex-row md:px-12 lg:px-32">
         <svg
-          className="absolute bottom-0 right-0 z-[-1] rotate-180 opacity-50"
+          className="absolute inset-0 z-[-1] rotate-180 opacity-50"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1000 100"
           fill="#F17A14"
