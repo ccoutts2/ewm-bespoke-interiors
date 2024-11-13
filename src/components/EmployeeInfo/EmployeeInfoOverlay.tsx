@@ -88,31 +88,29 @@ const EmployeeInfoOverlay = ({
   return (
     <div
       ref={overlay}
-      className="fixed right-0 top-0 z-0 flex h-screen w-full bg-[#f6f6f6] p-4 [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]"
+      className="fixed right-0 top-0 z-0 flex h-screen w-full flex-col bg-[#f6f6f6] p-4 [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]"
     >
-      <div className="fixed left-0 top-0 w-full">
-        <div className="flex w-full items-center justify-between border-b border-b-black px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
-          <header ref={heading}>
-            <h2 className="text-xl md:text-4xl">{name}</h2>
-            <h3 className="text-lg md:text-2xl">{title}</h3>
-          </header>
-          <button
-            className="rounded-[20rem] bg-[#191919] px-4 py-2 text-[#e4e8ed] "
-            onClick={toggleInfo}
-          >
-            Close
-          </button>
+      <div className="flex w-full items-center justify-between border-b border-b-black px-4 py-4 capitalize md:px-12 md:py-6 lg:px-32 lg:text-xl">
+        <header ref={heading} className="flex flex-col">
+          <h2 className="text-xl md:text-4xl">{name}</h2>
+          <h3 className="text-lg md:text-2xl">{title}</h3>
+        </header>
+        <button
+          className="rounded-[20rem] bg-[#191919] px-4 py-2 text-[#e4e8ed] "
+          onClick={toggleInfo}
+        >
+          Close
+        </button>
+      </div>
+      <div className="flex h-full w-full flex-col justify-between gap-10 p-4 md:flex-row md:px-12 md:py-8 lg:px-32 lg:py-16">
+        <div
+          ref={imageContainer}
+          className="max-h-[50vh] flex-[1] [clip-path:polygon(0_0,100%_0,100%_0,0_0)]"
+        >
+          <img src={src} alt={alt} className="h-full w-full object-cover" />
         </div>
-        <div className="flex h-full w-full flex-col items-stretch justify-between gap-10 p-4 md:flex-row md:px-12 md:py-8 lg:px-32 lg:py-16">
-          <div
-            ref={imageContainer}
-            className="flex-1 [clip-path:polygon(0_0,100%_0,100%_0,0_0)]"
-          >
-            <img src={src} alt={alt} />
-          </div>
-          <div ref={text} className="flex-1">
-            <p className="text-base md:text-lg">{information}</p>
-          </div>
+        <div ref={text} className="flex-[1]">
+          <p className="text-base md:text-lg">{information}</p>
         </div>
       </div>
     </div>
