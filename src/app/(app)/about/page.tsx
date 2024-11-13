@@ -14,7 +14,7 @@ const Page = () => {
         description={assetsConfig.whatWeDo[0].description}
         header={"Our Story"}
       />
-      <div className="relative flex flex-col p-4 md:px-12 lg:px-32 lg:py-12">
+      <div className="relative flex w-full flex-col p-4 md:px-12 lg:px-32 lg:py-12">
         <svg
           className="absolute inset-0 z-[-1] opacity-50"
           xmlns="http://www.w3.org/2000/svg"
