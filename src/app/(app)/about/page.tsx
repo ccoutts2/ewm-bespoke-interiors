@@ -14,16 +14,7 @@ const Page = () => {
         description={assetsConfig.whatWeDo[0].description}
         header={"Our Story"}
       />
-      <div className="relative flex flex-col p-4 md:px-12 lg:px-32 lg:py-12">
-        <svg
-          className="absolute right-0 top-0 z-[-1] opacity-50"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 100"
-          fill="#F17A14"
-        >
-          <path d="M0 0v100S0 4 500 4s500 96 500 96V0H0Z"></path>
-        </svg>
-
+      <div className="flex flex-col p-4 md:px-12 lg:px-32 lg:py-12">
         <Paragraphs text="As a family-owned business, we take pride in the personal and professional service given to all our clients. We have developed a strong reputation over the years by combining these family values with a commitment to craftsmanship. In our approach, we remain deeply involved in all projects, ensuring attention to every detail, trust, and long-term involvement with our clients." />
         <Paragraphs text="Our fully equipped workshop is the heart of our business, a place where ingenuity and attention to detail are nurtured. This facility forms the lifeblood of our operations, housing all the machinery required for precision joinery, custom spraying, and bespoke upholstery. It's here that we turn ideas into reality, making sure each piece meets the highest standards." />
         <Paragraphs text="Our services range from carpentry and fitting of furniture to upholstery. We are fully prepared to handle both standard and highly customised projects, providing tailored solutions that meet your specifications precisely." />
