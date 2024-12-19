@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "EWM Bespoke Interiors Project Pages",
   description:
     "Website showcasing the projects completed by EWM Bespoke Interiors",
+  icons: {
+    icon: "/assets/favicon/favicon-16x16.png",
+  },
 };
 
 export default function RootLayout({

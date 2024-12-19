@@ -13,6 +13,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "EWM Bespoke Interiors",
   description: "Website showcasing services offered by EWM Bespoke Interiors",
+  icons: {
+    icon: "/assets/favicon/favicon-16x16.png",
+  },
 };
 
 export default function RootLayout({

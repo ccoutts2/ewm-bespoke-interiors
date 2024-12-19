@@ -118,6 +118,9 @@ export const ContactForm = () => {
       return { message: "Success" };
     } catch (error) {
       console.error("Error sending email:", error);
+      setErrorMessages({
+        message: "Failed to send email. Please try again later.",
+      });
     }
   };
 
