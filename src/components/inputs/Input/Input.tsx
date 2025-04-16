@@ -1,11 +1,10 @@
-interface InputProps {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   id: string;
   name: string;
   type: string;
   value: string;
   placeholder: string;
-  required: boolean;
 }
 
 const Input = ({
@@ -15,7 +14,6 @@ const Input = ({
   type,
   value,
   placeholder,
-  required = false,
   ...defaultProps
 }: InputProps) => {
   return (
@@ -27,7 +25,6 @@ const Input = ({
       value={value}
       type={type}
       placeholder={placeholder}
-      required={required}
       {...defaultProps}
     ></input>
   );

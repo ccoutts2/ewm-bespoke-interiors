@@ -6,6 +6,7 @@ interface DropDownListProps {
   name: string;
   options: DropDownOptions[];
   value: string;
+  required?: boolean;
 }
 
 const DropDownList = ({
@@ -14,6 +15,7 @@ const DropDownList = ({
   name,
   options,
   value,
+  required = false,
   ...defaultProps
 }: DropDownListProps) => {
   return (
@@ -23,6 +25,7 @@ const DropDownList = ({
       id={id}
       name={name}
       defaultValue={value}
+      required={required}
       {...defaultProps}
     >
       <option disabled value="">

@@ -21,7 +21,7 @@ const Schema = z.object({
     })
     .email(),
   dropdown: z.string(),
-  services: z.string(),
+  services: z.string().min(2, "Please enter this field"),
   dimensions: z.string(),
 });
 
@@ -35,6 +35,7 @@ export const ContactForm = () => {
   const [dimensions, setDimensions] = useState("");
   const [errorMessages, setErrorMessages] = useState({});
   const [emailError, setEmailError] = useState("");
+  const [servicesError, setServicesError] = useState("");
   const [isToastVisible, setIsToastVisible] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -170,6 +171,7 @@ export const ContactForm = () => {
         <DropDownList
           id="dropdown"
           name="dropdown"
+          required
           options={getDropdown}
           value={dropdown}
           onChange={handleDropdownChange}
@@ -186,6 +188,7 @@ export const ContactForm = () => {
           name="services"
           value={services}
           onChange={handleTextareaChange}
+          required
           placeholder="Share as many details as possible such as space and scale of work"
         />
       </FormFieldContainer>

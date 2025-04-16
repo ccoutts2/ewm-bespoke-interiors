@@ -1,4 +1,5 @@
-interface TextAreaProps {
+interface TextAreaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   id: string;
   name: string;
